@@ -1,0 +1,14 @@
+https://moxfield.com/decks/oW7DoJwInUCbBVgswn9B4g
+https://moxfield.com/decks/dTK5nwyKJ0GftXy7k_rnsw
+https://moxfield.com/decks/l_QpH86N9kybxldi-tMfsg
+https://moxfield.com/decks/ijzi011QpEq51qOq4gLlaQ
+https://moxfield.com/decks/h1iWVck0d06cVX6rAKuAmQ
+https://moxfield.com/decks/_YgoH0RpHkivC1-biqNJAA
+https://moxfield.com/decks/9sL93QXuwUyU9O7YGstSGA
+https://moxfield.com/decks/AVNxFDw_GUmOE6Bb1A63yA
+https://moxfield.com/decks/eBzCrQgX2E2ElYQNTosr4A
+https://moxfield.com/decks/v1HMMdKAfEm5WS2V5ihzzA
+https://moxfield.com/decks/tGgkNibyh0uYANqzUQqqrQ
+https://moxfield.com/decks/7MFNdvIXAkOSJdcLfkfdRA
+https://moxfield.com/decks/GgWqlOANkUWpnbw1qqqAqA
+https://moxfield.com/decks/JncGJYCtH0ixYQdy_XgdmQ

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTG Commander Deck Cards</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Alegreya:ital,wght@0,400;0,700;1,400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    font-family: 'Alegreya', Georgia, serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4mm;
+    padding: 5mm;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  @media print {
+    body {
+      background: white;
+      gap: 1mm;
+      padding: 0;
+    }
+    .card { break-inside: avoid; }
+  }
+
+  .card {
+    width: 63mm;
+    height: 88mm;
+    border-radius: 3mm;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    flex-shrink: 0;
+  }
+
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 3mm;
+    border: 1.2mm solid rgba(255,255,255,0.15);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .card-header {
+    position: relative;
+    height: 22mm;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85) saturate(1.1);
+  }
+
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10mm;
+    background: linear-gradient(transparent, var(--card-bg));
+    z-index: 1;
+  }
+
+  .card-name-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 2mm 0.5mm 2mm;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .commander-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 6.5pt;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.5);
+    line-height: 1.1;
+    max-width: 80%;
+  }
+
+  .mana-pips {
+    display: flex;
+    gap: 0.5mm;
+    flex-shrink: 0;
+  }
+
+  .mana-pip {
+    width: 3.5mm;
+    height: 3.5mm;
+    border-radius: 50%;
+    border: 0.3mm solid rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5pt;
+    font-weight: 900;
+    text-shadow: 0 0.5px 1px rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  .pip-W { background: radial-gradient(circle at 30% 30%, #fff9e6, #f0d860); color: #6b5c1f; }
+  .pip-U { background: radial-gradient(circle at 30% 30%, #4fa8d8, #0a4f8a); color: #c8e4f8; }
+  .pip-B { background: radial-gradient(circle at 30% 30%, #555, #1a1a1a); color: #bbb; }
+  .pip-R { background: radial-gradient(circle at 30% 30%, #f06040, #a01020); color: #ffddc8; }
+  .pip-G { background: radial-gradient(circle at 30% 30%, #50b060, #1a6030); color: #d0f0c8; }
+
+  .card-body {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 1.5mm 2mm 1mm 2mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8mm;
+    overflow: hidden;
+  }
+
+  .deck-name {
+    font-family: 'Cinzel', serif;
+    font-size: 5.5pt;
+    color: var(--accent);
+    text-align: center;
+    letter-spacing: 0.3mm;
+    text-transform: uppercase;
+    line-height: 1;
+    opacity: 0.8;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 4.5pt;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2mm;
+    border-bottom: 0.2mm solid var(--accent-dim);
+    padding-bottom: 0.3mm;
+    margin-bottom: 0.2mm;
+    line-height: 1;
+  }
+
+  .strategy-text {
+    font-size: 5pt;
+    color: var(--text);
+    line-height: 1.25;
+  }
+
+  .combos-list {
+    font-size: 4.5pt;
+    color: var(--text);
+    line-height: 1.2;
+    list-style: none;
+  }
+
+  .combos-list li {
+    padding-left: 2mm;
+    position: relative;
+    margin-bottom: 0.2mm;
+  }
+
+  .combos-list li::before {
+    content: '⚔';
+    position: absolute;
+    left: 0;
+    font-size: 4pt;
+    color: var(--accent);
+  }
+
+  .mana-curve-section {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  .mana-curve {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.4mm;
+    height: 7mm;
+    padding-top: 0.5mm;
+  }
+
+  .mana-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  .mana-bar {
+    width: 100%;
+    background: var(--accent);
+    border-radius: 0.3mm 0.3mm 0 0;
+    min-height: 0;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .mana-bar-label {
+    font-size: 3.5pt;
+    color: var(--text-dim);
+    line-height: 1;
+    margin-top: 0.2mm;
+  }
+
+  .mana-bar-count {
+    font-size: 3pt;
+    color: var(--text-dim);
+    line-height: 1;
+    margin-bottom: 0.1mm;
+  }
+
+  .avg-mv {
+    font-size: 3.5pt;
+    color: var(--text-dim);
+    text-align: right;
+    line-height: 1;
+    margin-top: 0.3mm;
+  }
+</style>
+</head>
+<body>
+<script>
+const decks = [
+  {
+    name: "Ayara Custom",
+    commander: "Ayara, First of Locthwain",
+    art: "https://assets.moxfield.net/cards/card-EJ5rB-art_crop.webp",
+    colors: ["B"],
+    bg: "linear-gradient(160deg, #1c1020 0%, #25152a 40%, #1a1020 100%)",
+    accent: "#b48ead",
+    accentDim: "rgba(180,142,173,0.25)",
+    text: "#d8ccd8",
+    textDim: "#8a7a8a",
+    strategy: "Mono-black aristocrats. Drain opponents each time a black creature enters via Ayara. Recur cheap creatures from the graveyard and sacrifice them repeatedly for lethal life loss.",
+    combos: [
+      "Gravecrawler + Ashnod's Altar + Ayara → infinite drain",
+      "Pitiless Plunderer + sac outlet + recursive creature → infinite loop",
+      "Gray Merchant of Asphodel + high devotion → massive life swing",
+      "Exsanguinate / Aetherflux Reservoir as finishers"
+    ],
+    curve: [4, 10, 12, 14, 10, 8, 3, 2],
+    avgMv: 3.13
+  },
+  {
+    name: "Ellivere",
+    commander: "Ellivere of the Wild Court",
+    art: "https://assets.moxfield.net/cards/card-aQmJd-art_crop.webp",
+    colors: ["G", "W"],
+    bg: "linear-gradient(160deg, #1a2418 0%, #22301a 40%, #1c2816 100%)",
+    accent: "#a3be8c",
+    accentDim: "rgba(163,190,140,0.25)",
+    text: "#d4dcc8",
+    textDim: "#7a8a70",
+    strategy: "Enchantress Voltron. Stack auras on creatures for massive power. Enchantress effects draw piles of cards. Ellivere's Virtuous Role tokens provide evasion for commander-damage kills.",
+    combos: [
+      "Ethereal Armor / All That Glitters → huge power from enchantment count",
+      "Spirit Mantle + Ancestral Mask → unblockable lethal",
+      "Winds of Rath → one-sided board wipe (keeps enchanted creatures)",
+      "Mantle of the Ancients → recover all auras from graveyard"
+    ],
+    curve: [6, 9, 16, 14, 10, 4, 3, 1],
+    avgMv: 2.73
+  },
+  {
+    name: "Hydra",
+    commander: "Gargos, Vicious Watcher",
+    art: "https://assets.moxfield.net/cards/card-ka9w8-art_crop.webp",
+    colors: ["G"],
+    bg: "linear-gradient(160deg, #0e200e 0%, #183018 40%, #0e200e 100%)",
+    accent: "#5faa4f",
+    accentDim: "rgba(95,170,79,0.25)",
+    text: "#c8dcc0",
+    textDim: "#6a8a5a",
+    strategy: "Ramp hard, cast massive X-cost Hydras at a discount via Gargos. Targeting your own hydras with pump spells triggers Gargos's fight ability as free removal.",
+    combos: [
+      "Gargos + any targeting spell → free fight removal",
+      "Unbound Flourishing → doubles X spells",
+      "Kalonian Hydra → doubles all +1/+1 counters on attack",
+      "Hardened Scales + counter hydras → extra value on every creature"
+    ],
+    curve: [4, 12, 12, 14, 10, 4, 4, 4],
+    avgMv: 2.71
+  },
+  {
+    name: "Jasper",
+    commander: "Laughing Jasper Flint",
+    art: "https://assets.moxfield.net/cards/card-enRB1-art_crop.webp",
+    colors: ["B", "R"],
+    bg: "linear-gradient(160deg, #201010 0%, #2a1515 40%, #1a0e0e 100%)",
+    accent: "#bf616a",
+    accentDim: "rgba(191,97,106,0.25)",
+    text: "#d8c8c8",
+    textDim: "#8a6a6a",
+    strategy: "Exile and cast opponents' cards. Jasper exiles from hands on attack; other creatures steal from libraries and graveyards. Heavy mana rocks to cast multi-colored stolen spells.",
+    combos: [
+      "Jasper + Whispersilk Cloak → reliable hand exile",
+      "Etali, Primal Storm → cascade-steal on attack",
+      "Fevered Suspicion → mass theft + damage",
+      "Outrageous Robbery → exile 8 cards from opponent's library"
+    ],
+    curve: [3, 6, 10, 12, 10, 8, 6, 8],
+    avgMv: 3.87
+  },
+  {
+    name: "Terra",
+    commander: "Terra, Herald of Hope",
+    art: "https://assets.moxfield.net/cards/card-Mz9je-art_crop.webp",
+    colors: ["W", "B", "R"],
+    bg: "linear-gradient(160deg, #201518 0%, #2a1820 40%, #1a1015 100%)",
+    accent: "#d08770",
+    accentDim: "rgba(208,135,112,0.25)",
+    text: "#d8d0cc",
+    textDim: "#8a7a70",
+    strategy: "Mardu reanimator. Fill graveyard with powerful ETB creatures, then reanimate with Terra. Sacrifice outlets enable repeated value loops. Overwhelm with recursive threats.",
+    combos: [
+      "Karmic Guide + Luminous Broodmoth + sac outlet → infinite recursion",
+      "Buried Alive → tutor key creatures into graveyard",
+      "Goblin Bombardment → free sac outlet + direct damage",
+      "Rise of the Dark Realms → reanimate ALL graveyards"
+    ],
+    curve: [6, 7, 11, 13, 12, 7, 5, 3],
+    avgMv: 3.30
+  },
+  {
+    name: "Suspend",
+    commander: "Alaundo the Seer",
+    art: "https://assets.moxfield.net/cards/card-bR50n-art_crop.webp",
+    colors: ["U", "G"],
+    bg: "linear-gradient(160deg, #0e1a1e 0%, #102828 40%, #0e1a1e 100%)",
+    accent: "#88c0d0",
+    accentDim: "rgba(136,192,208,0.25)",
+    text: "#c8dce0",
+    textDim: "#6a8a8e",
+    strategy: "Tap Alaundo to draw and exile cards with time counters, then cast them for free. Untap effects allow multiple activations per turn. Win by drawing entire deck into Thassa's Oracle.",
+    combos: [
+      "Freed from the Real / Pemmin's Aura + Alaundo → infinite activations",
+      "Intruder Alarm + creatures entering → chain untaps",
+      "Thassa's Oracle → win after emptying library",
+      "Seedborn Muse → untap on each player's turn"
+    ],
+    curve: [7, 18, 18, 12, 6, 4, 2, 1],
+    avgMv: 2.40
+  },
+  {
+    name: "Sidisi",
+    commander: "Sidisi, Brood Tyrant",
+    art: "https://assets.moxfield.net/cards/card-q4bQy-art_crop.webp",
+    colors: ["B", "G", "U"],
+    bg: "linear-gradient(160deg, #101a18 0%, #152520 40%, #101a18 100%)",
+    accent: "#8fbcbb",
+    accentDim: "rgba(143,188,187,0.25)",
+    text: "#c8d8d6",
+    textDim: "#6a8a88",
+    strategy: "Self-mill to create zombie tokens with Sidisi. High creature count maximizes token output. Graveyard becomes a second hand for reanimation and recursion. Zombie swarm wins.",
+    combos: [
+      "Mesmeric Orb + untap effects → massive mill + zombie flood",
+      "Living Death → mass reanimate from stacked graveyard",
+      "Syr Konrad + self-mill → drain all opponents",
+      "Dredge cards (Golgari Grave-Troll) → repeated mill triggers"
+    ],
+    curve: [6, 14, 16, 12, 8, 5, 2, 1],
+    avgMv: 2.98
+  },
+  {
+    name: "Ognis",
+    commander: "Ognis, the Dragon's Lash",
+    art: "https://assets.moxfield.net/cards/card-zbbem-art_crop.webp",
+    colors: ["B", "R", "G"],
+    bg: "linear-gradient(160deg, #1a1510 0%, #2a1e14 40%, #1a1510 100%)",
+    accent: "#ebcb8b",
+    accentDim: "rgba(235,203,139,0.25)",
+    text: "#d8d4c8",
+    textDim: "#8a8468",
+    strategy: "Attack with haste creatures to generate treasure tokens via Ognis. Treasures fuel artifact synergies and ramp. Payoffs include Revel in Riches alt-win and Marionette Master damage.",
+    combos: [
+      "Revel in Riches + 10 treasures → alternate win condition",
+      "Marionette Master + treasure sacrifice → massive drain",
+      "Bootleggers' Stash → lands produce treasures",
+      "Insurrection / Mob Rule → steal all creatures for lethal"
+    ],
+    curve: [5, 8, 12, 12, 10, 7, 5, 4],
+    avgMv: 3.13
+  },
+  {
+    name: "Neera",
+    commander: "Neera, Wild Mage",
+    art: "https://assets.moxfield.net/cards/card-O959K-art_crop.webp",
+    colors: ["U", "R"],
+    bg: "linear-gradient(160deg, #14101e 0%, #1e1528 40%, #14101e 100%)",
+    accent: "#b48ead",
+    accentDim: "rgba(180,142,173,0.25)",
+    text: "#d0c8d8",
+    textDim: "#7a6a8a",
+    strategy: "Cast cheap spells, then use Neera to polymorph them into expensive bombs from the library. Top-deck manipulation controls what Neera flips into. Spell-damage payoffs add up fast.",
+    combos: [
+      "Cheap spell + Neera → free Hullbreaker Horror or bomb",
+      "Aetherflux Reservoir + spell storm → 50-damage laser",
+      "Mnemonic Deluge → copy a big spell three times",
+      "Veyran + spell triggers → doubled damage and effects"
+    ],
+    curve: [6, 12, 8, 10, 8, 6, 5, 8],
+    avgMv: 3.53
+  },
+  {
+    name: "NazeGul",
+    commander: "Lord of the Nazgûl",
+    art: "https://assets.moxfield.net/cards/card-g32jp-art_crop.webp",
+    colors: ["U", "B"],
+    bg: "linear-gradient(160deg, #10101a 0%, #181825 40%, #10101a 100%)",
+    accent: "#81a1c1",
+    accentDim: "rgba(129,161,193,0.25)",
+    text: "#c8d0d8",
+    textDim: "#6a7a8a",
+    strategy: "Nazgûl tribal with 9 Nazgûl that each grow when a Wraith enters. Clone Nazgûl to multiply triggers — each copy pumps all others. Ring temptation gives evasion for swarm lethal.",
+    combos: [
+      "Rite of Replication on Nazgûl → 5 copies pumping all Wraiths",
+      "Echoing Return → recur ALL Nazgûl from graveyard at once",
+      "Clone effects count as Wraith entering → pump all Nazgûl",
+      "Call of the Ring → consistent card draw + Ring temptation"
+    ],
+    curve: [8, 12, 12, 14, 10, 6, 3, 1],
+    avgMv: 2.85
+  },
+  {
+    name: "Maarika",
+    commander: "Maarika, Brutal Gladiator",
+    art: "https://assets.moxfield.net/cards/card-R9K48-art_crop.webp",
+    colors: ["B", "R", "G"],
+    bg: "linear-gradient(160deg, #1a1210 0%, #261818 40%, #1a1210 100%)",
+    accent: "#a3be8c",
+    accentDim: "rgba(163,190,140,0.25)",
+    text: "#d0d0c8",
+    textDim: "#7a7a68",
+    strategy: "Infect Voltron. Give Maarika infect via Grafted Exoskeleton or Glistening Oil. Maarika fights when dealing excess damage. Pump + infect = one-shot poison kills on multiple opponents.",
+    combos: [
+      "Grafted Exoskeleton + Maarika → infect commander damage",
+      "Chandra's Ignition on infect creature → poison entire table",
+      "Tainted Strike + high power → surprise infect lethal",
+      "Fiendlash + fight effects → doubled damage output"
+    ],
+    curve: [8, 11, 12, 14, 10, 6, 4, 2],
+    avgMv: 2.92
+  },
+  {
+    name: "Kuja Token Sorcier",
+    commander: "Kuja, Genome Sorcerer",
+    art: "https://assets.moxfield.net/cards/card-face-kq2Zr-art_crop.webp",
+    colors: ["B", "R"],
+    bg: "linear-gradient(160deg, #1e1018 0%, #281420 40%, #1e1018 100%)",
+    accent: "#bf616a",
+    accentDim: "rgba(191,97,106,0.25)",
+    text: "#d8c8d0",
+    textDim: "#8a6a78",
+    strategy: "Spellslinger burn. Cheap instants and sorceries trigger Kuja's token creation and damage. Spell-damage doublers amplify burn. Arcane Bombardment creates exponential value each turn.",
+    combos: [
+      "Arcane Bombardment + high spell density → exponential casts",
+      "Quest for Pure Flame → double ALL damage output",
+      "Mizzix's Mastery overloaded → replay entire graveyard",
+      "Guttersnipe + cheap spell chain → rapid burn"
+    ],
+    curve: [6, 12, 16, 14, 6, 4, 4, 3],
+    avgMv: 2.53
+  },
+  {
+    name: "Gimli",
+    commander: "Gimli, Mournful Avenger",
+    art: "https://assets.moxfield.net/cards/card-5MB5v-art_crop.webp",
+    colors: ["R", "G"],
+    bg: "linear-gradient(160deg, #1a1810 0%, #251e12 40%, #1a1810 100%)",
+    accent: "#d08770",
+    accentDim: "rgba(208,135,112,0.25)",
+    text: "#d8d4c8",
+    textDim: "#8a8068",
+    strategy: "Token sacrifice. Create waves of tokens, sacrifice them to grow Gimli with +1/+1 counters. Doubling Season amplifies everything. Fling a massive Gimli or swing for lethal commander damage.",
+    combos: [
+      "Doubling Season + token creators → massive army + counters",
+      "Ashnod's Altar + tokens → mana flood + Gimli growth",
+      "Fling / Kazuul's Fury → lethal direct damage with huge Gimli",
+      "Impact Tremors + mass token generation → direct burn"
+    ],
+    curve: [6, 12, 10, 14, 12, 6, 4, 3],
+    avgMv: 2.94
+  },
+  {
+    name: "Cloud",
+    commander: "Cloud, Ex-SOLDIER",
+    art: "https://assets.moxfield.net/cards/card-Q9nre-art_crop.webp",
+    colors: ["W", "R", "G"],
+    bg: "linear-gradient(160deg, #181a10 0%, #222412 40%, #181a10 100%)",
+    accent: "#ebcb8b",
+    accentDim: "rgba(235,203,139,0.25)",
+    text: "#d8d8c8",
+    textDim: "#8a8a68",
+    strategy: "Equipment Voltron. Equip Cloud with powerful weapons at reduced costs. Equipment synergy creatures draw cards and auto-equip. Commander damage kills through heavy hitting gear.",
+    combos: [
+      "Puresteel Paladin + metalcraft → free equip costs",
+      "Sram + equipment casts → card draw engine",
+      "Bloodforged Battle-Axe → multiplying weapons on hit",
+      "Darksteel Plate + Conqueror's Flail → protected indestructible swings"
+    ],
+    curve: [4, 14, 16, 12, 8, 4, 4, 2],
+    avgMv: 2.68
+  }
+];
+
+const pipLetters = { W: 'W', U: 'U', B: 'B', R: 'R', G: 'G' };
+
+function renderCard(deck) {
+  const maxCurve = Math.max(...deck.curve);
+  const curveHTML = deck.curve.map((count, i) => {
+    const pct = maxCurve > 0 ? (count / maxCurve) * 100 : 0;
+    return `
+      <div class="mana-bar-group">
+        <span class="mana-bar-count">${count > 0 ? count : ''}</span>
+        <div class="mana-bar" style="height:${pct}%"></div>
+        <span class="mana-bar-label">${i}</span>
+      </div>`;
+  }).join('');
+
+  const pipsHTML = deck.colors.map(c =>
+    `<span class="mana-pip pip-${c}">${pipLetters[c]}</span>`
+  ).join('');
+
+  const combosHTML = deck.combos.map(c =>
+    `<li>${c}</li>`
+  ).join('');
+
+  return `
+    <div class="card" style="--card-bg:${deck.bg};--accent:${deck.accent};--accent-dim:${deck.accentDim};--text:${deck.text};--text-dim:${deck.textDim}">
+      <div class="card-border"></div>
+      <div class="card-header">
+        <img data-commander="${deck.commander}" alt="${deck.commander}" loading="lazy">
+        <div class="card-name-bar">
+          <span class="commander-name">${deck.commander}</span>
+          <span class="mana-pips">${pipsHTML}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="deck-name">${deck.name}</div>
+        <div class="section-label">Strategy</div>
+        <div class="strategy-text">${deck.strategy}</div>
+        <div class="section-label">Winning Lines</div>
+        <ul class="combos-list">${combosHTML}</ul>
+        <div class="mana-curve-section">
+          <div class="section-label">Mana Curve</div>
+          <div class="mana-curve">${curveHTML}</div>
+          <div class="avg-mv">Avg MV ${deck.avgMv.toFixed(2)}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+document.body.innerHTML = decks.map(renderCard).join('');
+
+// Fetch art from Scryfall JSON API (handles DFCs and gives stable image URLs)
+document.querySelectorAll('img[data-commander]').forEach(async img => {
+  const name = img.dataset.commander;
+  try {
+    const resp = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const uri = data.image_uris?.art_crop
+      ?? data.card_faces?.[0]?.image_uris?.art_crop;
+    if (uri) img.src = uri;
+  } catch (e) { /* network failure — img stays blank */ }
+});
+</script>
+</body>
+</html>
