@@ -191,14 +191,15 @@
   .mana-curve-section {
     margin-top: auto;
     flex-shrink: 0;
+    padding: 0.5mm 1mm;
   }
 
   .mana-curve {
     display: flex;
     align-items: flex-end;
-    gap: 0.4mm;
-    height: 7mm;
-    padding-top: 0.5mm;
+    gap: 0.5mm;
+    height: 12.5mm;
+    padding-top: 0.75mm;
   }
 
   .mana-bar-group {
@@ -220,17 +221,17 @@
   }
 
   .mana-bar-label {
-    font-size: 5.5pt;
+    font-size: 6pt;
     color: var(--text-dim);
     line-height: 1;
-    margin-top: 0.2mm;
+    margin-top: 0.25mm;
   }
 
   .mana-bar-count {
-    font-size: 4.5pt;
+    font-size: 5pt;
     color: var(--text-dim);
     line-height: 1;
-    margin-bottom: 0.1mm;
+    margin-bottom: 0.15mm;
   }
 
   .avg-mv {
@@ -532,7 +533,7 @@ const pipLetters = { W: 'W', U: 'U', B: 'B', R: 'R', G: 'G' };
 function renderCard(deck) {
   const maxCurve = Math.max(...deck.curve);
   const curveHTML = deck.curve.map((count, i) => {
-    const pct = maxCurve > 0 ? (count / maxCurve) * 100 : 0;
+    const pct = maxCurve > 0 ? (count / maxCurve) * 80 : 0;
     return `
       <div class="mana-bar-group">
         <span class="mana-bar-count">${count > 0 ? count : ''}</span>
