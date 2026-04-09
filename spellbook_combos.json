@@ -1,0 +1,497 @@
+{
+  "Ayara": [
+    {
+      "cards": [
+        "Ayara, First of Locthwain",
+        "Carnival of Souls",
+        "Gravecrawler",
+        "Carrion Feeder"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite lifegain triggers",
+        "Infinite lifeloss",
+        "Infinite LTB",
+        "Infinite sacrifice triggers"
+      ],
+      "description": "Activate Carrion Feeder by sacrificing Gravecrawler, putting a +1/+1 counter on Carrion Feeder.\nCast Gravecrawler from your graveyard to the battlefield by paying {B}.\nAyara and Carnival of Souls trigger.\nResolve the Ayara trigger, causing each opponent to lose 1 life and you to gain 1 life.\nResolve the Carnival of Souls trigger, causing you to lose 1 life and add {B}.\nRepeat.",
+      "cards_in_deck": 3,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Warren Soultrader",
+        "Gravecrawler",
+        "Ayara, First of Locthwain"
+      ],
+      "produces": [
+        "Infinite LTB",
+        "Infinite ETB",
+        "Infinite sacrifice triggers",
+        "Infinite death triggers",
+        "Infinite lifegain triggers",
+        "Infinite storm count",
+        "Infinite lifeloss"
+      ],
+      "description": "Activate Warren Soultrader by paying 1 life and sacrificing Gravecrawler, creating a Treasure token.\nActivate the Treasure by tapping and sacrificing it, adding {B}.\nCast Gravecrawler from your graveyard by paying {B}.\nWhen Gravecrawler enters, Ayara triggers, causing you to gain 1 life and each opponent to lose 1 life.\nRepeat.",
+      "cards_in_deck": 2,
+      "total_cards": 3
+    },
+    {
+      "cards": [
+        "Ayara, First of Locthwain",
+        "Plague of Vermin"
+      ],
+      "produces": [
+        "Near-infinite creature tokens for all players",
+        "Near-infinite ETB",
+        "Near-infinite lifegain",
+        "Near-infinite lifegain triggers",
+        "Near-infinite lifeloss"
+      ],
+      "description": "Cast Plague of Vermin by paying {6}{B}.\nResolve Plague of Vermin, choosing to pay all but one life and create that many black Rat tokens.\nFor each Rat tokens that enters the battlefield, Ayara triggers, causing you to gain that many life and each opponent to lose that many life.",
+      "cards_in_deck": 1,
+      "total_cards": 2
+    }
+  ],
+  "Ellivere": [
+    {
+      "cards": [
+        "Jinnie Fay, Jetmir's Second",
+        "Breath of Fury",
+        "Ellivere of the Wild Court"
+      ],
+      "produces": [
+        "Infinite card draw",
+        "Infinite draw triggers",
+        "Near-infinite combat damage",
+        "Near-infinite combat phases",
+        "Near-infinite death triggers",
+        "Near-infinite ETB",
+        "Near-infinite LTB",
+        "Near-infinite sacrifice triggers"
+      ],
+      "description": "Declare the creature with Breath of Fury attached and Ellivere of the Wild Court as attackers.\nEllivere of the Wild Court's first ability triggers, creating a 2/2 Cat creature token with haste due to Jinnie Fay.\nDeal combat damage using the creature that has Breath of Fury attached.\nBreath of Fury and Ellivere of the Wild Court's second ability triggers.\nResolve the Breath of Fury trigger, causing you to sacrifice the creature it is attached to, then attach Breath of Fury to the Cat token, then ",
+      "cards_in_deck": 1,
+      "total_cards": 3
+    }
+  ],
+  "Hydra": [],
+  "Jasper": [],
+  "Terra": [
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Aurelia, the Warleader",
+        "Karmic Guide",
+        "Ashnod's Altar"
+      ],
+      "produces": [
+        "Infinite LTB",
+        "Infinite ETB",
+        "Infinite sacrifice triggers",
+        "Infinite death triggers",
+        "Infinite self-mill",
+        "Infinite combat phases",
+        "Infinite untap of creatures you control",
+        "Infinite mana creatures you control can produce",
+        "Infinite combat damage",
+        "Infinite colorless mana"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Aurelia as attackers.\nAurelia triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Ashnod's Altar twice by sacrificing Aurelia and Karmic Guide, adding {C}{C}{C}{C}.\nResolve the Terra ability, choosing to pay {2",
+      "cards_in_deck": 2,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Aurelia, the Warleader",
+        "Karmic Guide",
+        "Phyrexian Altar"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite LTB",
+        "Infinite combat damage",
+        "Infinite combat phases",
+        "Infinite death triggers",
+        "Infinite sacrifice triggers",
+        "Infinite self-mill"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Aurelia as attackers.\nAurelia triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Phyrexian Altar twice by sacrificing Aurelia and Karmic Guide, adding {2}.\nResolve the Terra ability, choosing to pay {2} to tri",
+      "cards_in_deck": 2,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Aurelia, the Warleader",
+        "Karmic Guide",
+        "Thermopod"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite LTB",
+        "Infinite combat damage",
+        "Infinite combat phases",
+        "Infinite death triggers",
+        "Infinite sacrifice triggers",
+        "Infinite self-mill"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Aurelia as attackers.\nAurelia triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Thermopod twice by sacrificing Aurelia and Karmic Guide, adding {R}{R}\nResolve the Terra ability, choosing to pay {2} to trigger",
+      "cards_in_deck": 2,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Aurelia, the Warleader",
+        "Ashnod's Altar",
+        "Amulet of Vigor"
+      ],
+      "produces": [
+        "Infinite LTB",
+        "Infinite ETB",
+        "Infinite sacrifice triggers",
+        "Infinite death triggers",
+        "Infinite self-mill",
+        "Infinite combat phases",
+        "Infinite untap of creatures you control",
+        "Infinite mana creatures you control can produce",
+        "Infinite combat damage"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Aurelia as attackers.\nAurelia triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Ashnod's Altar by sacrificing Aurelia, adding {C}{C}.\nResolve the Terra ability, choosing to pay {2} to trigger its reflexive ab",
+      "cards_in_deck": 1,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Ashnod's Altar",
+        "Fear of Missing Out",
+        "Amulet of Vigor"
+      ],
+      "produces": [
+        "Infinite self-discard triggers",
+        "Near-infinite ETB",
+        "Infinite draw triggers",
+        "Near-infinite LTB",
+        "Infinite rummaging",
+        "Near-infinite death triggers",
+        "Near-infinite sacrifice triggers",
+        "Near-infinite combat phases",
+        "Near-infinite combat damage"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Fear of Missing Out as attackers.\nFear of Missing Out triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Ashnod's Altar by sacrificing Fear of Missing Out, adding {C}{C}.\nResolve the Terra ability, choosing to",
+      "cards_in_deck": 1,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Aurelia, the Warleader",
+        "Ashnod's Altar",
+        "Archelos, Lagoon Mystic"
+      ],
+      "produces": [
+        "Infinite LTB",
+        "Infinite ETB",
+        "Infinite sacrifice triggers",
+        "Infinite death triggers",
+        "Infinite self-mill",
+        "Infinite combat phases",
+        "Infinite untap of creatures you control",
+        "Infinite mana creatures you control can produce",
+        "Infinite combat damage"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Aurelia as attackers.\nAurelia triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Ashnod's Altar by sacrificing Aurelia, adding {C}{C}.\nResolve the Terra ability, choosing to pay {2} to trigger its reflexive ab",
+      "cards_in_deck": 1,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Terra, Herald of Hope",
+        "Ashnod's Altar",
+        "Fear of Missing Out",
+        "Archelos, Lagoon Mystic"
+      ],
+      "produces": [
+        "Infinite self-discard triggers",
+        "Near-infinite ETB",
+        "Infinite draw triggers",
+        "Near-infinite LTB",
+        "Infinite rummaging",
+        "Near-infinite death triggers",
+        "Near-infinite sacrifice triggers",
+        "Near-infinite combat phases",
+        "Near-infinite combat damage"
+      ],
+      "description": "At the beginning of your combat phase, Terra's first ability triggers, causing you to mill two cards.\nDeclare Terra and Fear of Missing Out as attackers.\nFear of Missing Out triggers, causing you to untap all other creatures you control and to get an additional combat phase after this one.\nDeal combat damage to an opponent using Terra, triggering its second ability.\nHolding priority, activate Ashnod's Altar by sacrificing Fear of Missing Out, adding {C}{C}.\nResolve the Terra ability, choosing to",
+      "cards_in_deck": 1,
+      "total_cards": 4
+    }
+  ],
+  "Suspend": [
+    {
+      "cards": [
+        "Alaundo the Seer",
+        "Tolarian Kraken",
+        "Teferi's Ageless Insight"
+      ],
+      "produces": [
+        "Infinite card draw",
+        "Infinite draw triggers",
+        "Near-infinite untap of creatures you control",
+        "Near-infinite mana creatures you control can produce"
+      ],
+      "description": "Activate the mana-producing creature by tapping it, adding at least {2}.\nActivate Alaundo by tapping it, drawing two cards and exiling a card from your hand, and removing a time counter from all other cards previously exiled with this ability.\nTolarian Kraken triggers, causing you to pay {2}, untapping Alaundo and the mana-producing creature.\nRepeat.",
+      "cards_in_deck": 2,
+      "total_cards": 3
+    },
+    {
+      "cards": [
+        "The Locust God",
+        "Intruder Alarm",
+        "Alaundo the Seer"
+      ],
+      "produces": [
+        "Cast a portion of the cards in your library and hand without paying their mana costs",
+        "Infinite draw triggers",
+        "Near-infinite creature tokens with haste",
+        "Near-infinite ETB",
+        "Near-infinite untap of all creatures"
+      ],
+      "description": "Activate Alaundo the Seer by tapping it, causing you to draw a card and exile a card from your hand with time counters on it equal to its mana value, then removing a time counter from each other card you own in exile.\nThe Locust God triggers, creating a 1/1 Insect creature token with flying and haste.\nWhen the Insect enters the battlefield, Intruder Alarm triggers, untapping all creatures.\nRepeat.",
+      "cards_in_deck": 2,
+      "total_cards": 3
+    }
+  ],
+  "Sidisi": [],
+  "Ognis": [
+    {
+      "cards": [
+        "Ognis, the Dragon's Lash",
+        "Time Sieve"
+      ],
+      "produces": [
+        "Infinite turns",
+        "Lock"
+      ],
+      "description": "Declare five creatures you control with haste as attackers.\nOgnis triggers five times, creating five tapped Treasure tokens.\nActivate Time Sieve by tapping it and sacrificing the Treasures, causing you to take an extra turn after this one.\nRepeat each turn.",
+      "cards_in_deck": 1,
+      "total_cards": 2
+    }
+  ],
+  "Neera": [
+    {
+      "cards": [
+        "Neera, Wild Mage",
+        "Displacer Kitten"
+      ],
+      "produces": [
+        "Cast any spell of your choice from your library",
+        "Infinite cast triggers for all spells in your library",
+        "Infinite magecraft triggers",
+        "Infinite storm count"
+      ],
+      "description": "Cast any noncreature spell, paying its costs.\nNeera and Displacer Kitten trigger, as do any Storm abilities or other cast triggers of the spell.\nResolve Displacer Kitten's ability, blinking Neera.\nResolve Neera's ability, putting the spell you cast on the bottom of your library, revealing cards from the top of your library until you reveal a nonland card, casting that card without paying its mana cost, and putting the rest on the bottom of your library in a random order.\nRepeat from step 2 any n",
+      "cards_in_deck": 2,
+      "total_cards": 2
+    }
+  ],
+  "Nazgul": [
+    {
+      "cards": [
+        "Lord of the Nazgûl",
+        "Mindsplice Apparatus",
+        "Phyrexian Altar",
+        "Whispers of the Muse"
+      ],
+      "produces": [
+        "Infinite card draw",
+        "Infinite draw triggers",
+        "Near-infinite death triggers",
+        "Near-infinite ETB",
+        "Near-infinite LTB",
+        "Near-infinite magecraft triggers",
+        "Near-infinite sacrifice triggers",
+        "Near-infinite storm count"
+      ],
+      "description": "Cast Whipsers of the Muse with buyback by paying {U}.\nLord of the Nazgûl triggers, creating a 3/3 Wraith creature token.\nResolve Whipsers of the Muse, causing you to draw a card and return Whipsers of the Muse to your hand.\nActivate Phyrexian Altar by sacrificing the Wraith, adding {U}.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Lord of the Nazgûl",
+        "Mindsplice Apparatus",
+        "Phyrexian Altar",
+        "Mystic Speculation"
+      ],
+      "produces": [
+        "Infinite death triggers",
+        "Infinite ETB",
+        "Infinite LTB",
+        "Infinite magecraft triggers",
+        "Infinite sacrifice triggers",
+        "Infinite scry",
+        "Infinite storm count"
+      ],
+      "description": "Cast Mystic Speculation with buyback by paying {U}.\nLord of the Nazgûl triggers, creating a 3/3 Wraith creature token.\nResolve Mystic Speculation, causing you to scry 3 and return Mystic Speculation to your hand.\nActivate Phyrexian Altar by sacrificing the Wraith, adding {U}.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Lord of the Nazgûl",
+        "Mindsplice Apparatus",
+        "Phyrexian Altar",
+        "Clockspinning"
+      ],
+      "produces": [
+        "Infinite death triggers",
+        "Infinite ETB",
+        "Infinite LTB",
+        "Infinite magecraft triggers",
+        "Infinite proliferate",
+        "Infinite sacrifice triggers",
+        "Infinite storm count"
+      ],
+      "description": "Cast Clockspinning with buyback by paying {U}.\nLord of the Nazgûl triggers, creating a 3/3 Wraith creature token.\nResolve Clockspinning, causing you to return Clockspinning to your hand.\nActivate Phyrexian Altar by sacrificing the Wraith, adding {U}.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Lord of the Nazgûl",
+        "Mindsplice Apparatus",
+        "Phyrexian Altar",
+        "Whim of Volrath"
+      ],
+      "produces": [
+        "Infinite death triggers",
+        "Infinite ETB",
+        "Infinite LTB",
+        "Infinite magecraft triggers",
+        "Infinite sacrifice triggers",
+        "Infinite storm count"
+      ],
+      "description": "Cast Whim of Volrath with buyback by paying {U}.\nLord of the Nazgûl triggers, creating a 3/3 Wraith creature token.\nResolve Whim of Volrath, returning it to your hand.\nActivate Phyrexian Altar by sacrificing the Wraith, adding {U}.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "The Tenth Doctor",
+        "Mana Echoes",
+        "Reality Strobe",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite colorless mana",
+        "Infinite creature tokens",
+        "Infinite magecraft triggers",
+        "Mass Land Denial",
+        "Return any number of permanents to their owner's hand"
+      ],
+      "description": "Activate The Tenth Doctor by paying {7}, removing all time counters from Reality Strobe.\nReality Strobe triggers, causing you to cast it from exile without paying its mana cost.\nLord of the Nazgûl triggers, creating a creature token.\nWhen the creature token enters, Mana Echoes triggers, adding {C} for each creature you control that shares a creature type with the token.\nResolve Reality Strobe.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "The Tenth Doctor",
+        "Mana Echoes",
+        "Inspiring Refrain",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite card draw",
+        "Infinite draw triggers",
+        "Near-infinite ETB",
+        "Near-infinite colorless mana",
+        "Near-infinite creature tokens",
+        "Near-infinite magecraft triggers"
+      ],
+      "description": "Activate The Tenth Doctor by paying {7}, removing all time counters from Inspiring Refrain.\nInspiring Refrain triggers, causing you to cast it from exile without paying its mana cost.\nLord of the Nazgûl triggers, creating a creature token.\nWhen the creature token enters, Mana Echoes triggers, adding {C} for each creature you control that shares a creature type with the token.\nResolve Inspiring Refrain.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "The Tenth Doctor",
+        "Mana Echoes",
+        "Festering March",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite colorless mana",
+        "Infinite creature tokens",
+        "Infinite magecraft triggers",
+        "Reduce the toughness of creatures opponents control to 0"
+      ],
+      "description": "Activate The Tenth Doctor by paying {7}, removing all time counters from Festering March.\nFestering March triggers, causing you to cast it from exile without paying its mana cost.\nLord of the Nazgûl triggers, creating a creature token.\nWhen the creature token enters, Mana Echoes triggers, adding {C} for each creature you control that shares a creature type with the token.\nResolve Festering March.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "The Tenth Doctor",
+        "Mana Echoes",
+        "Arc Blade",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite colorless mana",
+        "Infinite creature tokens",
+        "Infinite damage",
+        "Infinite magecraft triggers"
+      ],
+      "description": "Activate The Tenth Doctor by paying {7}, removing all time counters from Arc Blade.\nArc Blade triggers, causing you to cast it from exile without paying its mana cost.\nLord of the Nazgûl triggers, creating a creature token.\nWhen the creature token enters, Mana Echoes triggers, adding {C} for each creature you control that shares a creature type with the token.\nResolve Arc Blade.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "The Tenth Doctor",
+        "Mana Echoes",
+        "Charnel Serenade",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite colorless mana",
+        "Infinite creature tokens",
+        "Infinite magecraft triggers",
+        "Infinite surveil",
+        "Put all creature cards from your library and graveyard onto the battlefield with finality counters on them"
+      ],
+      "description": "Activate The Tenth Doctor by paying {7}, removing all time counters from Charnel Serenade.\nCharnel Serenade triggers, causing you to cast it from exile without paying its mana cost.\nLord of the Nazgûl triggers, creating a creature token.\nWhen the creature token enters, Mana Echoes triggers, adding {C} for each creature you control that shares a creature type with the token.\nResolve Charnel Serenade.\nRepeat.",
+      "cards_in_deck": 0,
+      "total_cards": 4
+    },
+    {
+      "cards": [
+        "Spellbinding Soprano",
+        "Sprout Swarm",
+        "Lord of the Nazgûl"
+      ],
+      "produces": [
+        "Infinite ETB",
+        "Infinite magecraft triggers",
+        "Infinite storm count",
+        "Infinite tapped creature tokens"
+      ],
+      "description": "Activate Spellbinding Soprano's encore ability by paying {3}{R} and exiling it from your graveyard, creating a token copy of it with haste for each opponent you have.\nDeclare each Spellbinding Soprano token as an attacker.\nEach Spellbinding Soprano token triggers, causing instant and sorcery spells you cast this turn to cost {1} less to cast for each Spellbinding Soprano token.\nCast Sprout Swarm with buyback by tapping a green creature and any other creature you control.\nLord of the Nazgûl trigg",
+      "cards_in_deck": 0,
+      "total_cards": 3
+    }
+  ],
+  "Maarika": [],
+  "Kuja": [],
+  "Gimli": [],
+  "Cloud": []
+}

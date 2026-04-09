@@ -1,0 +1,2356 @@
+{
+  "Ayara": {
+    "full": [
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Ashnod's Altar",
+          "Reassembling Skeleton"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Pitiless Plunderer + Ashnod's Altar + Reassembling Skeleton (52785 decks)",
+        "count": 52785,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Gravecrawler",
+          "Pitiless Plunderer",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count"
+        ],
+        "header": "Gravecrawler + Pitiless Plunderer + Ashnod's Altar (28685 decks)",
+        "count": 28685,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Gravecrawler",
+          "Pitiless Plunderer",
+          "Carrion Feeder"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count"
+        ],
+        "header": "Gravecrawler + Pitiless Plunderer + Carrion Feeder (22564 decks)",
+        "count": 22564,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Ashnod's Altar",
+          "Cult Conscript"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Pitiless Plunderer + Ashnod's Altar + Cult Conscript (4596 decks)",
+        "count": 4596,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Oathsworn Vampire",
+          "Ashnod's Altar",
+          "Pitiless Plunderer",
+          "Blood Artist"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite lifeloss",
+          "Infinite LTB",
+          "Infinite storm count"
+        ],
+        "header": "Oathsworn Vampire + Ashnod's Altar + Pitiless Plunderer + Blood Artist (2354 decks)",
+        "count": 2354,
+        "cards_in_deck": 4,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Oathsworn Vampire",
+          "Ashnod's Altar",
+          "Pitiless Plunderer",
+          "Zulaport Cutthroat"
+        ],
+        "results": [
+          "Infinite ETB",
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite lifeloss",
+          "Infinite LTB",
+          "Infinite storm count"
+        ],
+        "header": "Oathsworn Vampire + Ashnod's Altar + Pitiless Plunderer + Zulaport Cutthroat (1915 decks)",
+        "count": 1915,
+        "cards_in_deck": 4,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Endrek Sahr, Master Breeder",
+          "Phyrexian Reclamation",
+          "Gray Merchant of Asphodel",
+          "Ashnod's Altar",
+          "Pitiless Plunderer"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite lifeloss",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count",
+          "Infinite Treasure tokens"
+        ],
+        "header": "Endrek Sahr, Master Breeder + Phyrexian Reclamation + Gray Merchant of Asphodel + Ashnod's Altar + Pitiless Plunderer (1377 decks)",
+        "count": 1377,
+        "cards_in_deck": 5,
+        "total_cards": 5
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Endrek Sahr, Master Breeder",
+          "Phyrexian Reclamation",
+          "Gray Merchant of Asphodel",
+          "Phyrexian Altar",
+          "Pitiless Plunderer"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite lifeloss",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count",
+          "Infinite Treasure tokens"
+        ],
+        "header": "Endrek Sahr, Master Breeder + Phyrexian Reclamation + Gray Merchant of Asphodel + Phyrexian Altar + Pitiless Plunderer (966 decks)",
+        "count": 966,
+        "cards_in_deck": 4,
+        "total_cards": 5
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Carrion Feeder",
+          "Reassembling Skeleton",
+          "Pawn of Ulamog"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite colored mana",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite Treasure tokens",
+          "Infinite +1/+1 counters on a creature"
+        ],
+        "header": "Pitiless Plunderer + Carrion Feeder + Reassembling Skeleton + Pawn of Ulamog (16999 decks)",
+        "count": 16999,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Reassembling Skeleton",
+          "Carrion Feeder",
+          "Drivnod, Carnage Dominus"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite +1/+1 counters on a creature"
+        ],
+        "header": "Pitiless Plunderer + Reassembling Skeleton + Carrion Feeder + Drivnod, Carnage Dominus (10181 decks)",
+        "count": 10181,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Carrion Feeder",
+          "Reassembling Skeleton",
+          "Sifter of Skulls"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite colored mana",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite Treasure tokens",
+          "Infinite +1/+1 counters on a creature"
+        ],
+        "header": "Pitiless Plunderer + Carrion Feeder + Reassembling Skeleton + Sifter of Skulls (7234 decks)",
+        "count": 7234,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Carrion Feeder",
+          "Cult Conscript",
+          "Pawn of Ulamog"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite colored mana",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite Treasure tokens",
+          "Infinite +1/+1 counters on a creature"
+        ],
+        "header": "Pitiless Plunderer + Carrion Feeder + Cult Conscript + Pawn of Ulamog (1769 decks)",
+        "count": 1769,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "K'rrik, Son of Yawgmoth",
+          "Gravecrawler",
+          "Aetherflux Reservoir",
+          "Carrion Feeder"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on most creatures you control",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "K'rrik, Son of Yawgmoth + Gravecrawler + Aetherflux Reservoir + Carrion Feeder (1442 decks)",
+        "count": 1442,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "K'rrik, Son of Yawgmoth",
+          "Gravecrawler",
+          "Aetherflux Reservoir",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite colorless mana",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "K'rrik, Son of Yawgmoth + Gravecrawler + Aetherflux Reservoir + Ashnod's Altar (1237 decks)",
+        "count": 1237,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Pitiless Plunderer",
+          "Carrion Feeder",
+          "Oathsworn Vampire",
+          "Pawn of Ulamog"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite colored mana",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite Treasure tokens",
+          "Infinite +1/+1 counters on a creature",
+          "Infinite storm count"
+        ],
+        "header": "Pitiless Plunderer + Carrion Feeder + Oathsworn Vampire + Pawn of Ulamog (831 decks)",
+        "count": 831,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Blood Artist",
+          "Reassembling Skeleton",
+          "Carnival of Souls",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite damage",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Blood Artist + Reassembling Skeleton + Carnival of Souls + Ashnod's Altar (683 decks)",
+        "count": 683,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Zulaport Cutthroat",
+          "Reassembling Skeleton",
+          "Carnival of Souls",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Each opponent loses the game",
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite lifegain triggers",
+          "Infinite lifeloss",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Zulaport Cutthroat + Reassembling Skeleton + Carnival of Souls + Ashnod's Altar (678 decks)",
+        "count": 678,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      }
+    ]
+  },
+  "Ellivere": {
+    "full": [
+      {
+        "cards": [
+          "Siona, Captain of the Pyleas",
+          "Shielded by Faith"
+        ],
+        "results": [
+          "Infinite creature tokens",
+          "Infinite ETB"
+        ],
+        "header": "Siona, Captain of the Pyleas + Shielded by Faith (4916 decks)",
+        "count": 4916,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Rancor",
+          "Phyrexian Altar",
+          "Siona, Captain of the Pyleas"
+        ],
+        "results": [
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count"
+        ],
+        "header": "Rancor + Phyrexian Altar + Siona, Captain of the Pyleas (56 decks)",
+        "count": 56,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Phyrexian Altar",
+          "Rancor",
+          "Archon of Sun's Grace"
+        ],
+        "results": [
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite storm count"
+        ],
+        "header": "Phyrexian Altar + Rancor + Archon of Sun's Grace (46 decks)",
+        "count": 46,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Secret Arcade // Dusty Parlor",
+          "Archon of Sun's Grace"
+        ],
+        "results": [
+          "Infinite ETB",
+          "Infinite creature tokens",
+          "Draw the game"
+        ],
+        "header": "Secret Arcade // Dusty Parlor + Archon of Sun's Grace (11032 decks)",
+        "count": 11032,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Hydra": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Staff of Domination",
+          "Marwyn, the Nurturer"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Infinite draw triggers",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite mana creatures you control can produce",
+          "Infinite untap of creatures you control",
+          "Infinite green mana"
+        ],
+        "header": "Staff of Domination + Marwyn, the Nurturer (25708 decks)",
+        "count": 25708,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Umbral Mantle",
+          "Marwyn, the Nurturer"
+        ],
+        "results": [
+          "Infinite green mana",
+          "Infinitely large creature until end of turn",
+          "Infinite untap of creatures you control",
+          "Infinite mana creatures you control can produce"
+        ],
+        "header": "Umbral Mantle + Marwyn, the Nurturer (15244 decks)",
+        "count": 15244,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "The Great Henge",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Near-infinite ETB",
+          "Near-infinite LTB",
+          "Near-infinite death triggers",
+          "Near-infinite sacrifice triggers",
+          "Near-infinite colorless mana"
+        ],
+        "header": "The Great Henge + Ashnod's Altar (14160 decks)",
+        "count": 14160,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Basalt Monolith",
+          "Nyxbloom Ancient"
+        ],
+        "results": [
+          "Infinite colorless mana"
+        ],
+        "header": "Basalt Monolith + Nyxbloom Ancient (13865 decks)",
+        "count": 13865,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Grim Monolith",
+          "Nyxbloom Ancient"
+        ],
+        "results": [
+          "Infinite colorless mana"
+        ],
+        "header": "Grim Monolith + Nyxbloom Ancient (8042 decks)",
+        "count": 8042,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "The Great Henge",
+          "Altar of Dementia"
+        ],
+        "results": [
+          "Infinite self-mill",
+          "Infinite card draw",
+          "Near-infinite ETB",
+          "Near-infinite LTB",
+          "Near-infinite mill",
+          "Near-infinite death triggers",
+          "Near-infinite sacrifice triggers"
+        ],
+        "header": "The Great Henge + Altar of Dementia (7463 decks)",
+        "count": 7463,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Staff of Domination",
+          "Gyre Sage"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Infinite draw triggers",
+          "Infinite lifegain",
+          "Infinite lifegain triggers",
+          "Infinite mana creatures you control can produce",
+          "Infinite untap of creatures you control",
+          "Infinite green mana"
+        ],
+        "header": "Staff of Domination + Gyre Sage (5922 decks)",
+        "count": 5922,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Umbral Mantle",
+          "Llanowar Tribe"
+        ],
+        "results": [
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Umbral Mantle + Llanowar Tribe (5646 decks)",
+        "count": 5646,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Umbral Mantle",
+          "Incubation Druid"
+        ],
+        "results": [
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Umbral Mantle + Incubation Druid (4728 decks)",
+        "count": 4728,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Sword of the Paruns",
+          "Marwyn, the Nurturer"
+        ],
+        "results": [
+          "Infinite mana creatures you control can produce",
+          "Infinite untap of creatures you control",
+          "Infinite green mana"
+        ],
+        "header": "Sword of the Paruns + Marwyn, the Nurturer (3892 decks)",
+        "count": 3892,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Jasper": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Helm of Obedience",
+          "Dauthi Voidwalker"
+        ],
+        "results": [
+          "Exile target opponent's library"
+        ],
+        "header": "Helm of Obedience + Dauthi Voidwalker (2318 decks)",
+        "count": 2318,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Terra": {
+    "full": [
+      {
+        "cards": [
+          "Luminous Broodmoth",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite damage"
+        ],
+        "header": "Luminous Broodmoth + Goblin Bombardment (4202 decks)",
+        "count": 4202,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite recursion of creature cards with power 2 or less",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Karmic Guide + Reveillark + Goblin Bombardment (4073 decks)",
+        "count": 4073,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Goblin Bombardment",
+          "Fiend Hunter",
+          "Karmic Guide"
+        ],
+        "results": [
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Goblin Bombardment + Fiend Hunter + Karmic Guide (1832 decks)",
+        "count": 1832,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Sun Titan",
+          "Karmic Guide",
+          "Animate Dead",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Sun Titan + Karmic Guide + Animate Dead + Goblin Bombardment (855 decks)",
+        "count": 855,
+        "cards_in_deck": 3,
+        "total_cards": 4
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Viscera Seer"
+        ],
+        "results": [
+          "Infinite recursion of creature cards with power 2 or less",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite scry 1"
+        ],
+        "header": "Karmic Guide + Reveillark + Viscera Seer (12096 decks)",
+        "count": 12096,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite recursion of creature cards with power 2 or less"
+        ],
+        "header": "Karmic Guide + Reveillark + Ashnod's Altar (10284 decks)",
+        "count": 10284,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Altar of Dementia"
+        ],
+        "results": [
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite mill",
+          "Infinite recursion of creature cards with power 2 or less",
+          "Infinite sacrifice triggers",
+          "Infinite self-mill"
+        ],
+        "header": "Karmic Guide + Reveillark + Altar of Dementia (8451 decks)",
+        "count": 8451,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Carrion Feeder"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite +1/+1 counters on a creature",
+          "Infinite recursion of creature cards with power 2 or less"
+        ],
+        "header": "Karmic Guide + Reveillark + Carrion Feeder (6505 decks)",
+        "count": 6505,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Karmic Guide",
+          "Reveillark",
+          "Phyrexian Altar"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite recursion of creature cards with power 2 or less"
+        ],
+        "header": "Karmic Guide + Reveillark + Phyrexian Altar (6267 decks)",
+        "count": 6267,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Kiki-Jiki, Mirror Breaker",
+          "Karmic Guide",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite creature tokens with haste",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Kiki-Jiki, Mirror Breaker + Karmic Guide + Goblin Bombardment (3905 decks)",
+        "count": 3905,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Goblin Bombardment",
+          "Felidar Guardian",
+          "Karmic Guide"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite damage"
+        ],
+        "header": "Goblin Bombardment + Felidar Guardian + Karmic Guide (2891 decks)",
+        "count": 2891,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Ashnod's Altar",
+          "Fiend Hunter",
+          "Karmic Guide"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Ashnod's Altar + Fiend Hunter + Karmic Guide (2804 decks)",
+        "count": 2804,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Viscera Seer",
+          "Fiend Hunter",
+          "Karmic Guide"
+        ],
+        "results": [
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite scry 1"
+        ],
+        "header": "Viscera Seer + Fiend Hunter + Karmic Guide (2590 decks)",
+        "count": 2590,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      }
+    ]
+  },
+  "Suspend": {
+    "full": [
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Sol Ring (298674 decks)",
+        "count": 298674,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Tidespout Tyrant",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Tidespout Tyrant + Sol Ring (33826 decks)",
+        "count": 33826,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Kelpie Guide",
+          "Freed from the Real"
+        ],
+        "results": [
+          "Infinite mana permanents you control can produce"
+        ],
+        "header": "Kelpie Guide + Freed from the Real (10331 decks)",
+        "count": 10331,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Intruder Alarm"
+        ],
+        "results": [
+          "Infinite untap of creatures",
+          "Infinite untap of creatures you control",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite mana creatures you control can produce",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Intruder Alarm (9694 decks)",
+        "count": 9694,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Kelpie Guide",
+          "Pemmin's Aura"
+        ],
+        "results": [
+          "Infinite mana permanents you control can produce"
+        ],
+        "header": "Kelpie Guide + Pemmin's Aura (6500 decks)",
+        "count": 6500,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Clever Conjurer",
+          "Freed from the Real",
+          "Utopia Sprawl"
+        ],
+        "results": [
+          "Infinite green mana"
+        ],
+        "header": "Clever Conjurer + Freed from the Real + Utopia Sprawl (191 decks)",
+        "count": 191,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Clever Conjurer",
+          "Pemmin's Aura",
+          "Utopia Sprawl"
+        ],
+        "results": [
+          "Infinite green mana"
+        ],
+        "header": "Clever Conjurer + Pemmin's Aura + Utopia Sprawl (83 decks)",
+        "count": 83,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Unctus, Grand Metatect",
+          "Kelpie Guide",
+          "Vizier of Tumbling Sands"
+        ],
+        "results": [
+          "Infinite self-discard triggers",
+          "Infinite draw triggers",
+          "Infinite looting"
+        ],
+        "header": "Unctus, Grand Metatect + Kelpie Guide + Vizier of Tumbling Sands (2319 decks)",
+        "count": 2319,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Illusionist's Bracers",
+          "Vizier of Tumbling Sands",
+          "Clever Conjurer"
+        ],
+        "results": [
+          "Infinite mana permanents you control can produce"
+        ],
+        "header": "Illusionist's Bracers + Vizier of Tumbling Sands + Clever Conjurer (1596 decks)",
+        "count": 1596,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Unctus, Grand Metatect",
+          "Fatestitcher",
+          "Vizier of Tumbling Sands"
+        ],
+        "results": [
+          "Infinite self-discard triggers",
+          "Infinite draw triggers",
+          "Infinite looting"
+        ],
+        "header": "Unctus, Grand Metatect + Fatestitcher + Vizier of Tumbling Sands (1477 decks)",
+        "count": 1477,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Unctus, Grand Metatect",
+          "Fatestitcher",
+          "Kelpie Guide"
+        ],
+        "results": [
+          "Infinite self-discard triggers",
+          "Infinite draw triggers",
+          "Infinite looting"
+        ],
+        "header": "Unctus, Grand Metatect + Fatestitcher + Kelpie Guide (1395 decks)",
+        "count": 1395,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Freed from the Real",
+          "Vizier of Tumbling Sands",
+          "Simic Growth Chamber"
+        ],
+        "results": [
+          "Infinite green mana",
+          "Infinite mana permanents you control can produce"
+        ],
+        "header": "Freed from the Real + Vizier of Tumbling Sands + Simic Growth Chamber (1393 decks)",
+        "count": 1393,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Arbor Elf",
+          "Utopia Sprawl",
+          "Freed from the Real"
+        ],
+        "results": [
+          "Infinite green mana",
+          "Infinite mana Forests you control can produce"
+        ],
+        "header": "Arbor Elf + Utopia Sprawl + Freed from the Real (1390 decks)",
+        "count": 1390,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Unctus, Grand Metatect",
+          "Clever Conjurer",
+          "Vizier of Tumbling Sands"
+        ],
+        "results": [
+          "Infinite self-discard triggers",
+          "Infinite draw triggers",
+          "Infinite looting"
+        ],
+        "header": "Unctus, Grand Metatect + Clever Conjurer + Vizier of Tumbling Sands (1215 decks)",
+        "count": 1215,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Unctus, Grand Metatect",
+          "Clever Conjurer",
+          "Kelpie Guide"
+        ],
+        "results": [
+          "Infinite self-discard triggers",
+          "Infinite draw triggers",
+          "Infinite looting"
+        ],
+        "header": "Unctus, Grand Metatect + Clever Conjurer + Kelpie Guide (1173 decks)",
+        "count": 1173,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Arbor Elf",
+          "Utopia Sprawl",
+          "Pemmin's Aura"
+        ],
+        "results": [
+          "Infinite green mana",
+          "Infinite mana Forests you control can produce"
+        ],
+        "header": "Arbor Elf + Utopia Sprawl + Pemmin's Aura (892 decks)",
+        "count": 892,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Freed from the Real",
+          "Vizier of Tumbling Sands",
+          "Lotus Field"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite mana permanents you control can produce"
+        ],
+        "header": "Freed from the Real + Vizier of Tumbling Sands + Lotus Field (864 decks)",
+        "count": 864,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      }
+    ]
+  },
+  "Sidisi": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Living Death",
+          "Eternal Witness",
+          "Phyrexian Altar"
+        ],
+        "results": [
+          "Infinite blinking",
+          "Infinite colored mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Living Death + Eternal Witness + Phyrexian Altar (8058 decks)",
+        "count": 8058,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Colossal Grave-Reaver",
+          "Altar of Dementia",
+          "Golgari Thug"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers"
+        ],
+        "header": "Colossal Grave-Reaver + Altar of Dementia + Golgari Thug (1678 decks)",
+        "count": 1678,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Kotis, Sibsig Champion",
+          "Altar of Dementia",
+          "Eternal Witness"
+        ],
+        "results": [
+          "Near-infinite turns",
+          "Lock"
+        ],
+        "header": "Kotis, Sibsig Champion + Altar of Dementia + Eternal Witness (1419 decks)",
+        "count": 1419,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Sol Ring (298674 decks)",
+        "count": 298674,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "The Gitrog Monster",
+          "Dakmor Salvage"
+        ],
+        "results": [
+          "Infinite self-mill",
+          "Near-infinite self-discard triggers"
+        ],
+        "header": "The Gitrog Monster + Dakmor Salvage (43413 decks)",
+        "count": 43413,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Mikaeus, the Unhallowed",
+          "Altar of Dementia"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite sacrifice triggers",
+          "Infinite death triggers",
+          "Infinite mill",
+          "Infinite self-mill"
+        ],
+        "header": "Mikaeus, the Unhallowed + Altar of Dementia (18095 decks)",
+        "count": 18095,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "The Mindskinner",
+          "Syr Konrad, the Grim"
+        ],
+        "results": [
+          "Near-infinite mill"
+        ],
+        "header": "The Mindskinner + Syr Konrad, the Grim (14974 decks)",
+        "count": 14974,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Basalt Monolith",
+          "Mesmeric Orb"
+        ],
+        "results": [
+          "Infinite self-mill"
+        ],
+        "header": "Basalt Monolith + Mesmeric Orb (8816 decks)",
+        "count": 8816,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Mesmeric Orb",
+          "Aphetto Alchemist"
+        ],
+        "results": [
+          "Infinite self-mill"
+        ],
+        "header": "Mesmeric Orb + Aphetto Alchemist (1591 decks)",
+        "count": 1591,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Mesmeric Orb",
+          "Seeker of Skybreak"
+        ],
+        "results": [
+          "Infinite self-mill"
+        ],
+        "header": "Mesmeric Orb + Seeker of Skybreak (522 decks)",
+        "count": 522,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Ognis": {
+    "full": [
+      {
+        "cards": [
+          "Bootleggers' Stash",
+          "Revel in Riches"
+        ],
+        "results": [
+          "Win the game at the beginning of your next upkeep"
+        ],
+        "header": "Bootleggers' Stash + Revel in Riches (8903 decks)",
+        "count": 8903,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Dockside Extortionist",
+          "Revel in Riches"
+        ],
+        "results": [
+          "Win the game at the beginning of your next upkeep"
+        ],
+        "header": "Dockside Extortionist + Revel in Riches (4654 decks)",
+        "count": 4654,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Grand Warlord Radha",
+          "Hellkite Charger"
+        ],
+        "results": [
+          "Infinite combat phases",
+          "Infinite green mana",
+          "Infinite red mana"
+        ],
+        "header": "Grand Warlord Radha + Hellkite Charger (3760 decks)",
+        "count": 3760,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Grand Warlord Radha",
+          "Hellkite Charger",
+          "Savage Ventmaw"
+        ],
+        "results": [
+          "Infinite combat phases",
+          "Infinite green mana",
+          "Infinite red mana"
+        ],
+        "header": "Grand Warlord Radha + Hellkite Charger + Savage Ventmaw (1816 decks)",
+        "count": 1816,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Jolene, the Plunder Queen",
+          "Goldspan Dragon",
+          "Hellkite Charger"
+        ],
+        "results": [
+          "Infinite combat phases"
+        ],
+        "header": "Jolene, the Plunder Queen + Goldspan Dragon + Hellkite Charger (1774 decks)",
+        "count": 1774,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Academy Manufactor",
+          "Mirkwood Bats",
+          "There and Back Again"
+        ],
+        "results": [
+          "Near-infinite lifeloss"
+        ],
+        "header": "Academy Manufactor + Mirkwood Bats + There and Back Again (3546 decks)",
+        "count": 3546,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Jolene, the Plunder Queen",
+          "Goldspan Dragon",
+          "Aggravated Assault"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite colored mana",
+          "Infinite combat phases",
+          "Infinite Treasure tokens",
+          "Infinite untap of creatures you control",
+          "Infinite mana creatures you control can produce"
+        ],
+        "header": "Jolene, the Plunder Queen + Goldspan Dragon + Aggravated Assault (2724 decks)",
+        "count": 2724,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Academy Manufactor",
+          "Peregrin Took",
+          "Stimulus Package"
+        ],
+        "results": [
+          "Infinite ETB",
+          "Infinite Food tokens",
+          "Infinite card draw",
+          "Infinite draw triggers",
+          "Infinite Clue tokens",
+          "Infinite creature tokens"
+        ],
+        "header": "Academy Manufactor + Peregrin Took + Stimulus Package (1331 decks)",
+        "count": 1331,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Dockside Extortionist",
+          "Hellkite Charger",
+          "Helm of the Host"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite combat phases",
+          "Infinite creature tokens with haste",
+          "Infinite ETB",
+          "Infinite mana creatures you control can produce",
+          "Infinite Treasure tokens",
+          "Infinite untap of creatures you control"
+        ],
+        "header": "Dockside Extortionist + Hellkite Charger + Helm of the Host (154 decks)",
+        "count": 154,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Old Gnawbone",
+          "Hellkite Charger"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite combat damage",
+          "Infinite combat phases",
+          "Infinite Treasure tokens"
+        ],
+        "header": "Old Gnawbone + Hellkite Charger (18916 decks)",
+        "count": 18916,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Savage Ventmaw",
+          "Aggravated Assault"
+        ],
+        "results": [
+          "Infinite combat damage",
+          "Infinite combat phases",
+          "Infinite green mana",
+          "Infinite mana creatures you control can produce",
+          "Infinite red mana",
+          "Infinite untap of creatures you control"
+        ],
+        "header": "Savage Ventmaw + Aggravated Assault (16526 decks)",
+        "count": 16526,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Brass's Bounty",
+          "Revel in Riches"
+        ],
+        "results": [
+          "Win the game at the beginning of your next upkeep"
+        ],
+        "header": "Brass's Bounty + Revel in Riches (13720 decks)",
+        "count": 13720,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Old Gnawbone",
+          "Revel in Riches"
+        ],
+        "results": [
+          "Win the game at the beginning of your next upkeep"
+        ],
+        "header": "Old Gnawbone + Revel in Riches (8223 decks)",
+        "count": 8223,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Magda, Brazen Outlaw",
+          "Aggravated Assault"
+        ],
+        "results": [
+          "Infinite combat phases"
+        ],
+        "header": "Magda, Brazen Outlaw + Aggravated Assault (7278 decks)",
+        "count": 7278,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Grand Warlord Radha",
+          "Aggravated Assault"
+        ],
+        "results": [
+          "Infinite combat phases",
+          "Infinite green mana",
+          "Infinite red mana",
+          "Infinite untap of creatures you control",
+          "Infinite mana creatures you control can produce"
+        ],
+        "header": "Grand Warlord Radha + Aggravated Assault (6243 decks)",
+        "count": 6243,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Neera": {
+    "full": [
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Sol Ring (298674 decks)",
+        "count": 298674,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Neera, Wild Mage",
+          "Displacer Kitten"
+        ],
+        "results": [
+          "Cast any spell of your choice from your library",
+          "Infinite cast triggers for all spells in your library",
+          "Infinite magecraft triggers",
+          "Infinite storm count"
+        ],
+        "header": "Neera, Wild Mage + Displacer Kitten (2295 decks)",
+        "count": 2295,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Storm-Kiln Artist",
+          "Thousand-Year Storm",
+          "Narset's Reversal"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite copies of instant and sorcery spells on the stack",
+          "Infinite power for any creature",
+          "Infinite magecraft triggers",
+          "Infinite storm count",
+          "Infinite Treasure tokens"
+        ],
+        "header": "Storm-Kiln Artist + Thousand-Year Storm + Narset's Reversal (15597 decks)",
+        "count": 15597,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Primal Amulet",
+          "Frantic Search",
+          "Narset's Reversal"
+        ],
+        "results": [
+          "Infinite draw triggers",
+          "Infinite looting",
+          "Near-infinite magecraft triggers",
+          "Near-infinite mana lands you control can produce",
+          "Near-infinite storm count"
+        ],
+        "header": "Primal Amulet + Frantic Search + Narset's Reversal (7769 decks)",
+        "count": 7769,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Frantic Search",
+          "Underworld Breach",
+          "Thousand-Year Storm"
+        ],
+        "results": [
+          "Infinite draw triggers",
+          "Infinite looting",
+          "Infinite self-discard triggers",
+          "Near-infinite magecraft triggers",
+          "Near-infinite mana lands you control can produce",
+          "Near-infinite untap of lands you control"
+        ],
+        "header": "Frantic Search + Underworld Breach + Thousand-Year Storm (7463 decks)",
+        "count": 7463,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Displacer Kitten",
+          "Sensei's Divining Top",
+          "One with the Multiverse"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Infinite draw triggers",
+          "Near-infinite storm count"
+        ],
+        "header": "Displacer Kitten + Sensei's Divining Top + One with the Multiverse (1372 decks)",
+        "count": 1372,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Thousand-Year Storm",
+          "Storm-Kiln Artist",
+          "Unsubstantiate"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite power for any creature",
+          "Infinite magecraft triggers",
+          "Infinite storm count",
+          "Infinite Treasure tokens"
+        ],
+        "header": "Thousand-Year Storm + Storm-Kiln Artist + Unsubstantiate (877 decks)",
+        "count": 877,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Displacer Kitten",
+          "Mystic Speculation",
+          "Gilded Lotus"
+        ],
+        "results": [
+          "Infinite magecraft triggers",
+          "Infinite scry",
+          "Infinite storm count"
+        ],
+        "header": "Displacer Kitten + Mystic Speculation + Gilded Lotus (142 decks)",
+        "count": 142,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Mana Vault"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Mana Vault (67519 decks)",
+        "count": 67519,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Niv-Mizzet, Parun",
+          "Curiosity"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Near-infinite damage"
+        ],
+        "header": "Niv-Mizzet, Parun + Curiosity (61180 decks)",
+        "count": 61180,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Niv-Mizzet, Visionary",
+          "Niv-Mizzet, Parun"
+        ],
+        "results": [
+          "Near-infinite damage",
+          "Infinite card draw",
+          "Infinite draw triggers"
+        ],
+        "header": "Niv-Mizzet, Visionary + Niv-Mizzet, Parun (36920 decks)",
+        "count": 36920,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Niv-Mizzet, Parun",
+          "Ophidian Eye"
+        ],
+        "results": [
+          "Infinite card draw",
+          "Infinite draw triggers",
+          "Near-infinite damage"
+        ],
+        "header": "Niv-Mizzet, Parun + Ophidian Eye (34502 decks)",
+        "count": 34502,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Nazgul": {
+    "full": [
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Sol Ring (298674 decks)",
+        "count": 298674,
+        "cards_in_deck": 2,
+        "total_cards": 2
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Tainted Pact",
+          "Thassa's Oracle"
+        ],
+        "results": [
+          "Win the game"
+        ],
+        "header": "Tainted Pact + Thassa's Oracle (122759 decks)",
+        "count": 122759,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Mana Vault"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Mana Vault (67519 decks)",
+        "count": 67519,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Sheoldred, the Apocalypse",
+          "Peer into the Abyss"
+        ],
+        "results": [
+          "Near-infinite card draw for target opponent",
+          "Near-infinite draw triggers for target opponent",
+          "Near-infinite lifeloss for target opponent",
+          "Target opponent loses the game"
+        ],
+        "header": "Sheoldred, the Apocalypse + Peer into the Abyss (44013 decks)",
+        "count": 44013,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Tidespout Tyrant",
+          "Sol Ring"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Tidespout Tyrant + Sol Ring (33826 decks)",
+        "count": 33826,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Hullbreaker Horror",
+          "Mana Crypt"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite storm count"
+        ],
+        "header": "Hullbreaker Horror + Mana Crypt (10865 decks)",
+        "count": 10865,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Tainted Pact",
+          "Laboratory Maniac"
+        ],
+        "results": [
+          "Win the game"
+        ],
+        "header": "Tainted Pact + Laboratory Maniac (9194 decks)",
+        "count": 9194,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Tainted Pact",
+          "Jace, Wielder of Mysteries"
+        ],
+        "results": [
+          "Win the game"
+        ],
+        "header": "Tainted Pact + Jace, Wielder of Mysteries (6527 decks)",
+        "count": 6527,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Realmbreaker, the Invasion Tree",
+          "Maskwood Nexus"
+        ],
+        "results": [
+          "Put all creature cards from your library onto the battlefield"
+        ],
+        "header": "Realmbreaker, the Invasion Tree + Maskwood Nexus (5573 decks)",
+        "count": 5573,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Gray Merchant of Asphodel",
+          "Rite of Replication"
+        ],
+        "results": [
+          "Near-infinite lifegain",
+          "Near-infinite lifeloss"
+        ],
+        "header": "Gray Merchant of Asphodel + Rite of Replication (3175 decks)",
+        "count": 3175,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Archmage Emeritus",
+          "Chain of Smog"
+        ],
+        "results": [
+          "Infinite draw triggers",
+          "Infinite self-discard triggers",
+          "Near-infinite magecraft triggers"
+        ],
+        "header": "Archmage Emeritus + Chain of Smog (1808 decks)",
+        "count": 1808,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Maarika": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Blightsteel Colossus",
+          "Chandra's Ignition"
+        ],
+        "results": [
+          "Each opponent loses the game"
+        ],
+        "header": "Blightsteel Colossus + Chandra's Ignition (4284 decks)",
+        "count": 4284,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Chandra's Ignition",
+          "Jumbo Cactuar"
+        ],
+        "results": [
+          "Near-infinite damage"
+        ],
+        "header": "Chandra's Ignition + Jumbo Cactuar (3531 decks)",
+        "count": 3531,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Crackdown Construct",
+          "Lightning Greaves"
+        ],
+        "results": [
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Crackdown Construct + Lightning Greaves (2769 decks)",
+        "count": 2769,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Murderous Redcap",
+          "Rhythm of the Wild"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite death triggers"
+        ],
+        "header": "Murderous Redcap + Rhythm of the Wild (2699 decks)",
+        "count": 2699,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Fiendlash",
+          "Ill-Tempered Loner"
+        ],
+        "results": [
+          "Infinite damage"
+        ],
+        "header": "Fiendlash + Ill-Tempered Loner (2616 decks)",
+        "count": 2616,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Hidetsugu Consumes All",
+          "Chandra's Ignition"
+        ],
+        "results": [
+          "Each opponent loses the game"
+        ],
+        "header": "Hidetsugu Consumes All + Chandra's Ignition (192 decks)",
+        "count": 192,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  },
+  "Kuja": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Reiterate",
+          "Seething Song",
+          "Ruby Medallion"
+        ],
+        "results": [
+          "Infinite magecraft triggers",
+          "Infinite storm count"
+        ],
+        "header": "Reiterate + Seething Song + Ruby Medallion (11612 decks)",
+        "count": 11612,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      }
+    ]
+  },
+  "Gimli": {
+    "full": [
+      {
+        "cards": [
+          "Blade of the Bloodchief",
+          "Animation Module",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite +1/+1 counters on creatures you control"
+        ],
+        "header": "Blade of the Bloodchief + Animation Module + Ashnod's Altar (2197 decks)",
+        "count": 2197,
+        "cards_in_deck": 3,
+        "total_cards": 3
+      }
+    ],
+    "near": [
+      {
+        "cards": [
+          "Krenko, Mob Boss",
+          "Thornbite Staff",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite creature tokens",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Krenko, Mob Boss + Thornbite Staff + Goblin Bombardment (10038 decks)",
+        "count": 10038,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Krenko, Mob Boss",
+          "Thornbite Staff",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Krenko, Mob Boss + Thornbite Staff + Ashnod's Altar (5672 decks)",
+        "count": 5672,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Krenko, Mob Boss",
+          "Umbral Mantle",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite untap of creatures you control",
+          "Infinite mana creatures you control can produce",
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Krenko, Mob Boss + Umbral Mantle + Ashnod's Altar (4592 decks)",
+        "count": 4592,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Krenko, Mob Boss",
+          "Thornbite Staff",
+          "Phyrexian Altar"
+        ],
+        "results": [
+          "Infinite colored mana",
+          "Infinite creature tokens",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Krenko, Mob Boss + Thornbite Staff + Phyrexian Altar (4126 decks)",
+        "count": 4126,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Tarrian's Soulcleaver",
+          "Animation Module",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Infinite colorless mana"
+        ],
+        "header": "Tarrian's Soulcleaver + Animation Module + Ashnod's Altar (3778 decks)",
+        "count": 3778,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Crime Novelist",
+          "Animation Module",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite red mana",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Crime Novelist + Animation Module + Ashnod's Altar (2073 decks)",
+        "count": 2073,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Tarrian's Soulcleaver",
+          "Animation Module",
+          "Phyrexian Altar"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Tarrian's Soulcleaver + Animation Module + Phyrexian Altar (1314 decks)",
+        "count": 1314,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Crime Novelist",
+          "Animation Module",
+          "Goblin Bombardment"
+        ],
+        "results": [
+          "Infinite +1/+1 counters on a creature",
+          "Infinite damage",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Crime Novelist + Animation Module + Goblin Bombardment (1310 decks)",
+        "count": 1310,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Spawning Pit",
+          "Doubling Season",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Infinite colorless mana",
+          "Infinite creature tokens",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers"
+        ],
+        "header": "Spawning Pit + Doubling Season + Ashnod's Altar (1115 decks)",
+        "count": 1115,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      },
+      {
+        "cards": [
+          "Woodfall Primus",
+          "Rhythm of the Wild",
+          "Ashnod's Altar"
+        ],
+        "results": [
+          "Destroy all noncreature permanents opponents control",
+          "Infinite colorless mana",
+          "Infinite death triggers",
+          "Infinite ETB",
+          "Infinite LTB",
+          "Infinite sacrifice triggers",
+          "Mass Land Denial"
+        ],
+        "header": "Woodfall Primus + Rhythm of the Wild + Ashnod's Altar (750 decks)",
+        "count": 750,
+        "cards_in_deck": 2,
+        "total_cards": 3
+      }
+    ]
+  },
+  "Cloud": {
+    "full": [],
+    "near": [
+      {
+        "cards": [
+          "Mycosynth Lattice",
+          "Vandalblast"
+        ],
+        "results": [
+          "Mass Land Denial",
+          "Destroy all permanents opponents control"
+        ],
+        "header": "Mycosynth Lattice + Vandalblast (18599 decks)",
+        "count": 18599,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Goblin Sharpshooter",
+          "Basilisk Collar"
+        ],
+        "results": [
+          "Destroy all creatures opponents control",
+          "From now on, destroy any creatures opponents control at instant speed",
+          "Lock"
+        ],
+        "header": "Goblin Sharpshooter + Basilisk Collar (13879 decks)",
+        "count": 13879,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Boros Reckoner",
+          "Boros Charm"
+        ],
+        "results": [
+          "Infinite lifegain",
+          "Infinite lifegain triggers"
+        ],
+        "header": "Boros Reckoner + Boros Charm (12184 decks)",
+        "count": 12184,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Swords to Plowshares",
+          "Jumbo Cactuar"
+        ],
+        "results": [
+          "Near-infinite lifegain"
+        ],
+        "header": "Swords to Plowshares + Jumbo Cactuar (7818 decks)",
+        "count": 7818,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Monk Gyatso",
+          "Lightning Greaves"
+        ],
+        "results": [
+          "Infinite LTB",
+          "Infinite ETB",
+          "Infinite storm count"
+        ],
+        "header": "Monk Gyatso + Lightning Greaves (5063 decks)",
+        "count": 5063,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Crackdown Construct",
+          "Lightning Greaves"
+        ],
+        "results": [
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Crackdown Construct + Lightning Greaves (2769 decks)",
+        "count": 2769,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Apex Altisaur",
+          "Darksteel Plate"
+        ],
+        "results": [
+          "Infinite damage to most creatures"
+        ],
+        "header": "Apex Altisaur + Darksteel Plate (2404 decks)",
+        "count": 2404,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Teferi's Protection",
+          "Obliterate"
+        ],
+        "results": [
+          "Destroy all lands, creatures, and artifacts your opponents control",
+          "Mass Land Denial"
+        ],
+        "header": "Teferi's Protection + Obliterate (1946 decks)",
+        "count": 1946,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Teferi's Protection",
+          "Spellbinder"
+        ],
+        "results": [
+          "Permanents you control phase out during your opponents' turns",
+          "You have protection from everything during your opponents' turns",
+          "Your life total can't change during your opponents' turns",
+          "Lock"
+        ],
+        "header": "Teferi's Protection + Spellbinder (1073 decks)",
+        "count": 1073,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      },
+      {
+        "cards": [
+          "Crackdown Construct",
+          "Puresteel Paladin"
+        ],
+        "results": [
+          "Infinitely large creature until end of turn"
+        ],
+        "header": "Crackdown Construct + Puresteel Paladin (876 decks)",
+        "count": 876,
+        "cards_in_deck": 1,
+        "total_cards": 2
+      }
+    ]
+  }
+}
