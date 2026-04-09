@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""Generate the French deck_cards.html from template."""
+
+html = r'''<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -65,7 +68,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
     display: block;
     filter: brightness(0.85) saturate(1.1);
   }
@@ -154,13 +156,13 @@
   .strategy-text {
     font-size: 6.5pt;
     color: var(--text);
-    line-height: 1.25;
+    line-height: 1.2;
   }
 
   .combos-list {
-    font-size: 6.5pt;
+    font-size: 6pt;
     color: var(--text);
-    line-height: 1.2;
+    line-height: 1.15;
     list-style: none;
   }
 
@@ -638,7 +640,7 @@ function renderGlossary() {
   return cards.join('');
 }
 
-document.body.innerHTML = decks.map(renderCard).join('');
+document.body.innerHTML = decks.map(renderCard).join('') + renderGlossary();
 
 // Fetch art from Scryfall JSON API
 document.querySelectorAll('img[data-commander]').forEach(async img => {
@@ -654,4 +656,9 @@ document.querySelectorAll('img[data-commander]').forEach(async img => {
 });
 </script>
 </body>
-</html>
+</html>'''
+
+with open('deck_cards.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print(f"Written {len(html)} bytes to deck_cards.html")

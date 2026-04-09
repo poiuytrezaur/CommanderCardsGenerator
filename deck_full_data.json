@@ -1,0 +1,2104 @@
+{
+  "decks": [
+    {
+      "id": "ayara",
+      "commander": "Ayara, First of Locthwain",
+      "commander_fr": "Ayara, First of Locthwain",
+      "colors": [
+        "B"
+      ],
+      "card_count": 99,
+      "unique_cards": 69,
+      "mana_curve": [
+        0,
+        11,
+        14,
+        13,
+        12,
+        8,
+        1,
+        3
+      ],
+      "avg_mv": 3.13,
+      "top_keywords": [
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 3
+        },
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 3
+        },
+        {
+          "en": "Flashback",
+          "fr": "Flashback",
+          "count": 2
+        },
+        {
+          "en": "Menace",
+          "fr": "Menace",
+          "count": 2
+        },
+        {
+          "en": "Kicker",
+          "fr": "Kicker",
+          "count": 2
+        },
+        {
+          "en": "Lifelink",
+          "fr": "Lien de vie",
+          "count": 2
+        },
+        {
+          "en": "Landfall",
+          "fr": "Landfall",
+          "count": 1
+        },
+        {
+          "en": "Extort",
+          "fr": "Extort",
+          "count": 1
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 1
+        },
+        {
+          "en": "Imprint",
+          "fr": "Imprint",
+          "count": 1
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Reassembling Skeleton",
+              "fr": "Squelette réassemblable"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Gravecrawler",
+              "fr": "Rampeur des tombes"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Carrion Feeder",
+              "fr": "Bouffeur de charogne"
+            }
+          ],
+          "results": [
+            "Infinite +1/+1 counters on a creature",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Gravecrawler",
+              "fr": "Rampeur des tombes"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Cult Conscript",
+              "fr": "Conscrit de culte"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Endrek Sahr, Master Breeder",
+              "fr": "Endrek Sahr, maître reproducteur"
+            },
+            {
+              "en": "Phyrexian Reclamation",
+              "fr": "Défrichement phyrexian"
+            },
+            {
+              "en": "Gray Merchant of Asphodel",
+              "fr": "Marchand gris d'Asphodèle"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            }
+          ],
+          "results": [
+            "Infinite colored mana",
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite lifegain",
+            "Infinite lifegain triggers",
+            "Infinite lifeloss",
+            "Infinite LTB",
+            "Infinite sacrifice triggers",
+            "Infinite storm count",
+            "Infinite Treasure tokens"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Oathsworn Vampire",
+              "fr": "Vampire assermenté"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Zulaport Cutthroat",
+              "fr": "Surineur de Zulaport"
+            }
+          ],
+          "results": [
+            "Infinite ETB",
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite lifegain",
+            "Infinite lifegain triggers",
+            "Infinite lifeloss",
+            "Infinite LTB",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Oathsworn Vampire",
+              "fr": "Vampire assermenté"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Blood Artist",
+              "fr": "Artiste de sang"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite lifegain",
+            "Infinite lifegain triggers",
+            "Infinite lifeloss",
+            "Infinite LTB",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "ellivere",
+      "commander": "Ellivere of the Wild Court",
+      "commander_fr": "Ellivere of the Wild Court",
+      "colors": [
+        "G",
+        "W"
+      ],
+      "card_count": 99,
+      "unique_cards": 85,
+      "mana_curve": [
+        0,
+        9,
+        22,
+        16,
+        10,
+        4,
+        0,
+        1
+      ],
+      "avg_mv": 2.71,
+      "top_keywords": [
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 27
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 4
+        },
+        {
+          "en": "Constellation",
+          "fr": "Constellation",
+          "count": 4
+        },
+        {
+          "en": "Lifelink",
+          "fr": "Lien de vie",
+          "count": 3
+        },
+        {
+          "en": "Flash",
+          "fr": "Flash",
+          "count": 2
+        },
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Umbra armor",
+          "fr": "Umbra armor",
+          "count": 1
+        },
+        {
+          "en": "Bestow",
+          "fr": "Bestow",
+          "count": 1
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "gargos",
+      "commander": "Gargos, Vicious Watcher",
+      "commander_fr": "Gargos, Vicious Watcher",
+      "colors": [
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 70,
+      "mana_curve": [
+        0,
+        12,
+        20,
+        18,
+        4,
+        3,
+        4,
+        1
+      ],
+      "avg_mv": 2.71,
+      "top_keywords": [
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 8
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 4
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 4
+        },
+        {
+          "en": "Fight",
+          "fr": "Fight",
+          "count": 2
+        },
+        {
+          "en": "Warp",
+          "fr": "Warp",
+          "count": 2
+        },
+        {
+          "en": "Ward",
+          "fr": "Garde",
+          "count": 2
+        },
+        {
+          "en": "Escalate",
+          "fr": "Escalate",
+          "count": 1
+        },
+        {
+          "en": "Evolve",
+          "fr": "Evolve",
+          "count": 1
+        },
+        {
+          "en": "Morph",
+          "fr": "Mue",
+          "count": 1
+        },
+        {
+          "en": "Graft",
+          "fr": "Graft",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "jasper",
+      "commander": "Laughing Jasper Flint",
+      "commander_fr": "Laughing Jasper Flint",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "card_count": 99,
+      "unique_cards": 81,
+      "mana_curve": [
+        1,
+        4,
+        19,
+        12,
+        10,
+        4,
+        4,
+        8
+      ],
+      "avg_mv": 3.55,
+      "top_keywords": [
+        {
+          "en": "Treasure",
+          "fr": "Treasure",
+          "count": 6
+        },
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 3
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 3
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 3
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 3
+        },
+        {
+          "en": "Manifest",
+          "fr": "Manifest",
+          "count": 3
+        },
+        {
+          "en": "Menace",
+          "fr": "Menace",
+          "count": 2
+        },
+        {
+          "en": "Overload",
+          "fr": "Overload",
+          "count": 2
+        },
+        {
+          "en": "Ninjutsu",
+          "fr": "Ninjutsu",
+          "count": 2
+        },
+        {
+          "en": "Landcycling",
+          "fr": "Landcycling",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "terra",
+      "commander": "Terra, Herald of Hope",
+      "commander_fr": "Terra, Herald of Hope",
+      "colors": [
+        "W",
+        "B",
+        "R"
+      ],
+      "card_count": 99,
+      "unique_cards": 92,
+      "mana_curve": [
+        0,
+        7,
+        16,
+        15,
+        13,
+        5,
+        2,
+        4
+      ],
+      "avg_mv": 3.27,
+      "top_keywords": [
+        {
+          "en": "Mill",
+          "fr": "Meule",
+          "count": 7
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 7
+        },
+        {
+          "en": "First strike",
+          "fr": "Initiative",
+          "count": 3
+        },
+        {
+          "en": "Lifelink",
+          "fr": "Lien de vie",
+          "count": 3
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 2
+        },
+        {
+          "en": "Raid",
+          "fr": "Raid",
+          "count": 1
+        },
+        {
+          "en": "Landcycling",
+          "fr": "Landcycling",
+          "count": 1
+        },
+        {
+          "en": "Basic landcycling",
+          "fr": "Basic landcycling",
+          "count": 1
+        },
+        {
+          "en": "Typecycling",
+          "fr": "Typecycling",
+          "count": 1
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Celes, Rune Knight",
+              "fr": "Celes, chevalier runique"
+            },
+            {
+              "en": "Goblin Bombardment",
+              "fr": "Bombardement des gobelins"
+            }
+          ],
+          "results": [
+            "Infinite LTB",
+            "Infinite ETB",
+            "Infinite sacrifice triggers",
+            "Infinite death triggers",
+            "Infinite damage",
+            "Infinite +1/+1 counters on creatures you control"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Luminous Broodmoth",
+              "fr": "Phalène pondeuse lumineuse"
+            },
+            {
+              "en": "Goblin Bombardment",
+              "fr": "Bombardement des gobelins"
+            }
+          ],
+          "results": [
+            "Infinite LTB",
+            "Infinite ETB",
+            "Infinite sacrifice triggers",
+            "Infinite death triggers",
+            "Infinite damage"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Squall, SeeD Mercenary",
+              "fr": "Squall, mercenaire SeeD"
+            },
+            {
+              "en": "Fear of Missing Out",
+              "fr": "Peur de rater quelque chose"
+            },
+            {
+              "en": "Goblin Bombardment",
+              "fr": "Bombardement des gobelins"
+            }
+          ],
+          "results": [
+            "Near-infinite damage",
+            "Infinite self-discard triggers",
+            "Near-infinite ETB",
+            "Infinite draw triggers",
+            "Near-infinite LTB",
+            "Infinite rummaging",
+            "Near-infinite death triggers",
+            "Near-infinite sacrifice triggers",
+            "Near-infinite combat damage",
+            "Near-infinite combat phases"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "suspend",
+      "commander": "Alaundo the Seer",
+      "commander_fr": "Alaundo the Seer",
+      "colors": [
+        "U",
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 85,
+      "mana_curve": [
+        4,
+        14,
+        22,
+        17,
+        2,
+        5,
+        2,
+        1
+      ],
+      "avg_mv": 2.4,
+      "top_keywords": [
+        {
+          "en": "Suspend",
+          "fr": "Suspension",
+          "count": 10
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 3
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 2
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Morph",
+          "fr": "Mue",
+          "count": 1
+        },
+        {
+          "en": "Escalate",
+          "fr": "Escalate",
+          "count": 1
+        },
+        {
+          "en": "Collect evidence",
+          "fr": "Collect evidence",
+          "count": 1
+        },
+        {
+          "en": "Flash",
+          "fr": "Flash",
+          "count": 1
+        },
+        {
+          "en": "Islandcycling",
+          "fr": "Islandcycling",
+          "count": 1
+        },
+        {
+          "en": "Landcycling",
+          "fr": "Landcycling",
+          "count": 1
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Seeker of Skybreak",
+              "fr": "Chercheur de trouées de ciel"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            },
+            {
+              "en": "Freed from the Real",
+              "fr": "Libéré du réel"
+            }
+          ],
+          "results": [
+            "Infinite mana permanents you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Aphetto Alchemist",
+              "fr": "Alchimiste aphettien"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Marvin, Murderous Mimic",
+              "fr": "Marvin, mimique meurtrier"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Hullbreaker Horror",
+              "fr": "Horreur brisecoque"
+            },
+            {
+              "en": "Sol Ring",
+              "fr": "Anneau solaire"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Seeker of Skybreak",
+              "fr": "Chercheur de trouées de ciel"
+            },
+            {
+              "en": "Illusionist's Bracers",
+              "fr": "Bracelets de l'illusionniste"
+            }
+          ],
+          "results": [
+            "Infinite mana creatures you control can produce",
+            "Infinite untap of creatures you control"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Illusionist's Bracers",
+              "fr": "Bracelets de l'illusionniste"
+            },
+            {
+              "en": "Aphetto Alchemist",
+              "fr": "Alchimiste aphettien"
+            }
+          ],
+          "results": [
+            "Infinite mana artifacts you control can produce",
+            "Infinite mana creatures you control can produce",
+            "Infinite untap of artifacts you control",
+            "Infinite untap of creatures you control"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            },
+            {
+              "en": "Pemmin's Aura",
+              "fr": "Aura de Pemmin"
+            }
+          ],
+          "results": [
+            "Infinite mana permanents you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Freed from the Real",
+              "fr": "Libéré du réel"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            },
+            {
+              "en": "Simic Growth Chamber",
+              "fr": "Chambre de croissance des Simic"
+            }
+          ],
+          "results": [
+            "Infinite green mana",
+            "Infinite mana permanents you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Hullbreaker Horror",
+              "fr": "Horreur brisecoque"
+            },
+            {
+              "en": "Intruder Alarm",
+              "fr": "Signal d'alarme"
+            }
+          ],
+          "results": [
+            "Infinite untap of creatures",
+            "Infinite untap of creatures you control",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite mana creatures you control can produce",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Pemmin's Aura",
+              "fr": "Aura de Pemmin"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            },
+            {
+              "en": "Simic Growth Chamber",
+              "fr": "Chambre de croissance des Simic"
+            }
+          ],
+          "results": [
+            "Infinite green mana",
+            "Infinite mana permanents you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Aphetto Alchemist",
+              "fr": "Alchimiste aphettien"
+            }
+          ],
+          "results": [
+            "Infinite draw triggers",
+            "Infinite looting",
+            "Infinite self-discard triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Freed from the Real",
+              "fr": "Libéré du réel"
+            }
+          ],
+          "results": [
+            "Infinite draw triggers",
+            "Infinite looting",
+            "Infinite self-discard triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "Pemmin's Aura",
+              "fr": "Aura de Pemmin"
+            }
+          ],
+          "results": [
+            "Infinite draw triggers",
+            "Infinite looting",
+            "Infinite self-discard triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            }
+          ],
+          "results": [
+            "Infinite untap of legendary creatures you control",
+            "Infinite mana legendary creatures you control can produce"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Intruder Alarm",
+              "fr": "Signal d'alarme"
+            },
+            {
+              "en": "Retraction Helix",
+              "fr": "Hélice de rétractation"
+            }
+          ],
+          "results": [
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite mana creatures you control can produce",
+            "Infinite storm count",
+            "Infinite untap of creatures",
+            "Infinite untap of creatures you control"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            },
+            {
+              "en": "Ioreth of the Healing House",
+              "fr": "Ioreth de la Maison de guérison"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            },
+            {
+              "en": "Kiora's Follower",
+              "fr": "Fidèle de Kiora"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            },
+            {
+              "en": "Forensic Researcher",
+              "fr": "Chercheuse criminalistique"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            },
+            {
+              "en": "Vizier of Tumbling Sands",
+              "fr": "Vizir de la chute du sable"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
+              "en": "North Pole Patrol",
+              "fr": "Patrouille du Pôle Nord"
+            },
+            {
+              "en": "Kelpie Guide",
+              "fr": "Guide kelpie"
+            }
+          ],
+          "results": [
+            "Infinite self-discard triggers",
+            "Infinite draw triggers",
+            "Infinite looting"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "sidisi",
+      "commander": "Sidisi, Brood Tyrant",
+      "commander_fr": "Sidisi, Brood Tyrant",
+      "colors": [
+        "B",
+        "G",
+        "U"
+      ],
+      "card_count": 99,
+      "unique_cards": 94,
+      "mana_curve": [
+        0,
+        7,
+        20,
+        17,
+        9,
+        6,
+        4,
+        0
+      ],
+      "avg_mv": 2.98,
+      "top_keywords": [
+        {
+          "en": "Mill",
+          "fr": "Meule",
+          "count": 27
+        },
+        {
+          "en": "Dredge",
+          "fr": "Drague",
+          "count": 5
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 5
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 3
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 3
+        },
+        {
+          "en": "Landcycling",
+          "fr": "Landcycling",
+          "count": 2
+        },
+        {
+          "en": "Typecycling",
+          "fr": "Typecycling",
+          "count": 2
+        },
+        {
+          "en": "Landfall",
+          "fr": "Landfall",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Basic landcycling",
+          "fr": "Basic landcycling",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "ognid",
+      "commander": "Ognis, the Dragon's Lash",
+      "commander_fr": "Ognis, the Dragon's Lash",
+      "colors": [
+        "B",
+        "R",
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 91,
+      "mana_curve": [
+        0,
+        9,
+        20,
+        13,
+        7,
+        7,
+        4,
+        2
+      ],
+      "avg_mv": 3.06,
+      "top_keywords": [
+        {
+          "en": "Treasure",
+          "fr": "Treasure",
+          "count": 19
+        },
+        {
+          "en": "Haste",
+          "fr": "Célérité",
+          "count": 13
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 5
+        },
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 4
+        },
+        {
+          "en": "First strike",
+          "fr": "Initiative",
+          "count": 3
+        },
+        {
+          "en": "Vigilance",
+          "fr": "Vigilance",
+          "count": 2
+        },
+        {
+          "en": "Max speed",
+          "fr": "Max speed",
+          "count": 2
+        },
+        {
+          "en": "Start your engines!",
+          "fr": "Start your engines!",
+          "count": 2
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 2
+        },
+        {
+          "en": "Fabricate",
+          "fr": "Fabricate",
+          "count": 2
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "neera",
+      "commander": "Neera, Wild Mage",
+      "commander_fr": "Neera, Wild Mage",
+      "colors": [
+        "U",
+        "R"
+      ],
+      "card_count": 99,
+      "unique_cards": 86,
+      "mana_curve": [
+        0,
+        13,
+        15,
+        11,
+        6,
+        4,
+        3,
+        10
+      ],
+      "avg_mv": 3.47,
+      "top_keywords": [
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 6
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 5
+        },
+        {
+          "en": "Magecraft",
+          "fr": "Magecraft",
+          "count": 2
+        },
+        {
+          "en": "Cascade",
+          "fr": "Cascade",
+          "count": 2
+        },
+        {
+          "en": "Annihilator",
+          "fr": "Annihilateur",
+          "count": 1
+        },
+        {
+          "en": "Kicker",
+          "fr": "Kicker",
+          "count": 1
+        },
+        {
+          "en": "Offspring",
+          "fr": "Offspring",
+          "count": 1
+        },
+        {
+          "en": "Avoidance",
+          "fr": "Avoidance",
+          "count": 1
+        },
+        {
+          "en": "Treasure",
+          "fr": "Treasure",
+          "count": 1
+        },
+        {
+          "en": "Discover",
+          "fr": "Discover",
+          "count": 1
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Hullbreaker Horror",
+              "fr": "Horreur brisecoque"
+            },
+            {
+              "en": "Sol Ring",
+              "fr": "Anneau solaire"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "Nazegul",
+      "commander": "Lord of the Nazgûl",
+      "commander_fr": "Lord of the Nazgûl",
+      "colors": [
+        "U",
+        "B"
+      ],
+      "card_count": 99,
+      "unique_cards": 83,
+      "mana_curve": [
+        0,
+        12,
+        14,
+        20,
+        13,
+        4,
+        1,
+        1
+      ],
+      "avg_mv": 2.85,
+      "top_keywords": [
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 9
+        },
+        {
+          "en": "Changeling",
+          "fr": "Changelin",
+          "count": 3
+        },
+        {
+          "en": "Flash",
+          "fr": "Flash",
+          "count": 2
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Kicker",
+          "fr": "Kicker",
+          "count": 2
+        },
+        {
+          "en": "Magecraft",
+          "fr": "Magecraft",
+          "count": 1
+        },
+        {
+          "en": "Flashback",
+          "fr": "Flashback",
+          "count": 1
+        },
+        {
+          "en": "Transdimensional Scout",
+          "fr": "Transdimensional Scout",
+          "count": 1
+        },
+        {
+          "en": "Wraith Form",
+          "fr": "Wraith Form",
+          "count": 1
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Hullbreaker Horror",
+              "fr": "Horreur brisecoque"
+            },
+            {
+              "en": "Sol Ring",
+              "fr": "Anneau solaire"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite storm count"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "maarika",
+      "commander": "Maarika, Brutal Gladiator",
+      "commander_fr": "Maarika, Brutal Gladiator",
+      "colors": [
+        "B",
+        "R",
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 96,
+      "mana_curve": [
+        0,
+        10,
+        16,
+        17,
+        9,
+        6,
+        3,
+        1
+      ],
+      "avg_mv": 2.97,
+      "top_keywords": [
+        {
+          "en": "Infect",
+          "fr": "Infection",
+          "count": 20
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 6
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 4
+        },
+        {
+          "en": "Fight",
+          "fr": "Fight",
+          "count": 3
+        },
+        {
+          "en": "First strike",
+          "fr": "Initiative",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Suspend",
+          "fr": "Suspension",
+          "count": 2
+        },
+        {
+          "en": "Proliferate",
+          "fr": "Prolifération",
+          "count": 1
+        },
+        {
+          "en": "Fuse",
+          "fr": "Fuse",
+          "count": 1
+        },
+        {
+          "en": "Jump",
+          "fr": "Jump",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "kuja",
+      "commander": "Kuja, Genome Sorcerer",
+      "commander_fr": "Kuja, Genome Sorcerer",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "card_count": 99,
+      "unique_cards": 86,
+      "mana_curve": [
+        0,
+        13,
+        27,
+        13,
+        6,
+        2,
+        1,
+        0
+      ],
+      "avg_mv": 2.35,
+      "top_keywords": [
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 2
+        },
+        {
+          "en": "Convoke",
+          "fr": "Convocation",
+          "count": 2
+        },
+        {
+          "en": "Overload",
+          "fr": "Overload",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Job select",
+          "fr": "Job select",
+          "count": 1
+        },
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 1
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 1
+        },
+        {
+          "en": "Kicker",
+          "fr": "Kicker",
+          "count": 1
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 1
+        },
+        {
+          "en": "Offspring",
+          "fr": "Offspring",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "gimli",
+      "commander": "Gimli, Mournful Avenger",
+      "commander_fr": "Gimli, Mournful Avenger",
+      "colors": [
+        "R",
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 93,
+      "mana_curve": [
+        0,
+        12,
+        19,
+        11,
+        7,
+        8,
+        3,
+        2
+      ],
+      "avg_mv": 2.95,
+      "top_keywords": [
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 6
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 3
+        },
+        {
+          "en": "Devour",
+          "fr": "Devour",
+          "count": 3
+        },
+        {
+          "en": "Devoid",
+          "fr": "Devoid",
+          "count": 3
+        },
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 2
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Fight",
+          "fr": "Fight",
+          "count": 2
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 2
+        },
+        {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 2
+        },
+        {
+          "en": "Ferocious",
+          "fr": "Ferocious",
+          "count": 2
+        }
+      ],
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Spawning Pit",
+              "fr": "Fosse de l'engeance"
+            },
+            {
+              "en": "Doubling Season",
+              "fr": "Saison de dédoublement"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite creature tokens",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Blade of the Bloodchief",
+              "fr": "Lame du chef de sang"
+            },
+            {
+              "en": "Animation Module",
+              "fr": "Module d'animation"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers",
+            "Infinite +1/+1 counters on creatures you control"
+          ],
+          "source": "edhrec"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "commander": "Cloud, Ex-SOLDIER",
+      "commander_fr": "Cloud, Ex-SOLDIER",
+      "colors": [
+        "W",
+        "R",
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 95,
+      "mana_curve": [
+        1,
+        11,
+        20,
+        19,
+        7,
+        2,
+        2,
+        1
+      ],
+      "avg_mv": 2.62,
+      "top_keywords": [
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 18
+        },
+        {
+          "en": "Haste",
+          "fr": "Célérité",
+          "count": 3
+        },
+        {
+          "en": "Double strike",
+          "fr": "Double initiative",
+          "count": 3
+        },
+        {
+          "en": "Reconfigure",
+          "fr": "Reconfigure",
+          "count": 3
+        },
+        {
+          "en": "Vigilance",
+          "fr": "Vigilance",
+          "count": 3
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 2
+        },
+        {
+          "en": "Landcycling",
+          "fr": "Landcycling",
+          "count": 2
+        },
+        {
+          "en": "Typecycling",
+          "fr": "Typecycling",
+          "count": 2
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 2
+        }
+      ],
+      "verified_combos": []
+    }
+  ]
+}
