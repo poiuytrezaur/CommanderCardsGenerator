@@ -246,34 +246,6 @@ html = r'''<!DOCTYPE html>
     margin-top: 0.2mm;
   }
 
-  .glossary-body {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 2mm;
-    overflow: hidden;
-  }
-
-  .glossary-title {
-    font-family: 'Cinzel', serif;
-    font-size: 8pt;
-    color: var(--accent);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.3mm;
-    margin-bottom: 1.5mm;
-  }
-
-  .glossary-item {
-    font-size: 5.5pt;
-    color: var(--text);
-    line-height: 1.3;
-    margin-bottom: 0.4mm;
-  }
-
-  .glossary-item strong {
-    color: var(--accent);
-    font-size: 6pt;
-  }
 </style>
 </head>
 <body>
@@ -547,31 +519,6 @@ const decks = [
   }
 ];
 
-const glossaryKeywords = [
-  { fr: "Vol", desc: "Ne peut \u00eatre bloqu\u00e9 que par vol ou port\u00e9e" },
-  { fr: "Pi\u00e9tinement", desc: "D\u00e9g\u00e2ts exc\u00e9dentaires inflig\u00e9s au joueur" },
-  { fr: "C\u00e9l\u00e9rit\u00e9", desc: "Peut attaquer et s\u2019engager imm\u00e9diatement" },
-  { fr: "Contact mortel", desc: "Toute blessure \u00e0 une cr\u00e9ature est mortelle" },
-  { fr: "Lien de vie", desc: "D\u00e9g\u00e2ts inflig\u00e9s = gain de vie" },
-  { fr: "Menace", desc: "Bloqu\u00e9 par 2 cr\u00e9atures minimum" },
-  { fr: "Initiative", desc: "Inflige ses blessures de combat en premier" },
-  { fr: "Double initiative", desc: "Blessures en premier ET normalement" },
-  { fr: "Infection", desc: "Marqueurs -1/-1 aux cr\u00e9atures, poison aux joueurs" },
-  { fr: "Garde", desc: "Adversaire paie un co\u00fbt extra pour cibler" },
-  { fr: "Changelin", desc: "Poss\u00e8de tous les types de cr\u00e9ature" },
-  { fr: "Cascade", desc: "Exile jusqu\u2019\u00e0 trouver un sort moins cher, lancez-le gratis" },
-  { fr: "Suspension", desc: "Exil\u00e9 avec marqueurs temps, lanc\u00e9 quand il n\u2019y en a plus" },
-  { fr: "Drague", desc: "Au lieu de piocher, meulez pour le ramener" },
-  { fr: "Meule", desc: "Mettez des cartes du dessus au cimeti\u00e8re" },
-  { fr: "Recyclage", desc: "D\u00e9faussez + payez pour piocher une carte" },
-  { fr: "Regard", desc: "Regardez le dessus, mettez dessus ou dessous" },
-  { fr: "Port\u00e9e", desc: "Peut bloquer les cr\u00e9atures avec le vol" },
-  { fr: "Flash", desc: "Peut \u00eatre lanc\u00e9 \u00e0 tout moment" },
-  { fr: "Vigilance", desc: "Attaquer n\u2019engage pas cette cr\u00e9ature" },
-  { fr: "Constellation", desc: "Se d\u00e9clenche quand un enchantement arrive" },
-  { fr: "Convocation", desc: "Engagez des cr\u00e9atures pour aider \u00e0 payer" },
-];
-
 const pipLetters = { W: 'W', U: 'U', B: 'B', R: 'R', G: 'G' };
 
 function renderCard(deck) {
@@ -619,28 +566,7 @@ function renderCard(deck) {
     </div>`;
 }
 
-function renderGlossary() {
-  const half = Math.ceil(glossaryKeywords.length / 2);
-  const cards = [0, 1].map(page => {
-    const slice = page === 0
-      ? glossaryKeywords.slice(0, half)
-      : glossaryKeywords.slice(half);
-    const itemsHTML = slice.map(k =>
-      `<div class="glossary-item"><strong>${k.fr}</strong> \u2014 ${k.desc}</div>`
-    ).join('');
-    return `
-      <div class="card" style="--card-bg:linear-gradient(160deg,#151520 0%,#1a1a2a 40%,#151520 100%);--accent:#d4a76a;--accent-dim:rgba(212,167,106,0.25);--text:#d0ccc0;--text-dim:#8a8678">
-        <div class="card-border"></div>
-        <div class="glossary-body">
-          <div class="glossary-title">\ud83d\udcd6 Glossaire${page === 1 ? ' (suite)' : ''}</div>
-          ${itemsHTML}
-        </div>
-      </div>`;
-  });
-  return cards.join('');
-}
-
-document.body.innerHTML = decks.map(renderCard).join('') + renderGlossary();
+document.body.innerHTML = decks.map(renderCard).join('');
 
 // Fetch art from Scryfall JSON API
 document.querySelectorAll('img[data-commander]').forEach(async img => {
