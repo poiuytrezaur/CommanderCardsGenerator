@@ -267,7 +267,7 @@ const decks = [
       "Exsanguination / R\u00e9servoir d\u2019Aetherflux comme finisseurs"
     ],
     keywords: "Contact mortel \u00b7 Vol \u00b7 Menace \u00b7 Lien de vie",
-    curve: [0, 11, 14, 13, 12, 8, 1, 3],
+    curve: [0, 11, 14, 13, 12, 8, 1, 2, 1],
     avgMv: 3.13
   },
   {
@@ -305,8 +305,8 @@ const decks = [
       "\u00c9cailles endurcies + hydres \u00e0 marqueurs \u2192 bonus partout"
     ],
     keywords: "Pi\u00e9tinement \u00b7 Port\u00e9e \u00b7 Garde \u00b7 Combat",
-    curve: [0, 12, 20, 18, 4, 3, 4, 1],
-    avgMv: 2.71
+    curve: [0, 12, 19, 18, 4, 3, 3, 1],
+    avgMv: 2.67
   },
   {
     commander: "Laughing Jasper Flint",
@@ -324,7 +324,7 @@ const decks = [
       "Vol scandaleux \u2192 exil de 8 cartes adverses"
     ],
     keywords: "Contact mortel \u00b7 Vol \u00b7 Menace \u00b7 Tr\u00e9sor",
-    curve: [1, 4, 19, 12, 10, 4, 4, 8],
+    curve: [1, 4, 19, 12, 10, 4, 4, 6, 2],
     avgMv: 3.55
   },
   {
@@ -343,8 +343,8 @@ const decks = [
       "Ascension des royaumes sombres \u2192 r\u00e9anime TOUS les cimeti\u00e8res"
     ],
     keywords: "Vol \u00b7 Initiative \u00b7 Lien de vie \u00b7 Recyclage \u00b7 Meule",
-    curve: [0, 7, 16, 15, 13, 5, 2, 4],
-    avgMv: 3.27
+    curve: [0, 7, 16, 15, 13, 4, 2, 3, 0, 1],
+    avgMv: 3.25
   },
   {
     commander: "Alaundo the Seer",
@@ -381,7 +381,7 @@ const decks = [
       "Drague (Troll du Golgari) \u2192 triggers de meule r\u00e9p\u00e9t\u00e9s"
     ],
     keywords: "Meule \u00b7 Drague \u00b7 Vol \u00b7 Recyclage",
-    curve: [0, 7, 20, 17, 9, 6, 4, 0],
+    curve: [0, 7, 20, 17, 9, 6, 4],
     avgMv: 2.98
   },
   {
@@ -400,7 +400,7 @@ const decks = [
       "Insurrection / Loi de la foule \u2192 volez toutes les cr\u00e9atures"
     ],
     keywords: "C\u00e9l\u00e9rit\u00e9 \u00b7 Vol \u00b7 Pi\u00e9tinement \u00b7 Tr\u00e9sor \u00b7 Initiative",
-    curve: [0, 9, 20, 13, 7, 7, 4, 2],
+    curve: [0, 9, 20, 13, 7, 7, 4, 1, 1],
     avgMv: 3.06
   },
   {
@@ -419,7 +419,7 @@ const decks = [
       "Veyran + triggers de sorts \u2192 d\u00e9g\u00e2ts et effets doubl\u00e9s"
     ],
     keywords: "Vol \u00b7 Regard \u00b7 Cascade \u00b7 Annihilateur",
-    curve: [0, 13, 15, 11, 6, 4, 3, 10],
+    curve: [0, 13, 15, 11, 6, 4, 3, 5, 3, 2],
     avgMv: 3.47
   },
   {
@@ -476,7 +476,7 @@ const decks = [
       "Tripier + cha\u00eene de sorts pas chers \u2192 burn rapide"
     ],
     keywords: "Convocation \u00b7 Regard \u00b7 Contact mortel \u00b7 Overload",
-    curve: [0, 13, 27, 13, 6, 2, 1, 0],
+    curve: [0, 13, 27, 13, 6, 2, 1],
     avgMv: 2.35
   },
   {

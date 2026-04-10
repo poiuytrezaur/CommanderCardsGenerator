@@ -287,7 +287,7 @@ const decks = [
       "Vents de Rajh → nettoyage unilatéral (garde les enchantés)",
       "Manteau des anciens → récupère toutes les auras du cimetière"
     ],
-    keywords: "Enchantements, Pioche",
+    keywords: "Enchantements, Pioche, Voltron",
     curve: [0, 9, 22, 16, 10, 4, 0, 1],
     avgMv: 2.71
   },
@@ -411,7 +411,7 @@ const decks = [
       "Insurrection / Loi de la jungle → volez toutes les créatures",
       "Jouissance des richesses + 10 trésors → condition de victoire alternative"
     ],
-    keywords: "Célérité, Trésors, Contrôle de créature, Dégâts à distance",
+    keywords: "Célérité, Trésors, Contrôle de créature, Burn",
     curve: [0, 9, 20, 13, 7, 7, 4, 1, 1],
     avgMv: 3.06
   },
@@ -431,7 +431,7 @@ const decks = [
       "Réservoir d'Aetherflux + sorts en série → laser 50 dégâts",
       "Déluge mnémonique → copie un gros sort 3 fois"
     ],
-    keywords: "Cascade, Regard, Chaos, Spellslinger",
+    keywords: "Cascade, Regard, Chaos, Burn, Spellslinger",
     curve: [0, 13, 15, 11, 6, 4, 3, 5, 3, 2],
     avgMv: 3.47
   },
@@ -492,15 +492,15 @@ const decks = [
       "Bombardement ésotérique + sorts en masse → casts exponentiels",
       "Quête de la Flamme Pure → double TOUS les dégâts",
       "Maîtrise de Mizzix surchargé → rejoue le cimetière en entier",
-      "Tripier + cha\u00eene de sorts pas chers → burn rapide"
+      "Kuja transformé + chaîne de sorts pas chers → burn rapide"
     ],
-    keywords: "Convocation \u00b7 Regard \u00b7 Contact mortel \u00b7 Overload",
+    keywords: "Spellslinger, Burn, Convocation, Dégâts à distance",
     curve: [0, 13, 27, 13, 6, 2, 1],
     avgMv: 2.35
   },
   {
     commander: "Gimli, Mournful Avenger",
-    nameCustom: "",
+    nameCustom: "Gimli, Vengeur éploré",
     colors: ["R", "G"],
     bg: "linear-gradient(160deg, #faf4ec 0%, #f2e8dc 40%, #faf4ec 100%)",
     accent: "#6e3010",
@@ -508,20 +508,20 @@ const decks = [
     text: "#1c0c04",
     textDim: "#5c3a20",
     imgY: "10%",
-    strategy: "Sacrifice de tokens. Créez des vagues de jetons, sacrifiez-les pour gonfler Gimli en +1/+1. Doubling Season multiplie tout. Puis Fling un Gimli de 35/35 au visage. Petit nain, gros dégâts.",
+    strategy: "Sacrifice de jetons. Créez des vagues de jetons, sacrifiez-les pour gonfler Gimli en +1/+1. Saison de dédoublement multiplie tout. Puis Jeter un Gimli de 35/35 au visage. Petit nain, gros dégâts.",
     combos: [
       "Fosse de l'engeance + Saison de dédoublement + Autel d'Ashnod → ∞ tokens & mana",
       "Lame du chef de sang + Module d'animation + Autel d'Ashnod → ∞ mort & mana",
-      "Fling / Fureur de Kazuul → dégâts directs létaux avec un Gimli énorme",
-      "Tremblements d'impact + tokens en masse → burn direct"
+      "Jet / Fureur de Kazuul → dégâts directs létaux avec un Gimli énorme",
+      "Secousses d'impact + jetons en masse → burn direct"
     ],
-    keywords: "Portée \u00b7 Piétinement \u00b7 Dévorer \u00b7 Recyclage",
+    keywords: "Jetons, Marqueurs +1/+1, Pietinnement, Dévorement",
     curve: [0, 12, 19, 11, 7, 8, 3, 2],
     avgMv: 2.95
   },
   {
     commander: "Cloud, Ex-SOLDIER",
-    nameCustom: "",
+    nameCustom: "Cloud, Ex-SOLDAT",
     colors: ["W", "R", "G"],
     bg: "linear-gradient(160deg, #faf8ec 0%, #f2f0dc 40%, #faf8ec 100%)",
     accent: "#4a4808",
@@ -529,14 +529,14 @@ const decks = [
     text: "#141400",
     textDim: "#505020",
     imgY: "20%",
-    strategy: "Voltron \u00c9quipement. Armez Cloud jusqu'aux dents à co\u00fbt réduit. Puresteel Paladin = équipement gratuit, Sram = pioche par arme. Un Cloud bien chargé, c'est comme un tank avec une épée Buster.",
+    strategy: "Voltron Équipement. Armez Cloud jusqu'aux dents à coût réduit. Paladin de Puracier = équipement gratuit, Sram = pioche par arme. Un Cloud bien chargé, c'est comme un tank avec une épée Buster.",
     combos: [
-      "Paladin puracier + ma\u00eetrise métal → co\u00fbt d'équipement gratuit",
+      "Paladin puracier → coût d'équipement gratuit",
       "Sram + sorts d'équipement → moteur de pioche",
       "Hache de sang forgée → armes qui se multiplient à chaque frappe",
       "Cuirasse de sombracier + Fléau du conquérant → frappes protégées"
     ],
-    keywords: "Célérité \u00b7 Double initiative \u00b7 Vigilance \u00b7 Vol",
+    keywords: "Equipement, Célérité, Double initiative",
     curve: [1, 11, 20, 19, 7, 2, 2, 1],
     avgMv: 2.62
   }
@@ -547,7 +547,7 @@ const pipSvgs = { W: 'https://svgs.scryfall.io/card-symbols/W.svg', U: 'https://
 function renderCard(deck) {
   const maxCurve = Math.max(...deck.curve);
   const curveHTML = deck.curve.map((count, i) => {
-    const pct = maxCurve > 0 ? (count / maxCurve) * 80 : 0;
+    const pct = maxCurve > 0 ? (count * 50 / maxCurve) : 0;
     return `
       <div class="mana-bar-group">
         <span class="mana-bar-count">${count > 0 ? count : ''}</span>

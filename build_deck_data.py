@@ -367,8 +367,8 @@ for deck_id in DECKS:
     deck = all_decks[deck_id]
     cards = deck["cards"]
 
-    # Mana curve (0–7+)
-    curve = [0] * 8
+    # Mana curve (dynamic, no cap)
+    cmc_counts = {}
     total_mv = 0
     nonland_count = 0
     kw_counter = Counter()
@@ -379,11 +379,14 @@ for deck_id in DECKS:
             tl = info.get("type_line", "")
             if "Land" not in tl:
                 cmc = int(info.get("cmc", 0))
-                curve[min(cmc, 7)] += c["qty"]
+                cmc_counts[cmc] = cmc_counts.get(cmc, 0) + c["qty"]
                 total_mv += cmc * c["qty"]
                 nonland_count += c["qty"]
             for kw in info.get("keywords", []):
                 kw_counter[kw] += c["qty"]
+
+    max_cmc = max(cmc_counts.keys()) if cmc_counts else 0
+    curve = [cmc_counts.get(i, 0) for i in range(max_cmc + 1)]
 
     avg_mv = round(total_mv / nonland_count, 2) if nonland_count else 0
 
