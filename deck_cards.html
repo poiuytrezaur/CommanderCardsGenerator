@@ -41,7 +41,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     flex-shrink: 0;
   }
 
@@ -56,7 +55,7 @@
 
   .card-header {
     position: relative;
-    height: 22mm;
+    height: 18mm;
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -110,24 +109,16 @@
   }
 
   .mana-pip {
-    width: 3.5mm;
-    height: 3.5mm;
-    border-radius: 50%;
-    border: 0.3mm solid rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 6.5pt;
-    font-weight: 900;
-    text-shadow: 0 0.5px 1px rgba(0,0,0,0.3);
-    box-shadow: inset 0 1px 2px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.4);
+    width: 4mm;
+    height: 4mm;
+    flex-shrink: 0;
   }
 
-  .pip-W { background: radial-gradient(circle at 30% 30%, #fff9e6, #f0d860); color: #6b5c1f; }
-  .pip-U { background: radial-gradient(circle at 30% 30%, #4fa8d8, #0a4f8a); color: #c8e4f8; }
-  .pip-B { background: radial-gradient(circle at 30% 30%, #555, #1a1a1a); color: #bbb; }
-  .pip-R { background: radial-gradient(circle at 30% 30%, #f06040, #a01020); color: #ffddc8; }
-  .pip-G { background: radial-gradient(circle at 30% 30%, #50b060, #1a6030); color: #d0f0c8; }
+  .mana-pip img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 
   .card-body {
     flex: 1;
@@ -141,27 +132,28 @@
 
   .section-label {
     font-family: 'Cinzel', serif;
-    font-size: 6.5pt;
+    font-size: 7pt;
+    font-weight: 700;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.2mm;
-    border-bottom: 0.2mm solid var(--accent-dim);
+    border-bottom: 0.3mm solid var(--accent-dim);
     padding-bottom: 0.3mm;
     margin-bottom: 0.2mm;
     line-height: 1;
   }
 
   .strategy-text {
-    font-size: 6.5pt;
+    font-size: 7pt;
     color: var(--text);
     line-height: 1.25;
     margin-bottom: 3mm;
   }
 
   .combos-list {
-    font-size: 6.5pt;
+    font-size: 7pt;
     color: var(--text);
-    line-height: 1.2;
+    line-height: 1.1;
     list-style: none;
   }
 
@@ -180,16 +172,16 @@
   }
 
   .keywords-line {
-    font-size: 5.5pt;
-    color: var(--text-dim);
-    line-height: 1.15;
+    font-size: 6.5pt;
+    color: var(--text);
+    line-height: 1.2;
     font-style: italic;
   }
 
   .keywords-line strong {
     color: var(--accent);
     font-style: normal;
-    font-size: 5.5pt;
+    font-size: 6.5pt;
   }
 
   .mana-curve-section {
@@ -282,10 +274,10 @@ const decks = [
     commander: "Ayara, First of Locthwain",
     colors: ["B"],
     bg: "linear-gradient(160deg, #1c1020 0%, #25152a 40%, #1a1020 100%)",
-    accent: "#b48ead",
-    accentDim: "rgba(180,142,173,0.25)",
-    text: "#d8ccd8",
-    textDim: "#8a7a8a",
+    accent: "#c89ec0",
+    accentDim: "rgba(200,158,192,0.3)",
+    text: "#efe6ef",
+    textDim: "#a898a8",
     strategy: "Aristocrates mono-noir. Chaque cr\u00e9ature noire qui d\u00e9barque draine 1 PV via Ayara. Sacrifiez, ressuscitez, re-sacrifiez \u2014 vos adversaires fondent comme neige au soleil pendant que vous sirotez leur essence vitale.",
     combos: [
       "Saccageur impitoyable + Autel d\u2019Ashnod + cr\u00e9ature r\u00e9cursive \u2192 \u221e mana & drain",
@@ -301,10 +293,10 @@ const decks = [
     commander: "Ellivere of the Wild Court",
     colors: ["G", "W"],
     bg: "linear-gradient(160deg, #1a2418 0%, #22301a 40%, #1c2816 100%)",
-    accent: "#a3be8c",
-    accentDim: "rgba(163,190,140,0.25)",
-    text: "#d4dcc8",
-    textDim: "#7a8a70",
+    accent: "#b8d4a0",
+    accentDim: "rgba(184,212,160,0.3)",
+    text: "#eaf0e0",
+    textDim: "#98a890",
     strategy: "Voltron Enchantresse. Empilez les auras, piochez \u00e0 n\u2019en plus finir gr\u00e2ce aux enchanteresses. Le r\u00f4le Vertueux d\u2019Ellivere donne l\u2019\u00e9vasion pour achever au commandant. Les auras ne sont pas des autocollants, c\u2019est un art de vivre.",
     combos: [
       "Armure \u00e9th\u00e9r\u00e9e / Tout ce qui brille \u2192 puissance massive",
@@ -320,10 +312,10 @@ const decks = [
     commander: "Gargos, Vicious Watcher",
     colors: ["G"],
     bg: "linear-gradient(160deg, #0e200e 0%, #183018 40%, #0e200e 100%)",
-    accent: "#5faa4f",
-    accentDim: "rgba(95,170,79,0.25)",
-    text: "#c8dcc0",
-    textDim: "#6a8a5a",
+    accent: "#78c468",
+    accentDim: "rgba(120,196,104,0.3)",
+    text: "#e4f0dc",
+    textDim: "#88a878",
     strategy: "Rampez fort, castez des Hydres XXL \u00e0 prix r\u00e9duit gr\u00e2ce \u00e0 Gargos. Ciblez vos propres Hydres pour d\u00e9clencher des combats gratuits. Vos serpents \u00e0 47 t\u00eates adorent faire la causette aux cr\u00e9atures adverses.",
     combos: [
       "Gargos + sort de ciblage \u2192 combat gratuit comme removal",
@@ -339,10 +331,10 @@ const decks = [
     commander: "Laughing Jasper Flint",
     colors: ["B", "R"],
     bg: "linear-gradient(160deg, #201010 0%, #2a1515 40%, #1a0e0e 100%)",
-    accent: "#bf616a",
-    accentDim: "rgba(191,97,106,0.25)",
-    text: "#d8c8c8",
-    textDim: "#8a6a6a",
+    accent: "#d87880",
+    accentDim: "rgba(216,120,128,0.3)",
+    text: "#f0e0e0",
+    textDim: "#a88888",
     strategy: "Exilez les cartes des mains adverses avec Jasper, puis castez-les vous-m\u00eame. D\u2019autres cr\u00e9atures volent depuis les biblioth\u00e8ques et cimeti\u00e8res. Pourquoi construire un deck quand on peut emprunter les v\u00f4tres ?",
     combos: [
       "Jasper + Cape de soie susurrante \u2192 exile fiable de la main",
@@ -358,10 +350,10 @@ const decks = [
     commander: "Terra, Herald of Hope",
     colors: ["W", "B", "R"],
     bg: "linear-gradient(160deg, #201518 0%, #2a1820 40%, #1a1015 100%)",
-    accent: "#d08770",
-    accentDim: "rgba(208,135,112,0.25)",
-    text: "#d8d0cc",
-    textDim: "#8a7a70",
+    accent: "#e0a088",
+    accentDim: "rgba(224,160,136,0.3)",
+    text: "#f0e8e4",
+    textDim: "#a89890",
     strategy: "R\u00e9animateur Mardu. Remplissez le cimeti\u00e8re de bombes, Terra les ram\u00e8ne au bercail. Boucles sacrifice + r\u00e9cursion ad nauseam. Le cimeti\u00e8re c\u2019est pas la fin \u2014 c\u2019est la salle d\u2019attente.",
     combos: [
       "Celes + Bombardement des gobelins \u2192 \u221e arriv\u00e9es & d\u00e9parts",
@@ -377,10 +369,10 @@ const decks = [
     commander: "Alaundo the Seer",
     colors: ["U", "G"],
     bg: "linear-gradient(160deg, #0e1a1e 0%, #102828 40%, #0e1a1e 100%)",
-    accent: "#88c0d0",
-    accentDim: "rgba(136,192,208,0.25)",
-    text: "#c8dce0",
-    textDim: "#6a8a8e",
+    accent: "#a0d4e4",
+    accentDim: "rgba(160,212,228,0.3)",
+    text: "#e4f0f4",
+    textDim: "#88a8b0",
     strategy: "Tapez Alaundo pour piocher et exiler avec des marqueurs temps, puis castez tout gratos. Effets de d\u00e9gagement = activations infinies. Le temps est relatif, surtout quand vous le supprimez.",
     combos: [
       "Lib\u00e9r\u00e9 du r\u00e9el / Aura de Pemmin + Alaundo \u2192 \u221e activations",
@@ -396,10 +388,10 @@ const decks = [
     commander: "Sidisi, Brood Tyrant",
     colors: ["B", "G", "U"],
     bg: "linear-gradient(160deg, #101a18 0%, #152520 40%, #101a18 100%)",
-    accent: "#8fbcbb",
-    accentDim: "rgba(143,188,187,0.25)",
-    text: "#c8d8d6",
-    textDim: "#6a8a88",
+    accent: "#a8d4d2",
+    accentDim: "rgba(168,212,210,0.3)",
+    text: "#e4f0ee",
+    textDim: "#88a8a6",
     strategy: "Auto-meule pour spawner des zombies avec Sidisi. +60 cr\u00e9atures au deck pour maximiser les triggers. Votre cimeti\u00e8re EST votre seconde main. Le recyclage : bon pour la plan\u00e8te, mortel pour vos adversaires.",
     combos: [
       "Orbe mesm\u00e9rienne + d\u00e9gagement \u2192 meule massive + zombies",
@@ -415,10 +407,10 @@ const decks = [
     commander: "Ognis, the Dragon's Lash",
     colors: ["B", "R", "G"],
     bg: "linear-gradient(160deg, #1a1510 0%, #2a1e14 40%, #1a1510 100%)",
-    accent: "#ebcb8b",
-    accentDim: "rgba(235,203,139,0.25)",
-    text: "#d8d4c8",
-    textDim: "#8a8468",
+    accent: "#f0d8a0",
+    accentDim: "rgba(240,216,160,0.3)",
+    text: "#f0ece0",
+    textDim: "#a8a488",
     strategy: "Attaquez avec des cr\u00e9atures c\u00e9l\u00e9rit\u00e9, r\u00e9coltez des tr\u00e9sors via Ognis. Les tr\u00e9sors financent synergies artefacts et victoire alternative. L\u2019argent ne fait pas le bonheur, mais il gagne la partie.",
     combos: [
       "Revel in Riches + 10 tr\u00e9sors \u2192 condition de victoire alternative",
@@ -434,10 +426,10 @@ const decks = [
     commander: "Neera, Wild Mage",
     colors: ["U", "R"],
     bg: "linear-gradient(160deg, #14101e 0%, #1e1528 40%, #14101e 100%)",
-    accent: "#b48ead",
-    accentDim: "rgba(180,142,173,0.25)",
-    text: "#d0c8d8",
-    textDim: "#7a6a8a",
+    accent: "#c89ec0",
+    accentDim: "rgba(200,158,192,0.3)",
+    text: "#efe6ef",
+    textDim: "#9888a0",
     strategy: "Castez un sort \u00e0 1 mana, Neera le polymorphe en bombe de 9 mana. Manipulez le dessus de la biblio pour contr\u00f4ler le r\u00e9sultat. Loterie magique, sauf que vous avez marqu\u00e9 les cartes.",
     combos: [
       "Horreur brisecoque + Anneau solaire \u2192 \u221e mana & compteur d\u2019orage",
@@ -453,10 +445,10 @@ const decks = [
     commander: "Lord of the Nazg\u00fbl",
     colors: ["U", "B"],
     bg: "linear-gradient(160deg, #10101a 0%, #181825 40%, #10101a 100%)",
-    accent: "#81a1c1",
-    accentDim: "rgba(129,161,193,0.25)",
-    text: "#c8d0d8",
-    textDim: "#6a7a8a",
+    accent: "#98b8d8",
+    accentDim: "rgba(152,184,216,0.3)",
+    text: "#e4e8f0",
+    textDim: "#8898a8",
     strategy: "Tribal Nazg\u00fbl avec 9 copies qui grossissent \u00e0 chaque arriv\u00e9e de spectre. Clonez-les pour multiplier les triggers \u2014 chaque copie booste toutes les autres. Un Anneau pour les dominer tous.",
     combos: [
       "Horreur brisecoque + Anneau solaire \u2192 \u221e mana & orage",
@@ -472,10 +464,10 @@ const decks = [
     commander: "Maarika, Brutal Gladiator",
     colors: ["B", "R", "G"],
     bg: "linear-gradient(160deg, #1a1210 0%, #261818 40%, #1a1210 100%)",
-    accent: "#a3be8c",
-    accentDim: "rgba(163,190,140,0.25)",
-    text: "#d0d0c8",
-    textDim: "#7a7a68",
+    accent: "#b8d4a0",
+    accentDim: "rgba(184,212,160,0.3)",
+    text: "#eceee4",
+    textDim: "#989888",
     strategy: "Voltron Infection. Collez un Exosquelette greff\u00e9 sur Maarika = d\u00e9g\u00e2ts d\u2019infection au commandant. Maarika combat quand elle inflige des d\u00e9g\u00e2ts exc\u00e9dentaires. Chandra\u2019s Ignition + infection = table empoisonn\u00e9e. Th\u00e9rapeutique, promis.",
     combos: [
       "Exosquelette greff\u00e9 + Maarika \u2192 infection au commandant",
@@ -491,10 +483,10 @@ const decks = [
     commander: "Kuja, Genome Sorcerer",
     colors: ["B", "R"],
     bg: "linear-gradient(160deg, #1e1018 0%, #281420 40%, #1e1018 100%)",
-    accent: "#bf616a",
-    accentDim: "rgba(191,97,106,0.25)",
-    text: "#d8c8d0",
-    textDim: "#8a6a78",
+    accent: "#d87880",
+    accentDim: "rgba(216,120,128,0.3)",
+    text: "#f0e0e8",
+    textDim: "#a88898",
     strategy: "Spellslinger br\u00fblant. \u00c9ph\u00e9m\u00e8res et rituels pas chers d\u00e9clenchent tokens et d\u00e9g\u00e2ts de Kuja. Arcane Bombardment = sorts exponentiels chaque tour. Mizzix\u2019s Mastery overload\u00e9 = tout le cimeti\u00e8re rejou\u00e9. Le feu, c\u2019est beau.",
     combos: [
       "Bombardement arcanique + sorts en masse \u2192 casts exponentiels",
@@ -510,10 +502,10 @@ const decks = [
     commander: "Gimli, Mournful Avenger",
     colors: ["R", "G"],
     bg: "linear-gradient(160deg, #1a1810 0%, #251e12 40%, #1a1810 100%)",
-    accent: "#d08770",
-    accentDim: "rgba(208,135,112,0.25)",
-    text: "#d8d4c8",
-    textDim: "#8a8068",
+    accent: "#e0a088",
+    accentDim: "rgba(224,160,136,0.3)",
+    text: "#f0ece0",
+    textDim: "#a89e88",
     strategy: "Sacrifice de tokens. Cr\u00e9ez des vagues de jetons, sacrifiez-les pour gonfler Gimli en +1/+1. Doubling Season multiplie tout. Puis Fling un Gimli de 35/35 au visage. Petit nain, gros d\u00e9g\u00e2ts.",
     combos: [
       "Fosse de l\u2019engeance + Saison de d\u00e9doublement + Autel d\u2019Ashnod \u2192 \u221e tokens & mana",
@@ -529,10 +521,10 @@ const decks = [
     commander: "Cloud, Ex-SOLDIER",
     colors: ["W", "R", "G"],
     bg: "linear-gradient(160deg, #181a10 0%, #222412 40%, #181a10 100%)",
-    accent: "#ebcb8b",
-    accentDim: "rgba(235,203,139,0.25)",
-    text: "#d8d8c8",
-    textDim: "#8a8a68",
+    accent: "#f0d8a0",
+    accentDim: "rgba(240,216,160,0.3)",
+    text: "#f0f0e0",
+    textDim: "#a8a888",
     strategy: "Voltron \u00c9quipement. Armez Cloud jusqu\u2019aux dents \u00e0 co\u00fbt r\u00e9duit. Puresteel Paladin = \u00e9quipement gratuit, Sram = pioche par arme. Un Cloud bien charg\u00e9, c\u2019est comme un tank avec une \u00e9p\u00e9e Buster.",
     combos: [
       "Paladin puracier + ma\u00eetrise m\u00e9tal \u2192 co\u00fbt d\u2019\u00e9quipement gratuit",
@@ -571,7 +563,7 @@ const glossaryKeywords = [
   { fr: "Convocation", desc: "Engagez des cr\u00e9atures pour aider \u00e0 payer" },
 ];
 
-const pipLetters = { W: 'W', U: 'U', B: 'B', R: 'R', G: 'G' };
+const pipSvgs = { W: 'https://svgs.scryfall.io/card-symbols/W.svg', U: 'https://svgs.scryfall.io/card-symbols/U.svg', B: 'https://svgs.scryfall.io/card-symbols/B.svg', R: 'https://svgs.scryfall.io/card-symbols/R.svg', G: 'https://svgs.scryfall.io/card-symbols/G.svg' };
 
 function renderCard(deck) {
   const maxCurve = Math.max(...deck.curve);
@@ -586,7 +578,7 @@ function renderCard(deck) {
   }).join('');
 
   const pipsHTML = deck.colors.map(c =>
-    `<span class="mana-pip pip-${c}">${pipLetters[c]}</span>`
+    `<span class="mana-pip"><img src="${pipSvgs[c]}" alt="{${c}}" loading="lazy"></span>`
   ).join('');
 
   const combosHTML = deck.combos.map(c =>
