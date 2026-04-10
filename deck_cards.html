@@ -251,6 +251,7 @@
 const decks = [
   {
     commander: "Ayara, First of Locthwain",
+    nameCustom: "Ayara, Première de Locthwain",
     colors: ["B"],
     bg: "linear-gradient(160deg, #f4eff8 0%, #ece6f4 40%, #f2eef8 100%)",
     accent: "#5c2d82",
@@ -271,6 +272,7 @@ const decks = [
   },
   {
     commander: "Ellivere of the Wild Court",
+    nameCustom: "Ellivère de la Cour sauvage",
     colors: ["G", "W"],
     bg: "linear-gradient(160deg, #f0f8ec 0%, #e8f4e0 40%, #f2f8ee 100%)",
     accent: "#2a6018",
@@ -278,19 +280,20 @@ const decks = [
     text: "#0a1e06",
     textDim: "#4a6840",
     imgY: "15%",
-    strategy: "Voltron Enchantresse. Empilez les auras, piochez à n'en plus finir grâce aux enchanteresses. Le r\u00f4le Vertueux d'Ellivere donne l'évasion pour achever au commandant. Les auras ne sont pas des autocollants, c'est un art de vivre.",
+    strategy: "Voltron Enchantresse. Empilez les auras, piochez à n'en plus finir grâce aux enchanteresses. Le r\u00f4le Vertueux d'Ellivere donne la puissance pour achever au commandant. Les auras ne sont pas des autocollants, c'est un art de vivre.",
     combos: [
       "Armure éthérée / Tout ce qui brille → puissance massive",
       "Manteau d'esprit + Masque ancestral → létal imblocable",
-      "Vents de Rath → nettoyage unilatéral (garde les enchantés)",
+      "Vents de Rajh → nettoyage unilatéral (garde les enchantés)",
       "Manteau des anciens → récupère toutes les auras du cimetière"
     ],
-    keywords: "Vol \u00b7 Constellation \u00b7 Lien de vie \u00b7 Piétinement",
+    keywords: "Enchantements, Pioche",
     curve: [0, 9, 22, 16, 10, 4, 0, 1],
     avgMv: 2.71
   },
   {
     commander: "Gargos, Vicious Watcher",
+    nameCustom: "Gargos, Gardien vicieux",
     colors: ["G"],
     bg: "linear-gradient(160deg, #eef8ea 0%, #e4f4dc 40%, #eef8ea 100%)",
     accent: "#1a5c10",
@@ -301,16 +304,17 @@ const decks = [
     strategy: "Rampez fort, castez des Hydres XXL à prix réduit grâce à Gargos. Ciblez vos propres Hydres pour déclencher des combats gratuits. Vos serpents à 47 têtes adorent faire la causette aux créatures adverses.",
     combos: [
       "Gargos + sort de ciblage → combat gratuit comme removal",
-      "Floraison débridée → double les sorts X",
+      "Abondance déchainée → double les sorts X",
       "Hydre kalonienne → double les marqueurs +1/+1 à l'attaque",
-      "\u00c9cailles endurcies + hydres à marqueurs → bonus partout"
+      "\u00c9cailles rebforcées + hydres à marqueurs → bonus partout"
     ],
-    keywords: "Piétinement \u00b7 Portée \u00b7 Garde \u00b7 Combat",
+    keywords: "Hydres, Marqueurs +1/+1, Piétinement, Combat",
     curve: [0, 12, 20, 18, 4, 3, 4, 1],
     avgMv: 2.71
   },
   {
     commander: "Laughing Jasper Flint",
+    nameCustom: "Jasper Silex le Ricaneur",
     colors: ["B", "R"],
     bg: "linear-gradient(160deg, #faf0f0 0%, #f4e4e4 40%, #f8ecea 100%)",
     accent: "#8c1e28",
@@ -318,19 +322,19 @@ const decks = [
     text: "#200608",
     textDim: "#684040",
     imgY: "15%",
-    strategy: "Exilez les cartes des mains adverses avec Jasper, puis castez-les vous-même. D'autres créatures volent depuis les bibliothèques et cimetières. Pourquoi construire un deck quand on peut emprunter les v\u00f4tres ?",
+    strategy: "Exilez les cartes des mains adverses avec Jasper, puis lancez-les vous-même. D'autres créatures arrivent depuis les bibliothèques et cimetières. Pourquoi construire un deck quand on peut emprunter les cartes des autres ?",
     combos: [
-      "Jasper + Cape de soie susurrante → exile fiable de la main",
+      "Jasper + Cape de frémisoie → exile fiable de la main",
       "Etali, Tempête primordiale → vol en cascade à l'attaque",
-      "Suspicion fiévreuse → vol massif + dégâts",
-      "Vol scandaleux → exil de 8 cartes adverses"
+      "Suspicion enfiévrée → vol massif + dégâts"
     ],
-    keywords: "Contact mortel \u00b7 Vol \u00b7 Menace \u00b7 Trésor",
+    keywords: "Exil, Vol de cartes, Big mana",
     curve: [1, 4, 19, 12, 10, 4, 4, 8],
     avgMv: 3.55
   },
   {
     commander: "Terra, Herald of Hope",
+    nameCustom: "Terra, Symbole d'espoir pour le monde",
     colors: ["W", "B", "R"],
     bg: "linear-gradient(160deg, #faf6f0 0%, #f4ece2 40%, #f8f2ec 100%)",
     accent: "#7a3416",
@@ -338,19 +342,19 @@ const decks = [
     text: "#1c0c04",
     textDim: "#5a4030",
     imgY: "15%",
-    strategy: "Réanimateur Mardu. Remplissez le cimetière de bombes, Terra les ramène au bercail. Boucles sacrifice + récursion ad nauseam. Le cimetière c'est pas la fin \u2014 c'est la salle d'attente.",
+    strategy: "Réanimateur Mardu. Remplissez le cimetière de bombes, Terra les ramène sur le champ de bataille. Boucles sacrifice + récursion ad nauseam. Le cimetière c'est pas la fin ~ c'est la salle d'attente.",
     combos: [
-      "Celes + Bombardement des gobelins → ∞ arrivées & départs",
-      "Phalène pondeuse lumineuse + Bombardement des gobelins → ∞ boucle",
-      "Squall + Peur de rater + Bombardement → quasi-∞ dégâts",
-      "Ascension des royaumes sombres → réanime TOUS les cimetières"
+      "Celes + Bombardement des gobelins + créature avec persistance → ∞ arrivées & départs",
+      "Phalène pondeuse lumineuse + Bombardement des gobelins → morts à répétition",
+      "Ascension des royaumes obscurs → réanime TOUS les cimetières"
     ],
-    keywords: "Vol \u00b7 Initiative \u00b7 Lien de vie \u00b7 Recyclage \u00b7 Meule",
+  keywords: "Vol, Double Initiative, Réanimation, Meule",
     curve: [0, 7, 16, 15, 13, 5, 2, 4],
     avgMv: 3.27
   },
   {
     commander: "Alaundo the Seer",
+    nameCustom: "Alaundo le Prophète",
     colors: ["U", "G"],
     bg: "linear-gradient(160deg, #eef6f8 0%, #e2f0f4 40%, #eef6f8 100%)",
     accent: "#1a5468",
@@ -358,19 +362,20 @@ const decks = [
     text: "#041418",
     textDim: "#3a5e68",
     imgY: "15%",
-    strategy: "Tapez Alaundo pour piocher et exiler avec des marqueurs temps, puis castez tout gratos. Effets de dégagement = activations infinies. Le temps est relatif, surtout quand vous le supprimez.",
+    strategy: "Engagez Alaundo pour piocher et exiler avec des marqueurs temps, puis lancez tout gratos. Effets de dégagement = activations infinies. Le temps est relatif, surtout quand on le supprime.",
     combos: [
       "Libéré du réel / Aura de Pemmin + Alaundo → ∞ activations",
-      "Ioreth + dégageur (Kiora / Vizir / Guide) → ∞ mana & pioche",
+      "Ioreth + dégageurs (Kiora / Vizir / Guide) → ∞ mana & pioche",
       "Oracle de Thassa → victoire après biblio vide",
       "Muse née-des-graines → dégagement tour de chaque joueur"
     ],
-    keywords: "Suspension \u00b7 Recyclage \u00b7 Mue \u00b7 Regard",
+    keywords: "Pioche, Suspension, Dégagement, Défense talismanique",
     curve: [4, 14, 22, 17, 2, 5, 2, 1],
     avgMv: 2.40
   },
   {
     commander: "Sidisi, Brood Tyrant",
+    nameCustom: "Sidisi, Tyran de la couvée",
     colors: ["B", "G", "U"],
     bg: "linear-gradient(160deg, #eef6f4 0%, #e4f0ec 40%, #eef6f4 100%)",
     accent: "#1a4c3e",
@@ -378,19 +383,20 @@ const decks = [
     text: "#041210",
     textDim: "#3a5c54",
     imgY: "top",
-    strategy: "Auto-meule pour spawner des zombies avec Sidisi. +60 créatures au deck pour maximiser les triggers. Votre cimetière EST votre seconde main. Le recyclage : bon pour la planète, mortel pour vos adversaires.",
+    strategy: "Auto-meule pour spawner des zombies avec Sidisi. Deck rempli de créatures pour maximiser les triggers. Votre cimetière EST votre seconde main. Le recyclage : bon pour la planète, mortel pour vos adversaires.",
     combos: [
-      "Orbe mesmérienne + dégagement → meule massive + zombies",
+      "Orbe mesmérique + dégagement → meule massive + zombies",
       "Mort vivante → résurrection en masse du cimetière",
       "Syr Konrad + auto-meule → drain à toute la table",
-      "Drague (Troll du Golgari) → triggers de meule répétés"
+      "Crabe hédron + Déchiqueteuse de haies → meule à répétition"
     ],
-    keywords: "Meule \u00b7 Drague \u00b7 Vol \u00b7 Recyclage",
+    keywords: "Meule, Dragage, Jetons, Réanimation",
     curve: [0, 7, 20, 17, 9, 6, 4, 0],
     avgMv: 2.98
   },
   {
     commander: "Ognis, the Dragon's Lash",
+    nameCustom: "Ognis, Fouet du Dragon",
     colors: ["B", "R", "G"],
     bg: "linear-gradient(160deg, #f8f4ea 0%, #f0e8d8 40%, #f8f4ea 100%)",
     accent: "#5a3c08",
@@ -398,19 +404,20 @@ const decks = [
     text: "#180e02",
     textDim: "#524818",
     imgY: "20%",
-    strategy: "Attaquez avec des créatures célérité, récoltez des trésors via Ognis. Les trésors financent synergies artefacts et victoire alternative. L'argent ne fait pas le bonheur, mais il gagne la partie.",
+    strategy: "Attaquez avec la célérité, récoltez des trésors via Ognis. Les trésors financent synergies artefacts et victoire alternative. L'argent ne fait pas le bonheur, mais il gagne la partie.",
     combos: [
-      "Revel in Riches + 10 trésors → condition de victoire alternative",
-      "Ma\u00eetre marionnettiste + sacrifice de trésors → drain massif",
-      "Planque de contrebandiers → les terrains produisent des trésors",
-      "Insurrection / Loi de la foule → volez toutes les créatures"
+      "Maître marionnettiste + sacrifice de trésors → drain massif",
+      "Stock des traffiquants d'alcool → les terrains produisent des trésors",
+      "Insurrection / Loi de la jungle → volez toutes les créatures",
+      "Jouissance des richesses + 10 trésors → condition de victoire alternative"
     ],
-    keywords: "Célérité \u00b7 Vol \u00b7 Piétinement \u00b7 Trésor \u00b7 Initiative",
+    keywords: "Célérité, Trésors, Contrôle de créature, Dégâts à distance",
     curve: [0, 9, 20, 13, 7, 7, 4, 2],
     avgMv: 3.06
   },
   {
     commander: "Neera, Wild Mage",
+    nameCustom: "Neera, Mage sauvage",
     colors: ["U", "R"],
     bg: "linear-gradient(160deg, #f0eef8 0%, #e8e4f4 40%, #f0eef8 100%)",
     accent: "#3a1880",
@@ -418,19 +425,19 @@ const decks = [
     text: "#0c0820",
     textDim: "#4a3870",
     imgY: "40%",
-    strategy: "Castez un sort à 1 mana, Neera le polymorphe en bombe de 9 mana. Manipulez le dessus de la biblio pour contr\u00f4ler le résultat. Loterie magique, sauf que vous avez marqué les cartes.",
+    strategy: "Lancez un sort à 1 mana, Neera le polymorphe en bombe de 9 mana. Manipulez le dessus de la biblio pour contr\u00f4ler le résultat. Loterie magique, sauf que vous avez marqué les cartes.",
     combos: [
-      "Horreur brisecoque + Anneau solaire → ∞ mana & compteur d'orage",
-      "Réservoir d'Aetherflux + tempête de sorts → laser 50 dégâts",
-      "Déluge mnémonique → copie un gros sort 3 fois",
-      "Veyran + triggers de sorts → dégâts et effets doublés"
+      "Horreur brisecoque + éphémères → contrôle de la table",
+      "Réservoir d'Aetherflux + sorts en série → laser 50 dégâts",
+      "Déluge mnémonique → copie un gros sort 3 fois"
     ],
-    keywords: "Vol \u00b7 Regard \u00b7 Cascade \u00b7 Annihilateur",
+    keywords: "Cascade, Regard, Chaos, Spellslinger",
     curve: [0, 13, 15, 11, 6, 4, 3, 10],
     avgMv: 3.47
   },
   {
     commander: "Lord of the Nazg\u00fbl",
+    nameCustom: "Seigneur des Nazgûl",
     colors: ["U", "B"],
     bg: "linear-gradient(160deg, #eeeef8 0%, #e4e6f4 40%, #eeeef8 100%)",
     accent: "#1c2878",
@@ -438,19 +445,20 @@ const decks = [
     text: "#04081e",
     textDim: "#3c4468",
     imgY: "20%",
-    strategy: "Tribal Nazg\u00fbl avec 9 copies qui grossissent à chaque arrivée de spectre. Clonez-les pour multiplier les triggers \u2014 chaque copie booste toutes les autres. Un Anneau pour les dominer tous.",
+    strategy: "Tribal Nazgûl avec 9 copies qui grossissent à chaque tentation de l'anneau. Clonez-les pour multiplier les triggers \u2014 chaque copie booste toutes les autres. Un Anneau pour les dominer tous.",
     combos: [
-      "Horreur brisecoque + Anneau solaire → ∞ mana & orage",
+      "Horreur brisecoque + éphémères → contrôle de la table",
       "Rite de Réplication sur Nazg\u00fbl → 5 copies, tous boostés",
-      "Retour en écho → ramène TOUS les Nazg\u00fbl du cimetière",
+      "Copie du commandant → chaque copie déclenche les effets, jetons exponentiels",
       "Appel de l'Anneau → pioche constante + tentation de l'Anneau"
     ],
-    keywords: "Contact mortel \u00b7 Changelin \u00b7 Flash \u00b7 Regard",
+    keywords: "Nazgûl, Copie, Jetons, Spellslinger",
     curve: [0, 12, 14, 20, 13, 4, 1, 1],
     avgMv: 2.85
   },
   {
     commander: "Maarika, Brutal Gladiator",
+    nameCustom: "Maarika, Gladiatrice brutale",
     colors: ["B", "R", "G"],
     bg: "linear-gradient(160deg, #f4f2ea 0%, #ece8dc 40%, #f4f2ea 100%)",
     accent: "#3e2c08",
@@ -458,19 +466,20 @@ const decks = [
     text: "#120e02",
     textDim: "#524418",
     imgY: "top",
-    strategy: "Voltron Infection. Collez un Exosquelette greffé sur Maarika = dégâts d'infection au commandant. Maarika combat quand elle inflige des dégâts excédentaires. Chandra's Ignition + infection = table empoisonnée. Thérapeutique, promis.",
+    strategy: "Deck Infection. Invoquez des créatures infectées, reforcez les et envoyez les dans vos adversaires. Thérapeutique, promis.",
     combos: [
-      "Exosquelette greffé + Maarika → infection au commandant",
+      "Infection + Maarika → hauts dégâts de poison",
       "Ignition de Chandra sur créature infectée → empoisonne la table",
-      "Frappe corrompue + haute puissance → infection surprise létale",
-      "Fouet de la furie + combats → dégâts doublés"
+      "Frappe souillée + haute puissance / Arc enchaîneur → infection surprise létale",
+      "Souffrance pour tous / Fiellefouet → Marqueurs poison à répétition"
     ],
-    keywords: "Infection \u00b7 Initiative \u00b7 Piétinement \u00b7 Combat",
+    keywords: "Infection, Poison, Dégâts à distance",
     curve: [0, 10, 16, 17, 9, 6, 3, 1],
     avgMv: 2.97
   },
   {
     commander: "Kuja, Genome Sorcerer",
+    nameCustom: "Kuja, Sorcier génome",
     colors: ["B", "R"],
     bg: "linear-gradient(160deg, #f8f0f4 0%, #f2e4ec 40%, #f8f0f4 100%)",
     accent: "#7a1840",
@@ -478,11 +487,11 @@ const decks = [
     text: "#1e0410",
     textDim: "#62304a",
     imgY: "10%",
-    strategy: "Spellslinger br\u00fblant. \u00c9phémères et rituels pas chers déclenchent tokens et dégâts de Kuja. Arcane Bombardment = sorts exponentiels chaque tour. Mizzix's Mastery overloadé = tout le cimetière rejoué. Le feu, c'est beau.",
+    strategy: "Spellslinger brûlant. \u00c9phémères et rituels pas chers déclenchent tokens et dégâts de Kuja en détruisant les permanents de vos adversaires. Le feu, ça brûle.",
     combos: [
-      "Bombardement arcanique + sorts en masse → casts exponentiels",
+      "Bombardement ésotérique + sorts en masse → casts exponentiels",
       "Quête de la Flamme Pure → double TOUS les dégâts",
-      "Ma\u00eetrise de Mizzix overloadé → replay du cimetière entier",
+      "Maîtrise de Mizzix surchargé → rejoue le cimetière en entier",
       "Tripier + cha\u00eene de sorts pas chers → burn rapide"
     ],
     keywords: "Convocation \u00b7 Regard \u00b7 Contact mortel \u00b7 Overload",
@@ -491,6 +500,7 @@ const decks = [
   },
   {
     commander: "Gimli, Mournful Avenger",
+    nameCustom: "",
     colors: ["R", "G"],
     bg: "linear-gradient(160deg, #faf4ec 0%, #f2e8dc 40%, #faf4ec 100%)",
     accent: "#6e3010",
@@ -511,6 +521,7 @@ const decks = [
   },
   {
     commander: "Cloud, Ex-SOLDIER",
+    nameCustom: "",
     colors: ["W", "R", "G"],
     bg: "linear-gradient(160deg, #faf8ec 0%, #f2f0dc 40%, #faf8ec 100%)",
     accent: "#4a4808",
@@ -559,8 +570,8 @@ function renderCard(deck) {
       <div class="card-header">
         <img data-commander="${deck.commander}" alt="${deck.commander}" loading="lazy">
         <div class="card-name-bar">
-          <span class="commander-name">${deck.commander}</span>
-          <span class="mana-pips">${pipsHTML}</span>
+        <span class="commander-name">${deck.nameCustom || deck.commander}</span>
+        <span class="mana-pips">${pipsHTML}</span>
         </div>
       </div>
       <div class="card-body">
