@@ -3,7 +3,7 @@
     {
       "id": "ayara",
       "commander": "Ayara, First of Locthwain",
-      "commander_fr": "Ayara, First of Locthwain",
+      "commander_fr": "Ayara, Première de Locthwain",
       "colors": [
         "B"
       ],
@@ -277,7 +277,7 @@
     {
       "id": "ellivere",
       "commander": "Ellivere of the Wild Court",
-      "commander_fr": "Ellivere of the Wild Court",
+      "commander_fr": "Ellivère de la Cour sauvage",
       "colors": [
         "G",
         "W"
@@ -352,7 +352,7 @@
     {
       "id": "gargos",
       "commander": "Gargos, Vicious Watcher",
-      "commander_fr": "Gargos, Vicious Watcher",
+      "commander_fr": "Gargos, gardien vicieux",
       "colors": [
         "G"
       ],
@@ -426,7 +426,7 @@
     {
       "id": "jasper",
       "commander": "Laughing Jasper Flint",
-      "commander_fr": "Laughing Jasper Flint",
+      "commander_fr": "Jasper Silex le Ricaneur",
       "colors": [
         "B",
         "R"
@@ -502,7 +502,7 @@
     {
       "id": "terra",
       "commander": "Terra, Herald of Hope",
-      "commander_fr": "Terra, Herald of Hope",
+      "commander_fr": "Terra, symbole d'espoir pour le monde",
       "colors": [
         "W",
         "B",
@@ -651,7 +651,7 @@
     {
       "id": "suspend",
       "commander": "Alaundo the Seer",
-      "commander_fr": "Alaundo the Seer",
+      "commander_fr": "Alaundo le prophète",
       "colors": [
         "U",
         "G"
@@ -1416,7 +1416,7 @@
     {
       "id": "sidisi",
       "commander": "Sidisi, Brood Tyrant",
-      "commander_fr": "Sidisi, Brood Tyrant",
+      "commander_fr": "Sidisi, tyran de la Couvée",
       "colors": [
         "B",
         "G",
@@ -1491,7 +1491,7 @@
     {
       "id": "ognid",
       "commander": "Ognis, the Dragon's Lash",
-      "commander_fr": "Ognis, the Dragon's Lash",
+      "commander_fr": "Ognis, le Fouet du Dragon",
       "colors": [
         "B",
         "R",
@@ -1563,12 +1563,29 @@
           "count": 2
         }
       ],
-      "verified_combos": []
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "Bootleggers' Stash",
+              "fr": "Stock des trafiquants d'alcool"
+            },
+            {
+              "en": "Revel in Riches",
+              "fr": "Jouissance des richesses"
+            }
+          ],
+          "results": [
+            "Win the game at the beginning of your next upkeep"
+          ],
+          "source": "edhrec"
+        }
+      ]
     },
     {
       "id": "neera",
       "commander": "Neera, Wild Mage",
-      "commander_fr": "Neera, Wild Mage",
+      "commander_fr": "Neera, mage sauvage",
       "colors": [
         "U",
         "R"
@@ -1663,7 +1680,7 @@
     {
       "id": "Nazegul",
       "commander": "Lord of the Nazgûl",
-      "commander_fr": "Lord of the Nazgûl",
+      "commander_fr": "Seigneur des Nazgûl",
       "colors": [
         "U",
         "B"
@@ -1906,7 +1923,7 @@
     {
       "id": "gimli",
       "commander": "Gimli, Mournful Avenger",
-      "commander_fr": "Gimli, Mournful Avenger",
+      "commander_fr": "Gimli, vengeur éploré",
       "colors": [
         "R",
         "G"
@@ -2032,7 +2049,7 @@
     {
       "id": "cloud",
       "commander": "Cloud, Ex-SOLDIER",
-      "commander_fr": "Cloud, Ex-SOLDIER",
+      "commander_fr": "Cloud, ex-SOLDAT",
       "colors": [
         "W",
         "R",

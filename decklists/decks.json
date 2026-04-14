@@ -1,0 +1,16 @@
+{
+  "ayara":   {"commander": "Ayara, First of Locthwain",    "colors": ["B"]},
+  "ellivere":{"commander": "Ellivere of the Wild Court",   "colors": ["G", "W"]},
+  "gargos":  {"commander": "Gargos, Vicious Watcher",      "colors": ["G"]},
+  "jasper":  {"commander": "Laughing Jasper Flint",         "colors": ["B", "R"]},
+  "terra":   {"commander": "Terra, Herald of Hope",         "colors": ["W", "B", "R"]},
+  "suspend": {"commander": "Alaundo the Seer",             "colors": ["U", "G"]},
+  "sidisi":  {"commander": "Sidisi, Brood Tyrant",          "colors": ["B", "G", "U"]},
+  "ognid":   {"commander": "Ognis, the Dragon's Lash",      "colors": ["B", "R", "G"]},
+  "neera":   {"commander": "Neera, Wild Mage",              "colors": ["U", "R"]},
+  "Nazegul": {"commander": "Lord of the Nazgûl",            "colors": ["U", "B"]},
+  "maarika": {"commander": "Maarika, Brutal Gladiator",     "colors": ["B", "R", "G"]},
+  "kuja":    {"commander": "Kuja, Genome Sorcerer",         "colors": ["B", "R"]},
+  "gimli":   {"commander": "Gimli, Mournful Avenger",       "colors": ["R", "G"]},
+  "cloud":   {"commander": "Cloud, Ex-SOLDIER",             "colors": ["W", "R", "G"]}
+}

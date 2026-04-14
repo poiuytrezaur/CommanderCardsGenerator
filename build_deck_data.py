@@ -16,23 +16,9 @@ BASE_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 DECKLIST_DIR = BASE_DIR / "decklists"
 OUTPUT_FILE = BASE_DIR / "deck_full_data.json"
 
-# Deck configurations
-DECKS = {
-    "ayara":   {"commander": "Ayara, First of Locthwain",    "colors": ["B"]},
-    "ellivere":{"commander": "Ellivere of the Wild Court",   "colors": ["G", "W"]},
-    "gargos":  {"commander": "Gargos, Vicious Watcher",      "colors": ["G"]},
-    "jasper":  {"commander": "Laughing Jasper Flint",         "colors": ["B", "R"]},
-    "terra":   {"commander": "Terra, Herald of Hope",         "colors": ["W", "B", "R"]},
-    "suspend": {"commander": "Alaundo the Seer",             "colors": ["U", "G"]},
-    "sidisi":  {"commander": "Sidisi, Brood Tyrant",          "colors": ["B", "G", "U"]},
-    "ognid":   {"commander": "Ognis, the Dragon's Lash",      "colors": ["B", "R", "G"]},
-    "neera":   {"commander": "Neera, Wild Mage",              "colors": ["U", "R"]},
-    "Nazegul": {"commander": "Lord of the Nazgûl",            "colors": ["U", "B"]},
-    "maarika": {"commander": "Maarika, Brutal Gladiator",     "colors": ["B", "R", "G"]},
-    "kuja":    {"commander": "Kuja, Genome Sorcerer",         "colors": ["B", "R"]},
-    "gimli":   {"commander": "Gimli, Mournful Avenger",       "colors": ["R", "G"]},
-    "cloud":   {"commander": "Cloud, Ex-SOLDIER",             "colors": ["W", "R", "G"]},
-}
+# Deck configurations (loaded from decklists/decks.json)
+with open(DECKLIST_DIR / "decks.json", encoding="utf-8") as _f:
+    DECKS = json.load(_f)
 
 KEYWORD_FR = {
     "Flying": "Vol", "Trample": "Piétinement", "Haste": "Célérité",
@@ -62,7 +48,9 @@ def parse_decklist(filepath):
                 continue
             m = re.match(r'^(\d+)\s+(.+?)\s+\([A-Za-z0-9]+\)\s+\S+', line)
             if m:
-                cards.append({"name": m.group(2), "qty": int(m.group(1))})
+                # Normalize DFC/split card names: Moxfield uses ' / ', Scryfall uses ' // '
+                name = m.group(2).replace(' / ', ' // ')
+                cards.append({"name": name, "qty": int(m.group(1))})
     return cards
 
 
@@ -77,12 +65,12 @@ def api_get(url, retries=2):
         except HTTPError as e:
             if e.code == 404:
                 return None
-            if e.code == 429:
-                time.sleep(2)
-                continue
             if attempt == retries:
                 raise
-            time.sleep(0.5)
+            if e.code == 429:
+                time.sleep(2 ** (attempt + 1))
+            else:
+                time.sleep(0.5)
         except (URLError, TimeoutError):
             if attempt == retries:
                 raise
@@ -117,6 +105,7 @@ def api_post(url, data, retries=2):
 def slugify(name):
     nfkd = unicodedata.normalize('NFKD', name)
     ascii_name = nfkd.encode('ascii', 'ignore').decode('ascii')
+    ascii_name = ascii_name.replace("'", "")  # apostrophes are dropped, not split (e.g. "Dragon's" -> "dragons")
     slug = re.sub(r'[^a-z0-9]+', '-', ascii_name.lower()).strip('-')
     return slug
 
@@ -151,6 +140,11 @@ def get_card(name, cache):
         front = name.split(' / ')[0].strip()
         if front in cache:
             return cache[front]
+    # Handle front-face-only name when full DFC name (A // B) is in cache
+    prefix = name + ' // '
+    for key in cache:
+        if key.startswith(prefix):
+            return cache[key]
     return None
 
 
@@ -178,7 +172,11 @@ for deck_id, config in DECKS.items():
     all_card_names.update(names)
     print(f"  {deck_id}: {sum(c['qty'] for c in cards)} cards ({len(names)} unique)")
 
-print(f"\nTotal unique card names: {len(all_card_names)}")
+# Include commanders so they get fetched from Scryfall and translated
+for config in DECKS.values():
+    all_card_names.add(config["commander"])
+
+print(f"\nTotal unique card names (incl. commanders): {len(all_card_names)}")
 
 
 # ─── PHASE 2: Scryfall card data ───
@@ -203,23 +201,52 @@ for i in range(0, len(unique_list), 75):
         nf = [x.get("name", "") for x in result.get("not_found", [])]
         not_found.extend(nf)
         print(f"  Batch {i//75+1}: {len(result.get('data',[]))} found, {len(nf)} not found")
+        for nm in nf:
+            print(f"    NOT FOUND: {nm}")
     except Exception as e:
         print(f"  Batch {i//75+1} ERROR: {e}")
 
-# Retry not-found: try front face for DFCs, then fuzzy search
-retry_dfc = [(n, n.split(' / ')[0].strip()) for n in not_found if ' / ' in n]
-retry_other = [n for n in not_found if ' / ' not in n]
+# Retry not-found: batch DFCs via collection endpoint (front-face names), fuzzy for others
+retry_dfc = [(n, n.split(' // ')[0].strip()) for n in not_found if ' // ' in n]
+retry_other = [n for n in not_found if ' // ' not in n]
 
-for orig, front in retry_dfc:
-    try:
-        r = api_get(f"https://api.scryfall.com/cards/named?fuzzy={quote(front)}")
-        if r:
-            scryfall_cache[orig] = extract_card_info(r)
-            scryfall_cache[r["name"]] = extract_card_info(r)
-        else:
-            retry_other.append(orig)
-    except:
-        retry_other.append(orig)
+if retry_dfc:
+    print(f"\n  Batching {len(retry_dfc)} DFC retries by front face...")
+    # Build map: front_face -> [original full names]
+    front_to_orig = {}
+    for orig, front in retry_dfc:
+        front_to_orig.setdefault(front, []).append(orig)
+
+    all_fronts = list(front_to_orig.keys())
+    for i in range(0, len(all_fronts), 75):
+        batch = all_fronts[i:i+75]
+        try:
+            result = api_post(
+                "https://api.scryfall.com/cards/collection",
+                {"identifiers": [{"name": f} for f in batch]}
+            )
+            if result:
+                for card in result.get("data", []):
+                    info = extract_card_info(card)
+                    card_name = card["name"]
+                    scryfall_cache[card_name] = info
+                    # Match returned card name back to original DFC names
+                    # card_name may be just the front face or "Front // Back"
+                    card_front = card_name.split(' // ')[0].strip()
+                    for orig in front_to_orig.get(card_front, []):
+                        scryfall_cache[orig] = info
+                        print(f"    DFC BATCH OK: '{orig}' -> '{card_name}'")
+                for nf in result.get("not_found", []):
+                    nf_front = nf.get("name", "")
+                    for orig in front_to_orig.get(nf_front, []):
+                        retry_other.append(orig)
+                        print(f"    DFC BATCH MISS: '{orig}'")
+        except Exception as e:
+            print(f"  DFC batch retry ERROR: {e}")
+            for front in batch:
+                retry_other.extend(front_to_orig.get(front, []))
+
+time.sleep(0.5)  # pause before individual retries to avoid 429
 
 for name in retry_other:
     try:
@@ -227,8 +254,18 @@ for name in retry_other:
         if r:
             scryfall_cache[name] = extract_card_info(r)
             scryfall_cache[r["name"]] = extract_card_info(r)
-    except:
-        print(f"  NOT FOUND: {name}")
+            print(f"    FUZZY OK: '{name}' -> '{r['name']}'")
+        else:
+            print(f"    FUZZY MISS: '{name}'")
+    except Exception as e:
+        print(f"    FUZZY ERR: '{name}' -> {e}")
+
+# Report any cards still not found after retries
+still_missing = [n for n in all_card_names if n not in scryfall_cache and get_card(n, scryfall_cache) is None]
+if still_missing:
+    print(f"\n  WARNING: {len(still_missing)} cards not found on Scryfall:")
+    for nm in sorted(still_missing):
+        print(f"    - {nm}")
 
 print(f"\nScryfall cache: {len(scryfall_cache)} entries")
 
@@ -278,13 +315,24 @@ for i in range(0, len(names_to_translate), batch_size):
                         oname = card.get("name", "")
                         french_names[oname] = pname
                         fr_found += 1
-    except:
-        pass
+    except Exception as e:
+        if '429' in str(e) or '503' in str(e):
+            print(f"  Rate limited at batch {i//batch_size}, retrying...")
+            time.sleep(2)
 
     if (i // batch_size) % 10 == 0:
         print(f"  Progress: {min(i+batch_size, len(names_to_translate))}/{len(names_to_translate)} ({fr_found} French names)")
 
-print(f"\nFrench names: {len(french_names)} total")
+# Report cards without French translations
+untranslated = [n for n in scryfall_cache.keys() if n not in french_names]
+if untranslated:
+    print(f"\n  {len(untranslated)} cards without French translation (using English name):")
+    for nm in sorted(untranslated)[:20]:
+        print(f"    - {nm}")
+    if len(untranslated) > 20:
+        print(f"    ... and {len(untranslated) - 20} more")
+
+print(f"\nFrench names: {len(french_names)} total / {len(scryfall_cache)} cards")
 
 
 # ─── PHASE 4: Combo data ───
