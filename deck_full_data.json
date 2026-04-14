@@ -230,9 +230,9 @@
             }
           ],
           "results": [
-            "Infinite ETB",
             "Infinite colorless mana",
             "Infinite death triggers",
+            "Infinite ETB",
             "Infinite lifegain",
             "Infinite lifegain triggers",
             "Infinite lifeloss",
@@ -361,19 +361,19 @@
       "mana_curve": [
         0,
         12,
-        19,
+        20,
         18,
         4,
         3,
-        3,
+        4,
         1
       ],
-      "avg_mv": 2.67,
+      "avg_mv": 2.71,
       "top_keywords": [
         {
           "en": "Trample",
           "fr": "Piétinement",
-          "count": 6
+          "count": 8
         },
         {
           "en": "Reach",
@@ -384,6 +384,11 @@
           "en": "Enchant",
           "fr": "Enchant",
           "count": 4
+        },
+        {
+          "en": "Fight",
+          "fr": "Fight",
+          "count": 2
         },
         {
           "en": "Warp",
@@ -408,11 +413,6 @@
         {
           "en": "Morph",
           "fr": "Mue",
-          "count": 1
-        },
-        {
-          "en": "Fight",
-          "fr": "Fight",
           "count": 1
         },
         {
@@ -516,23 +516,23 @@
         16,
         15,
         13,
-        4,
+        5,
         2,
         3,
         0,
         1
       ],
-      "avg_mv": 3.25,
+      "avg_mv": 3.27,
       "top_keywords": [
+        {
+          "en": "Mill",
+          "fr": "Meule",
+          "count": 7
+        },
         {
           "en": "Flying",
           "fr": "Vol",
           "count": 7
-        },
-        {
-          "en": "Mill",
-          "fr": "Meule",
-          "count": 6
         },
         {
           "en": "First strike",
@@ -1230,6 +1230,24 @@
               "fr": "Unctus, grand métatecte"
             },
             {
+              "en": "Pemmin's Aura",
+              "fr": "Aura de Pemmin"
+            }
+          ],
+          "results": [
+            "Infinite draw triggers",
+            "Infinite looting",
+            "Infinite self-discard triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Unctus, Grand Metatect",
+              "fr": "Unctus, grand métatecte"
+            },
+            {
               "en": "Kelpie Guide",
               "fr": "Guide kelpie"
             },
@@ -1242,24 +1260,6 @@
             "Infinite self-discard triggers",
             "Infinite draw triggers",
             "Infinite looting"
-          ],
-          "source": "edhrec"
-        },
-        {
-          "cards": [
-            {
-              "en": "Unctus, Grand Metatect",
-              "fr": "Unctus, grand métatecte"
-            },
-            {
-              "en": "Pemmin's Aura",
-              "fr": "Aura de Pemmin"
-            }
-          ],
-          "results": [
-            "Infinite draw triggers",
-            "Infinite looting",
-            "Infinite self-discard triggers"
           ],
           "source": "edhrec"
         },
