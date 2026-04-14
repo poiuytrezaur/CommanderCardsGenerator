@@ -201,8 +201,6 @@ for i in range(0, len(unique_list), 75):
         nf = [x.get("name", "") for x in result.get("not_found", [])]
         not_found.extend(nf)
         print(f"  Batch {i//75+1}: {len(result.get('data',[]))} found, {len(nf)} not found")
-        for nm in nf:
-            print(f"    NOT FOUND: {nm}")
     except Exception as e:
         print(f"  Batch {i//75+1} ERROR: {e}")
 
@@ -240,7 +238,6 @@ if retry_dfc:
                     nf_front = nf.get("name", "")
                     for orig in front_to_orig.get(nf_front, []):
                         retry_other.append(orig)
-                        print(f"    DFC BATCH MISS: '{orig}'")
         except Exception as e:
             print(f"  DFC batch retry ERROR: {e}")
             for front in batch:
@@ -255,17 +252,25 @@ for name in retry_other:
             scryfall_cache[name] = extract_card_info(r)
             scryfall_cache[r["name"]] = extract_card_info(r)
             print(f"    FUZZY OK: '{name}' -> '{r['name']}'")
-        else:
-            print(f"    FUZZY MISS: '{name}'")
     except Exception as e:
         print(f"    FUZZY ERR: '{name}' -> {e}")
 
 # Report any cards still not found after retries
 still_missing = [n for n in all_card_names if n not in scryfall_cache and get_card(n, scryfall_cache) is None]
 if still_missing:
+    # Build a map of missing card -> list of decks that use it
+    missing_in_decks = {}
+    for nm in still_missing:
+        decks_using = [
+            deck_id for deck_id, deck in all_decks.items()
+            if any(c["name"] == nm for c in deck["cards"])
+            or DECKS[deck_id]["commander"] == nm
+        ]
+        missing_in_decks[nm] = decks_using
     print(f"\n  WARNING: {len(still_missing)} cards not found on Scryfall:")
     for nm in sorted(still_missing):
-        print(f"    - {nm}")
+        decks_str = ", ".join(missing_in_decks[nm]) if missing_in_decks[nm] else "commander list"
+        print(f"    - {nm}  [{decks_str}]")
 
 print(f"\nScryfall cache: {len(scryfall_cache)} entries")
 
@@ -285,52 +290,88 @@ names_to_translate = [n for n in scryfall_cache.keys() if n not in french_names]
 batch_size = 10
 fr_found = 0
 
+
+def get_french_name_from_card(card):
+    """Extract French printed name, handling DFC card_faces."""
+    pname = card.get("printed_name")
+    if not pname and "card_faces" in card:
+        faces = card["card_faces"]
+        if any(f.get("printed_name") for f in faces):
+            pname = " // ".join(f.get("printed_name") or f.get("name", "") for f in faces)
+    return pname or card.get("name", "")
+
+
+def fetch_french_batch(url):
+    """Fetch all pages for a French search URL, return list of (oname, pname) pairs."""
+    pairs = []
+    result = api_get(url)
+    while result:
+        for card in result.get("data", []):
+            pairs.append((card.get("name", ""), get_french_name_from_card(card)))
+        if result.get("has_more"):
+            result = api_get(result["next_page"])
+        else:
+            break
+    return pairs
+
+
 for i in range(0, len(names_to_translate), batch_size):
     batch = names_to_translate[i:i+batch_size]
     # For DFCs use front face name in search
-    search_names = []
-    for n in batch:
-        if ' // ' in n:
-            search_names.append(n.split(' // ')[0].strip())
-        else:
-            search_names.append(n)
+    search_names = [n.split(' // ')[0].strip() if ' // ' in n else n for n in batch]
 
     or_parts = " or ".join(f'!"{sn}"' for sn in search_names)
-    query = f'lang:fr ({or_parts})'
-    url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
+    url = f'https://api.scryfall.com/cards/search?q={quote(f"lang:fr ({or_parts})")}&unique=cards'
 
-    try:
-        result = api_get(url)
-        if result:
-            for card in result.get("data", []):
-                pname = card.get("printed_name", card.get("name", ""))
-                oname = card.get("name", "")
+    backoff = 2
+    for attempt in range(5):
+        try:
+            for oname, pname in fetch_french_batch(url):
                 french_names[oname] = pname
                 fr_found += 1
-            while result and result.get("has_more"):
-                result = api_get(result["next_page"])
-                if result:
-                    for card in result.get("data", []):
-                        pname = card.get("printed_name", card.get("name", ""))
-                        oname = card.get("name", "")
-                        french_names[oname] = pname
-                        fr_found += 1
-    except Exception as e:
-        if '429' in str(e) or '503' in str(e):
-            print(f"  Rate limited at batch {i//batch_size}, retrying...")
-            time.sleep(2)
+            break
+        except Exception as e:
+            if '429' in str(e) or '503' in str(e):
+                print(f"  Rate limited at batch {i//batch_size+1}, waiting {backoff}s...")
+                time.sleep(backoff)
+                backoff *= 2
+            else:
+                break
 
     if (i // batch_size) % 10 == 0:
         print(f"  Progress: {min(i+batch_size, len(names_to_translate))}/{len(names_to_translate)} ({fr_found} French names)")
+
+# Second pass: retry remaining untranslated cards individually
+second_pass = [n for n in scryfall_cache.keys() if n not in french_names]
+if second_pass:
+    print(f"\n  Second pass: {len(second_pass)} cards without French name, retrying individually...")
+    for name in second_pass:
+        search_name = name.split(' // ')[0].strip() if ' // ' in name else name
+        query = f'!"{search_name}" lang:fr'
+        url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
+        backoff = 2
+        for attempt in range(4):
+            try:
+                pairs = fetch_french_batch(url)
+                if pairs:
+                    oname, pname = pairs[0]
+                    french_names[oname] = pname
+                    french_names[name] = pname  # map original key too
+                    fr_found += 1
+                break
+            except Exception as e:
+                if '429' in str(e) or '503' in str(e):
+                    time.sleep(backoff)
+                    backoff *= 2
+                else:
+                    break
 
 # Report cards without French translations
 untranslated = [n for n in scryfall_cache.keys() if n not in french_names]
 if untranslated:
     print(f"\n  {len(untranslated)} cards without French translation (using English name):")
-    for nm in sorted(untranslated)[:20]:
+    for nm in sorted(untranslated):
         print(f"    - {nm}")
-    if len(untranslated) > 20:
-        print(f"    ... and {len(untranslated) - 20} more")
 
 print(f"\nFrench names: {len(french_names)} total / {len(scryfall_cache)} cards")
 
