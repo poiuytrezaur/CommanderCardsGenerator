@@ -1,7 +1,7 @@
 {
   "decks": [
     {
-      "id": "ayara",
+      "id": "oW7DoJwInUCbBVgswn9B4g",
       "commander": "Ayara, First of Locthwain",
       "commander_fr": "Ayara, Première de Locthwain",
       "colors": [
@@ -11,16 +11,16 @@
       "unique_cards": 69,
       "mana_curve": [
         0,
-        11,
-        14,
         13,
+        14,
         12,
-        8,
+        13,
+        6,
         1,
         2,
         1
       ],
-      "avg_mv": 3.13,
+      "avg_mv": 3.02,
       "top_keywords": [
         {
           "en": "Flying",
@@ -28,18 +28,8 @@
           "count": 3
         },
         {
-          "en": "Deathtouch",
-          "fr": "Contact mortel",
-          "count": 3
-        },
-        {
           "en": "Flashback",
           "fr": "Flashback",
-          "count": 2
-        },
-        {
-          "en": "Menace",
-          "fr": "Menace",
           "count": 2
         },
         {
@@ -53,9 +43,9 @@
           "count": 2
         },
         {
-          "en": "Landfall",
-          "fr": "Landfall",
-          "count": 1
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 2
         },
         {
           "en": "Extort",
@@ -63,13 +53,23 @@
           "count": 1
         },
         {
-          "en": "Enchant",
-          "fr": "Enchant",
+          "en": "Equip",
+          "fr": "Équiper",
           "count": 1
         },
         {
           "en": "Imprint",
           "fr": "Imprint",
+          "count": 1
+        },
+        {
+          "en": "Evoke",
+          "fr": "Évocation",
+          "count": 1
+        },
+        {
+          "en": "Fear",
+          "fr": "Fear",
           "count": 1
         }
       ],
@@ -95,6 +95,31 @@
             "Infinite ETB",
             "Infinite LTB",
             "Infinite sacrifice triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Gravecrawler",
+              "fr": "Rampeur des tombes"
+            },
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Viscera Seer",
+              "fr": "Voyant de viscères"
+            }
+          ],
+          "results": [
+            "Infinite LTB",
+            "Infinite ETB",
+            "Infinite sacrifice triggers",
+            "Infinite death triggers",
+            "Infinite scry 1",
+            "Infinite storm count"
           ],
           "source": "edhrec"
         },
@@ -161,6 +186,30 @@
             {
               "en": "Cult Conscript",
               "fr": "Conscrit de culte"
+            }
+          ],
+          "results": [
+            "Infinite colorless mana",
+            "Infinite death triggers",
+            "Infinite ETB",
+            "Infinite LTB",
+            "Infinite sacrifice triggers"
+          ],
+          "source": "edhrec"
+        },
+        {
+          "cards": [
+            {
+              "en": "Pitiless Plunderer",
+              "fr": "Saccageur impitoyable"
+            },
+            {
+              "en": "Ashnod's Altar",
+              "fr": "Autel d'Ashnod"
+            },
+            {
+              "en": "Bloodsoaked Champion",
+              "fr": "Champion sanguinolent"
             }
           ],
           "results": [
@@ -275,31 +324,31 @@
       ]
     },
     {
-      "id": "ellivere",
+      "id": "dTK5nwyKJ0GftXy7k_rnsw",
       "commander": "Ellivere of the Wild Court",
       "commander_fr": "Ellivère de la Cour sauvage",
       "colors": [
-        "G",
-        "W"
+        "W",
+        "G"
       ],
       "card_count": 99,
       "unique_cards": 85,
       "mana_curve": [
         0,
         9,
-        22,
-        16,
+        23,
+        15,
         10,
         4,
         0,
         1
       ],
-      "avg_mv": 2.71,
+      "avg_mv": 2.69,
       "top_keywords": [
         {
           "en": "Enchant",
           "fr": "Enchant",
-          "count": 27
+          "count": 28
         },
         {
           "en": "Flying",
@@ -317,8 +366,168 @@
           "count": 3
         },
         {
+          "en": "Scry",
+          "fr": "Regard",
+          "count": 3
+        },
+        {
           "en": "Flash",
           "fr": "Flash",
+          "count": 2
+        },
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 2
+        },
+        {
+          "en": "Treasure",
+          "fr": "Treasure",
+          "count": 1
+        },
+        {
+          "en": "Umbra armor",
+          "fr": "Umbra armor",
+          "count": 1
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "l_QpH86N9kybxldi-tMfsg",
+      "commander": "Gargos, Vicious Watcher",
+      "commander_fr": "Gargos, gardien vicieux",
+      "colors": [
+        "G"
+      ],
+      "card_count": 99,
+      "unique_cards": 71,
+      "mana_curve": [
+        0,
+        13,
+        19,
+        19,
+        4,
+        3,
+        4,
+        1
+      ],
+      "avg_mv": 2.7,
+      "top_keywords": [
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 8
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 4
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 4
+        },
+        {
+          "en": "Fight",
+          "fr": "Fight",
+          "count": 3
+        },
+        {
+          "en": "Ward",
+          "fr": "Garde",
+          "count": 2
+        },
+        {
+          "en": "Warp",
+          "fr": "Warp",
+          "count": 2
+        },
+        {
+          "en": "Strive",
+          "fr": "Strive",
+          "count": 1
+        },
+        {
+          "en": "Spell mastery",
+          "fr": "Spell mastery",
+          "count": 1
+        },
+        {
+          "en": "Umbra armor",
+          "fr": "Umbra armor",
+          "count": 1
+        },
+        {
+          "en": "Protection",
+          "fr": "Protection",
+          "count": 1
+        }
+      ],
+      "verified_combos": []
+    },
+    {
+      "id": "ijzi011QpEq51qOq4gLlaQ",
+      "commander": "Laughing Jasper Flint",
+      "commander_fr": "Jasper Silex le Ricaneur",
+      "colors": [
+        "B",
+        "R"
+      ],
+      "card_count": 99,
+      "unique_cards": 81,
+      "mana_curve": [
+        1,
+        3,
+        19,
+        11,
+        10,
+        6,
+        4,
+        6,
+        2
+      ],
+      "avg_mv": 3.65,
+      "top_keywords": [
+        {
+          "en": "Treasure",
+          "fr": "Treasure",
+          "count": 5
+        },
+        {
+          "en": "Flying",
+          "fr": "Vol",
+          "count": 4
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 3
+        },
+        {
+          "en": "Manifest",
+          "fr": "Manifest",
+          "count": 3
+        },
+        {
+          "en": "Deathtouch",
+          "fr": "Contact mortel",
+          "count": 3
+        },
+        {
+          "en": "Menace",
+          "fr": "Menace",
+          "count": 2
+        },
+        {
+          "en": "Ninjutsu",
+          "fr": "Ninjutsu",
           "count": 2
         },
         {
@@ -332,175 +541,15 @@
           "count": 2
         },
         {
-          "en": "Umbra armor",
-          "fr": "Umbra armor",
-          "count": 1
-        },
-        {
-          "en": "Bestow",
-          "fr": "Bestow",
-          "count": 1
-        },
-        {
-          "en": "Cycling",
-          "fr": "Recyclage",
-          "count": 1
-        }
-      ],
-      "verified_combos": []
-    },
-    {
-      "id": "gargos",
-      "commander": "Gargos, Vicious Watcher",
-      "commander_fr": "Gargos, gardien vicieux",
-      "colors": [
-        "G"
-      ],
-      "card_count": 99,
-      "unique_cards": 70,
-      "mana_curve": [
-        0,
-        12,
-        20,
-        18,
-        4,
-        3,
-        4,
-        1
-      ],
-      "avg_mv": 2.71,
-      "top_keywords": [
-        {
-          "en": "Trample",
-          "fr": "Piétinement",
-          "count": 8
-        },
-        {
-          "en": "Reach",
-          "fr": "Portée",
-          "count": 4
-        },
-        {
-          "en": "Enchant",
-          "fr": "Enchant",
-          "count": 4
-        },
-        {
-          "en": "Fight",
-          "fr": "Fight",
-          "count": 2
-        },
-        {
-          "en": "Warp",
-          "fr": "Warp",
-          "count": 2
-        },
-        {
-          "en": "Ward",
-          "fr": "Garde",
-          "count": 2
-        },
-        {
-          "en": "Escalate",
-          "fr": "Escalate",
-          "count": 1
-        },
-        {
-          "en": "Evolve",
-          "fr": "Evolve",
-          "count": 1
-        },
-        {
-          "en": "Morph",
-          "fr": "Mue",
-          "count": 1
-        },
-        {
-          "en": "Graft",
-          "fr": "Graft",
-          "count": 1
-        }
-      ],
-      "verified_combos": []
-    },
-    {
-      "id": "jasper",
-      "commander": "Laughing Jasper Flint",
-      "commander_fr": "Jasper Silex le Ricaneur",
-      "colors": [
-        "B",
-        "R"
-      ],
-      "card_count": 99,
-      "unique_cards": 81,
-      "mana_curve": [
-        1,
-        4,
-        19,
-        12,
-        10,
-        4,
-        4,
-        6,
-        2
-      ],
-      "avg_mv": 3.55,
-      "top_keywords": [
-        {
-          "en": "Treasure",
-          "fr": "Treasure",
-          "count": 6
-        },
-        {
-          "en": "Deathtouch",
-          "fr": "Contact mortel",
-          "count": 3
-        },
-        {
-          "en": "Flying",
-          "fr": "Vol",
-          "count": 3
-        },
-        {
-          "en": "Enchant",
-          "fr": "Enchant",
-          "count": 3
-        },
-        {
-          "en": "Equip",
-          "fr": "Équiper",
-          "count": 3
-        },
-        {
-          "en": "Manifest",
-          "fr": "Manifest",
-          "count": 3
-        },
-        {
-          "en": "Menace",
-          "fr": "Menace",
-          "count": 2
-        },
-        {
           "en": "Overload",
           "fr": "Overload",
           "count": 2
-        },
-        {
-          "en": "Ninjutsu",
-          "fr": "Ninjutsu",
-          "count": 2
-        },
-        {
-          "en": "Landcycling",
-          "fr": "Landcycling",
-          "count": 1
         }
       ],
       "verified_combos": []
     },
     {
-      "id": "terra",
+      "id": "h1iWVck0d06cVX6rAKuAmQ",
       "commander": "Terra, Herald of Hope",
       "commander_fr": "Terra, symbole d'espoir pour le monde",
       "colors": [
@@ -545,33 +594,33 @@
           "count": 3
         },
         {
-          "en": "Cycling",
-          "fr": "Recyclage",
-          "count": 2
-        },
-        {
           "en": "Deathtouch",
           "fr": "Contact mortel",
           "count": 2
         },
         {
-          "en": "Raid",
-          "fr": "Raid",
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Equip",
+          "fr": "Équiper",
           "count": 1
         },
         {
-          "en": "Landcycling",
-          "fr": "Landcycling",
+          "en": "Echo",
+          "fr": "Echo",
           "count": 1
         },
         {
-          "en": "Basic landcycling",
-          "fr": "Basic landcycling",
+          "en": "Protection",
+          "fr": "Protection",
           "count": 1
         },
         {
-          "en": "Typecycling",
-          "fr": "Typecycling",
+          "en": "Persist",
+          "fr": "Persistance",
           "count": 1
         }
       ],
@@ -649,7 +698,7 @@
       ]
     },
     {
-      "id": "suspend",
+      "id": "_YgoH0RpHkivC1-biqNJAA",
       "commander": "Alaundo the Seer",
       "commander_fr": "Alaundo le prophète",
       "colors": [
@@ -660,15 +709,15 @@
       "unique_cards": 85,
       "mana_curve": [
         4,
-        14,
+        16,
         22,
-        17,
+        15,
         2,
         5,
         2,
         1
       ],
-      "avg_mv": 2.4,
+      "avg_mv": 2.34,
       "top_keywords": [
         {
           "en": "Suspend",
@@ -678,12 +727,7 @@
         {
           "en": "Enchant",
           "fr": "Enchant",
-          "count": 3
-        },
-        {
-          "en": "Equip",
-          "fr": "Équiper",
-          "count": 2
+          "count": 4
         },
         {
           "en": "Cycling",
@@ -691,18 +735,13 @@
           "count": 2
         },
         {
+          "en": "Equip",
+          "fr": "Équiper",
+          "count": 2
+        },
+        {
           "en": "Morph",
           "fr": "Mue",
-          "count": 1
-        },
-        {
-          "en": "Escalate",
-          "fr": "Escalate",
-          "count": 1
-        },
-        {
-          "en": "Collect evidence",
-          "fr": "Collect evidence",
           "count": 1
         },
         {
@@ -718,6 +757,16 @@
         {
           "en": "Landcycling",
           "fr": "Landcycling",
+          "count": 1
+        },
+        {
+          "en": "Typecycling",
+          "fr": "Typecycling",
+          "count": 1
+        },
+        {
+          "en": "Collect evidence",
+          "fr": "Collect evidence",
           "count": 1
         }
       ],
@@ -1414,41 +1463,46 @@
       ]
     },
     {
-      "id": "sidisi",
+      "id": "9sL93QXuwUyU9O7YGstSGA",
       "commander": "Sidisi, Brood Tyrant",
       "commander_fr": "Sidisi, tyran de la Couvée",
       "colors": [
+        "U",
         "B",
-        "G",
-        "U"
+        "G"
       ],
       "card_count": 99,
       "unique_cards": 94,
       "mana_curve": [
         0,
-        7,
-        20,
+        8,
         17,
-        9,
-        6,
+        19,
+        8,
+        7,
         4
       ],
-      "avg_mv": 2.98,
+      "avg_mv": 3.02,
       "top_keywords": [
         {
           "en": "Mill",
           "fr": "Meule",
-          "count": 27
+          "count": 26
         },
         {
           "en": "Dredge",
           "fr": "Drague",
-          "count": 5
+          "count": 4
+        },
+        {
+          "en": "Reach",
+          "fr": "Portée",
+          "count": 3
         },
         {
           "en": "Flying",
           "fr": "Vol",
-          "count": 5
+          "count": 3
         },
         {
           "en": "Cycling",
@@ -1456,9 +1510,14 @@
           "count": 3
         },
         {
-          "en": "Reach",
-          "fr": "Portée",
-          "count": 3
+          "en": "Trample",
+          "fr": "Piétinement",
+          "count": 2
+        },
+        {
+          "en": "Landfall",
+          "fr": "Landfall",
+          "count": 2
         },
         {
           "en": "Landcycling",
@@ -1471,25 +1530,33 @@
           "count": 2
         },
         {
-          "en": "Landfall",
-          "fr": "Landfall",
-          "count": 2
-        },
-        {
           "en": "Scry",
           "fr": "Regard",
           "count": 2
-        },
-        {
-          "en": "Basic landcycling",
-          "fr": "Basic landcycling",
-          "count": 1
         }
       ],
-      "verified_combos": []
+      "verified_combos": [
+        {
+          "cards": [
+            {
+              "en": "The Gitrog Monster",
+              "fr": "Le monstre de Gitrog"
+            },
+            {
+              "en": "Dakmor Salvage",
+              "fr": "Margouillis du Marennois"
+            }
+          ],
+          "results": [
+            "Infinite self-mill",
+            "Near-infinite self-discard triggers"
+          ],
+          "source": "edhrec"
+        }
+      ]
     },
     {
-      "id": "ognid",
+      "id": "AVNxFDw_GUmOE6Bb1A63yA",
       "commander": "Ognis, the Dragon's Lash",
       "commander_fr": "Ognis, le Fouet du Dragon",
       "colors": [
@@ -1538,21 +1605,6 @@
           "count": 3
         },
         {
-          "en": "Vigilance",
-          "fr": "Vigilance",
-          "count": 2
-        },
-        {
-          "en": "Max speed",
-          "fr": "Max speed",
-          "count": 2
-        },
-        {
-          "en": "Start your engines!",
-          "fr": "Start your engines!",
-          "count": 2
-        },
-        {
           "en": "Equip",
           "fr": "Équiper",
           "count": 2
@@ -1560,6 +1612,21 @@
         {
           "en": "Fabricate",
           "fr": "Fabricate",
+          "count": 2
+        },
+        {
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
+        },
+        {
+          "en": "Vigilance",
+          "fr": "Vigilance",
+          "count": 2
+        },
+        {
+          "en": "Max speed",
+          "fr": "Max speed",
           "count": 2
         }
       ],
@@ -1583,7 +1650,7 @@
       ]
     },
     {
-      "id": "neera",
+      "id": "eBzCrQgX2E2ElYQNTosr4A",
       "commander": "Neera, Wild Mage",
       "commander_fr": "Neera, mage sauvage",
       "colors": [
@@ -1617,13 +1684,13 @@
           "count": 5
         },
         {
-          "en": "Magecraft",
-          "fr": "Magecraft",
+          "en": "Cascade",
+          "fr": "Cascade",
           "count": 2
         },
         {
-          "en": "Cascade",
-          "fr": "Cascade",
+          "en": "Magecraft",
+          "fr": "Magecraft",
           "count": 2
         },
         {
@@ -1632,28 +1699,28 @@
           "count": 1
         },
         {
+          "en": "Overload",
+          "fr": "Overload",
+          "count": 1
+        },
+        {
           "en": "Kicker",
           "fr": "Kicker",
           "count": 1
         },
         {
-          "en": "Offspring",
-          "fr": "Offspring",
+          "en": "Surveil",
+          "fr": "Surveil",
           "count": 1
         },
         {
-          "en": "Avoidance",
-          "fr": "Avoidance",
+          "en": "Flashback",
+          "fr": "Flashback",
           "count": 1
         },
         {
-          "en": "Treasure",
-          "fr": "Treasure",
-          "count": 1
-        },
-        {
-          "en": "Discover",
-          "fr": "Discover",
+          "en": "Transform",
+          "fr": "Transform",
           "count": 1
         }
       ],
@@ -1678,7 +1745,7 @@
       ]
     },
     {
-      "id": "Nazegul",
+      "id": "v1HMMdKAfEm5WS2V5ihzzA",
       "commander": "Lord of the Nazgûl",
       "commander_fr": "Seigneur des Nazgûl",
       "colors": [
@@ -1690,14 +1757,14 @@
       "mana_curve": [
         0,
         12,
-        14,
-        20,
         13,
-        4,
-        1,
+        19,
+        13,
+        5,
+        2,
         1
       ],
-      "avg_mv": 2.85,
+      "avg_mv": 2.94,
       "top_keywords": [
         {
           "en": "Deathtouch",
@@ -1710,13 +1777,13 @@
           "count": 3
         },
         {
-          "en": "Flash",
-          "fr": "Flash",
+          "en": "Cycling",
+          "fr": "Recyclage",
           "count": 2
         },
         {
-          "en": "Cycling",
-          "fr": "Recyclage",
+          "en": "Flash",
+          "fr": "Flash",
           "count": 2
         },
         {
@@ -1725,28 +1792,28 @@
           "count": 2
         },
         {
-          "en": "Kicker",
-          "fr": "Kicker",
-          "count": 2
-        },
-        {
           "en": "Magecraft",
           "fr": "Magecraft",
           "count": 1
         },
         {
-          "en": "Flashback",
-          "fr": "Flashback",
+          "en": "Transform",
+          "fr": "Transform",
+          "count": 1
+        },
+        {
+          "en": "Enchant",
+          "fr": "Enchant",
+          "count": 1
+        },
+        {
+          "en": "Disturb",
+          "fr": "Disturb",
           "count": 1
         },
         {
           "en": "Transdimensional Scout",
           "fr": "Transdimensional Scout",
-          "count": 1
-        },
-        {
-          "en": "Wraith Form",
-          "fr": "Wraith Form",
           "count": 1
         }
       ],
@@ -1771,7 +1838,7 @@
       ]
     },
     {
-      "id": "maarika",
+      "id": "tGgkNibyh0uYANqzUQqqrQ",
       "commander": "Maarika, Brutal Gladiator",
       "commander_fr": "Maarika, Brutal Gladiator",
       "colors": [
@@ -1780,10 +1847,10 @@
         "G"
       ],
       "card_count": 99,
-      "unique_cards": 96,
+      "unique_cards": 97,
       "mana_curve": [
         0,
-        10,
+        11,
         16,
         17,
         9,
@@ -1791,7 +1858,7 @@
         3,
         1
       ],
-      "avg_mv": 2.97,
+      "avg_mv": 2.94,
       "top_keywords": [
         {
           "en": "Infect",
@@ -1801,7 +1868,7 @@
         {
           "en": "Enchant",
           "fr": "Enchant",
-          "count": 6
+          "count": 7
         },
         {
           "en": "Equip",
@@ -1811,16 +1878,11 @@
         {
           "en": "Fight",
           "fr": "Fight",
-          "count": 3
+          "count": 4
         },
         {
           "en": "First strike",
           "fr": "Initiative",
-          "count": 2
-        },
-        {
-          "en": "Scry",
-          "fr": "Regard",
           "count": 2
         },
         {
@@ -1829,27 +1891,32 @@
           "count": 2
         },
         {
-          "en": "Proliferate",
-          "fr": "Prolifération",
-          "count": 1
-        },
-        {
-          "en": "Fuse",
-          "fr": "Fuse",
-          "count": 1
+          "en": "Cycling",
+          "fr": "Recyclage",
+          "count": 2
         },
         {
           "en": "Jump",
           "fr": "Jump",
+          "count": 1
+        },
+        {
+          "en": "Jump-start",
+          "fr": "Jump-start",
+          "count": 1
+        },
+        {
+          "en": "Haste",
+          "fr": "Célérité",
           "count": 1
         }
       ],
       "verified_combos": []
     },
     {
-      "id": "kuja",
-      "commander": "Kuja, Genome Sorcerer",
-      "commander_fr": "Kuja, Genome Sorcerer",
+      "id": "7MFNdvIXAkOSJdcLfkfdRA",
+      "commander": "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
+      "commander_fr": "Kuja, Genome Sorcerer // Trance Kuja, Fate Defied",
       "colors": [
         "B",
         "R"
@@ -1868,8 +1935,18 @@
       "avg_mv": 2.35,
       "top_keywords": [
         {
+          "en": "Overload",
+          "fr": "Overload",
+          "count": 2
+        },
+        {
           "en": "Equip",
           "fr": "Équiper",
+          "count": 2
+        },
+        {
+          "en": "Surveil",
+          "fr": "Surveil",
           "count": 2
         },
         {
@@ -1878,28 +1955,23 @@
           "count": 2
         },
         {
-          "en": "Overload",
-          "fr": "Overload",
-          "count": 2
-        },
-        {
-          "en": "Scry",
-          "fr": "Regard",
-          "count": 2
-        },
-        {
-          "en": "Job select",
-          "fr": "Job select",
+          "en": "Role token",
+          "fr": "Role token",
           "count": 1
         },
         {
-          "en": "Deathtouch",
-          "fr": "Contact mortel",
+          "en": "Prowess",
+          "fr": "Prowess",
           "count": 1
         },
         {
-          "en": "Flying",
-          "fr": "Vol",
+          "en": "Offspring",
+          "fr": "Offspring",
+          "count": 1
+        },
+        {
+          "en": "Undying",
+          "fr": "Immortel",
           "count": 1
         },
         {
@@ -1908,20 +1980,15 @@
           "count": 1
         },
         {
-          "en": "Cycling",
-          "fr": "Recyclage",
-          "count": 1
-        },
-        {
-          "en": "Offspring",
-          "fr": "Offspring",
+          "en": "Treasure",
+          "fr": "Treasure",
           "count": 1
         }
       ],
       "verified_combos": []
     },
     {
-      "id": "gimli",
+      "id": "GgWqlOANkUWpnbw1qqqAqA",
       "commander": "Gimli, Mournful Avenger",
       "commander_fr": "Gimli, vengeur éploré",
       "colors": [
@@ -1932,15 +1999,15 @@
       "unique_cards": 93,
       "mana_curve": [
         0,
-        12,
-        19,
+        13,
+        18,
         11,
         7,
         8,
         3,
         2
       ],
-      "avg_mv": 2.95,
+      "avg_mv": 2.94,
       "top_keywords": [
         {
           "en": "Equip",
@@ -1953,23 +2020,18 @@
           "count": 3
         },
         {
-          "en": "Devour",
-          "fr": "Devour",
-          "count": 3
-        },
-        {
           "en": "Devoid",
           "fr": "Devoid",
           "count": 3
         },
         {
-          "en": "Trample",
-          "fr": "Piétinement",
-          "count": 2
+          "en": "Devour",
+          "fr": "Devour",
+          "count": 3
         },
         {
-          "en": "Cycling",
-          "fr": "Recyclage",
+          "en": "Enchant",
+          "fr": "Enchant",
           "count": 2
         },
         {
@@ -1978,18 +2040,23 @@
           "count": 2
         },
         {
-          "en": "Enchant",
-          "fr": "Enchant",
+          "en": "Ferocious",
+          "fr": "Ferocious",
+          "count": 2
+        },
+        {
+          "en": "Ravenous",
+          "fr": "Ravenous",
+          "count": 2
+        },
+        {
+          "en": "Trample",
+          "fr": "Piétinement",
           "count": 2
         },
         {
           "en": "Scry",
           "fr": "Regard",
-          "count": 2
-        },
-        {
-          "en": "Ferocious",
-          "fr": "Ferocious",
           "count": 2
         }
       ],
@@ -2047,7 +2114,7 @@
       ]
     },
     {
-      "id": "cloud",
+      "id": "JncGJYCtH0ixYQdy_XgdmQ",
       "commander": "Cloud, Ex-SOLDIER",
       "commander_fr": "Cloud, ex-SOLDAT",
       "colors": [
@@ -2075,6 +2142,16 @@
           "count": 18
         },
         {
+          "en": "Vigilance",
+          "fr": "Vigilance",
+          "count": 3
+        },
+        {
+          "en": "Reconfigure",
+          "fr": "Reconfigure",
+          "count": 3
+        },
+        {
           "en": "Haste",
           "fr": "Célérité",
           "count": 3
@@ -2085,18 +2162,13 @@
           "count": 3
         },
         {
-          "en": "Reconfigure",
-          "fr": "Reconfigure",
-          "count": 3
-        },
-        {
-          "en": "Vigilance",
-          "fr": "Vigilance",
-          "count": 3
-        },
-        {
           "en": "Flying",
           "fr": "Vol",
+          "count": 2
+        },
+        {
+          "en": "Living weapon",
+          "fr": "Living weapon",
           "count": 2
         },
         {
@@ -2112,11 +2184,6 @@
         {
           "en": "Cycling",
           "fr": "Recyclage",
-          "count": 2
-        },
-        {
-          "en": "Reach",
-          "fr": "Portée",
           "count": 2
         }
       ],
