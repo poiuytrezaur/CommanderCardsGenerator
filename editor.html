@@ -1859,7 +1859,10 @@ function selectDeck(idx) {
   selectedIndex = idx;
   renderAll();
   // Switch to editor tab on mobile
-  if (isMobile()) setMobilePanel('editor');
+  if (isMobile()) {
+    setMobilePanel('editor');
+    showSaveWarningOnce();
+  }
 }
 
 function renderAll() {
