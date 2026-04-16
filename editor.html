@@ -2166,6 +2166,10 @@ const SAMPLE_DECKS = [
 ];
 
 /* ── Init ── */
+window.addEventListener('load', () => {
+  alert('⚠️ Rappel : pensez à exporter régulièrement votre JSON pour ne pas perdre votre progression. Le cache navigateur peut être effacé à tout moment.');
+});
+
 if (loadFromCache()) {
   setStatus(`${decks.length} deck(s) depuis le cache`);
   selectedIndex = decks.length > 0 ? 0 : -1;
