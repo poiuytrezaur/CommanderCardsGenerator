@@ -760,18 +760,6 @@
   }
 
   .tip-wrap:hover .tip-bubble { display: block; }
-
-  /* if tooltip overflows top, flip downward using JS-class alternative */
-  .tip-wrap.flip-down .tip-bubble {
-    top: calc(100% + 8px);
-    bottom: auto;
-  }
-  .tip-wrap.flip-down .tip-bubble::after {
-    top: auto;
-    bottom: 100%;
-    border-top-color: transparent;
-    border-bottom-color: #24243c;
-  }
 </style>
 </head>
 <body>
@@ -982,6 +970,9 @@ function positionTooltip(bubble) {
   // If it goes off-screen at top, flip to bottom
   if (topPos < 10) {
     topPos = rect.bottom + gap;
+    bubble.classList.add('flip-down');
+  } else {
+    bubble.classList.remove('flip-down');
   }
   
   bubble.style.top = topPos + 'px';
