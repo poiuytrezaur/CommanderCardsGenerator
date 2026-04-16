@@ -126,6 +126,7 @@ def extract_card_info(card):
         "cmc": card.get("cmc", 0),
         "type_line": card.get("type_line", ""),
         "keywords": card.get("keywords", []),
+        "oracle_id": card.get("oracle_id", ""),
     }
 
 
@@ -342,29 +343,81 @@ for i in range(0, len(names_to_translate), batch_size):
         print(f"  Progress: {min(i+batch_size, len(names_to_translate))}/{len(names_to_translate)} ({fr_found} French names)")
 
 # Second pass: retry remaining untranslated cards individually
+# For DFC/split cards (" // ") try the FULL name first (split cards are indexed by full name),
+# then fall back to front-face-only search.
 second_pass = [n for n in scryfall_cache.keys() if n not in french_names]
 if second_pass:
     print(f"\n  Second pass: {len(second_pass)} cards without French name, retrying individually...")
     for name in second_pass:
-        search_name = name.split(' // ')[0].strip() if ' // ' in name else name
-        query = f'!"{search_name}" lang:fr'
-        url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
-        backoff = 2
-        for attempt in range(4):
+        front_name = name.split(' // ')[0].strip() if ' // ' in name else name
+        # Candidates: for split/DFC try full name first, then front face; others just the name
+        candidates = ([name, front_name] if ' // ' in name and name != front_name else [front_name])
+        for candidate in candidates:
+            query = f'!"{candidate}" lang:fr'
+            url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
+            backoff = 2
+            found = False
+            for attempt in range(4):
+                try:
+                    pairs = fetch_french_batch(url)
+                    if pairs:
+                        oname, pname = pairs[0]
+                        french_names[oname] = pname
+                        french_names[name] = pname  # map original key too
+                        fr_found += 1
+                        found = True
+                    break
+                except Exception as e:
+                    if '429' in str(e) or '503' in str(e):
+                        time.sleep(backoff)
+                        backoff *= 2
+                    else:
+                        break
+            if found:
+                break  # no need to try fallback candidate
+
+# Third pass: oracle_id lookup, then single-result soft name search
+third_pass = [n for n in scryfall_cache.keys() if n not in french_names]
+if third_pass:
+    print(f"\n  Third pass: {len(third_pass)} cards, trying oracle_id + soft-name strategies...")
+    for name in third_pass:
+        found = False
+
+        # Strategy 1: search by oracle_id — reliable for any language/set variant
+        oracle_id = scryfall_cache.get(name, {}).get("oracle_id", "")
+        if oracle_id:
+            query = f'oracleid:{oracle_id} lang:fr'
+            url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
             try:
                 pairs = fetch_french_batch(url)
                 if pairs:
                     oname, pname = pairs[0]
                     french_names[oname] = pname
-                    french_names[name] = pname  # map original key too
+                    french_names[name] = pname
                     fr_found += 1
-                break
-            except Exception as e:
-                if '429' in str(e) or '503' in str(e):
-                    time.sleep(backoff)
-                    backoff *= 2
-                else:
-                    break
+                    found = True
+                    print(f"    ORACLE_ID OK: '{name}' -> '{pname}'")
+            except Exception:
+                pass
+
+        # Strategy 2: soft name search (no ! prefix) — accept only unambiguous single result
+        if not found:
+            search_name = name.split(' // ')[0].strip() if ' // ' in name else name
+            query = f'"{search_name}" lang:fr'
+            url = f'https://api.scryfall.com/cards/search?q={quote(query)}&unique=cards'
+            try:
+                result = api_get(url)
+                if result and result.get("total_cards") == 1:
+                    for card in result.get("data", []):
+                        oname = card.get("name", "")
+                        pname = get_french_name_from_card(card)
+                        french_names[oname] = pname
+                        french_names[name] = pname
+                        fr_found += 1
+                        found = True
+                        print(f"    SOFT_NAME OK: '{name}' -> '{pname}'")
+            except Exception:
+                pass
 
 # Report cards without French translations
 untranslated = [n for n in scryfall_cache.keys() if n not in french_names]
