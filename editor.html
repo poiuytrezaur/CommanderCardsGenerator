@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -15,9 +15,6 @@
     --ui-surface2: #282840;
     --ui-border: #3a3a5c;
     --ui-text: #e0e0f0;
-    --ui-text-dim: #8888aa;
-    --ui-accent: #7c5cbf;
-    --ui-accent-hover: #9370db;
     --ui-danger: #c0392b;
     --ui-danger-hover: #e74c3c;
     --ui-success: #27ae60;
@@ -47,7 +44,7 @@
   .toolbar h1 {
     font-family: 'Cinzel', serif;
     font-size: 16px;
-    color: var(--ui-accent);
+    color: var(--ui-text);
     margin-right: auto;
   }
 
@@ -65,19 +62,19 @@
   }
 
   .toolbar button:hover, .toolbar label:hover {
-    background: var(--ui-accent);
-    border-color: var(--ui-accent);
+    background: var(--ui-text);
+    border-color: var(--ui-text);
     color: #fff;
   }
 
   .toolbar .btn-accent {
-    background: var(--ui-accent);
-    border-color: var(--ui-accent);
+    background: var(--ui-text);
+    border-color: var(--ui-text);
     color: #fff;
   }
 
   .toolbar .btn-accent:hover {
-    background: var(--ui-accent-hover);
+    background: var(--ui-text);
   }
 
   .toolbar .btn-danger {
@@ -94,7 +91,7 @@
 
   .toolbar .status {
     font-size: 11px;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     min-width: 120px;
     text-align: right;
   }
@@ -129,14 +126,14 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
   }
 
   .sidebar-header button {
     font-size: 18px;
     background: none;
     border: none;
-    color: var(--ui-accent);
+    color: var(--ui-text);
     cursor: pointer;
     line-height: 1;
     padding: 2px 6px;
@@ -168,7 +165,7 @@
   .deck-item:hover { background: var(--ui-surface2); }
 
   .deck-item.active {
-    background: var(--ui-accent);
+    background: var(--ui-text);
     color: #fff;
   }
 
@@ -197,7 +194,7 @@
   .editor-panel.empty-state {
     align-items: center;
     justify-content: center;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     font-size: 14px;
   }
 
@@ -222,7 +219,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -244,7 +241,7 @@
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--ui-accent);
+    border-color: var(--ui-text);
   }
 
   .form-group textarea { min-height: 60px; }
@@ -271,7 +268,7 @@
   }
 
   .color-chip:hover { transform: scale(1.1); }
-  .color-chip.selected { border-color: #fff; box-shadow: 0 0 0 2px var(--ui-accent); }
+  .color-chip.selected { border-color: #fff; box-shadow: 0 0 0 2px var(--ui-text); }
 
   .color-chip[data-c="W"] { background: #f9faf4; color: #333; }
   .color-chip[data-c="U"] { background: #0e68ab; color: #fff; }
@@ -307,13 +304,13 @@
     font-size: 12px;
     background: var(--ui-surface2);
     border: 1px dashed var(--ui-border);
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
   }
 
-  .btn-add-combo:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+  .btn-add-combo:hover { border-color: var(--ui-text); color: var(--ui-text); }
 
   .curve-editor {
     display: flex;
@@ -339,11 +336,11 @@
     color: var(--ui-text);
   }
 
-  .curve-col input:focus { outline: none; border-color: var(--ui-accent); }
+  .curve-col input:focus { outline: none; border-color: var(--ui-text); }
 
   .curve-col span {
     font-size: 10px;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
   }
 
   .editor-actions {
@@ -386,7 +383,7 @@
   .preview-panel h3 {
     font-family: 'Cinzel', serif;
     font-size: 12px;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
@@ -584,14 +581,14 @@
     opacity: 0.75;
   }
 
-  .mana-bar-label { font-size: 5.5pt; color: var(--textDim); line-height: 1; margin-top: 0.2mm; }
+  .mana-bar-label { font-size: 5.5pt; color: var(--text-dim); line-height: 1; margin-top: 0.2mm; }
   .mana-bar-count { font-size: 5pt; color: var(--text); line-height: 1; margin-bottom: 0.1mm; }
   .avg-mv { font-size: 5.5pt; color: var(--text); text-align: right; line-height: 1; margin-top: 0.3mm; }
 
   /* ── JSON mode ── */
   .toolbar button.active {
-    background: var(--ui-accent);
-    border-color: var(--ui-accent);
+    background: var(--ui-text);
+    border-color: var(--ui-text);
     color: #fff;
   }
 
@@ -609,7 +606,7 @@
     align-items: center;
     font-size: 12px;
     font-weight: 600;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     flex-shrink: 0;
   }
 
@@ -629,7 +626,7 @@
 
   .json-textarea:focus {
     outline: none;
-    border-color: var(--ui-accent);
+    border-color: var(--ui-text);
   }
 
   .json-error {
@@ -652,15 +649,15 @@
     transition: background 0.15s, border-color 0.15s;
   }
 
-  .btn-json-action:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+  .btn-json-action:hover { border-color: var(--ui-text); color: var(--ui-text); }
 
   .btn-json-action.primary {
-    background: var(--ui-accent);
-    border-color: var(--ui-accent);
+    background: var(--ui-text);
+    border-color: var(--ui-text);
     color: #fff;
   }
 
-  .btn-json-action.primary:hover { background: var(--ui-accent-hover); }
+  .btn-json-action.primary:hover { background: var(--ui-text); }
 
   /* Toast */
   .toast {
@@ -682,6 +679,120 @@
 
   .toast.show { opacity: 1; transform: translateY(0); }
 
+  /* ── Tutorial modal ── */
+  .tuto-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .tuto-overlay.open { display: flex; }
+
+  .tuto-modal {
+    background: var(--ui-surface);
+    border: 1px solid var(--ui-border);
+    border-radius: 12px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tuto-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--ui-border);
+    flex-shrink: 0;
+  }
+
+  .tuto-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: var(--ui-text);
+    letter-spacing: 0.5px;
+  }
+
+  .tuto-close {
+    background: none;
+    border: none;
+    color: var(--ui-text);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .tuto-close:hover { background: var(--ui-surface2); }
+
+  .tuto-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .tuto-section h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--ui-text);
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ui-border);
+  }
+
+  .tuto-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tuto-section ul li {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #c0c0d8;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .tuto-section ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--ui-text);
+    font-size: 10px;
+    top: 2px;
+  }
+
+  .tuto-section ul li strong {
+    color: var(--ui-text);
+    font-weight: 600;
+  }
+
+  .tuto-kbd {
+    display: inline-block;
+    background: var(--ui-surface2);
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 11px;
+    color: var(--ui-text);
+  }
+
   /* ── Color field widget ── */
   .color-field {
     display: flex;
@@ -701,7 +812,7 @@
     transition: border-color 0.15s;
   }
 
-  .color-swatch:hover { border-color: var(--ui-accent); }
+  .color-swatch:hover { border-color: var(--ui-text); }
 
   .color-swatch input[type="color"] {
     position: absolute;
@@ -728,7 +839,7 @@
     text-transform: uppercase;
   }
 
-  .color-hex:focus { outline: none; border-color: var(--ui-accent); }
+  .color-hex:focus { outline: none; border-color: var(--ui-text); }
 
   /* ── Gradient preview ── */
   .gradient-preview {
@@ -737,30 +848,6 @@
     border: 1px solid var(--ui-border);
     margin-bottom: 5px;
     transition: background 0.25s;
-  }
-
-  /* ── Accent dim preview (checkerboard = transparency indicator) ── */
-  .accent-dim-swatch {
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
-    border: 1px solid var(--ui-border);
-    flex-shrink: 0;
-    background-image:
-      linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%),
-      linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%);
-    background-color: #fff;
-    background-size: 8px 8px;
-    background-position: 0 0, 4px 4px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .accent-dim-swatch::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--preview-color, transparent);
   }
 
   /* ── Auto button ── */
@@ -772,14 +859,14 @@
     border-radius: 5px;
     border: 1px solid var(--ui-border);
     background: var(--ui-surface2);
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     cursor: pointer;
     white-space: nowrap;
     flex-shrink: 0;
     transition: border-color 0.15s, color 0.15s;
   }
 
-  .btn-auto:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+  .btn-auto:hover { border-color: var(--ui-text); color: var(--ui-text); }
 
   /* ── Tooltips ── */
   .tip-wrap {
@@ -796,9 +883,9 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    border: 1px solid var(--ui-text-dim);
+    border: 1px solid var(--ui-text);
     background: none;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     font-size: 9px;
     font-weight: 700;
     cursor: help;
@@ -870,14 +957,14 @@
     border: none;
     border-bottom: 2px solid transparent;
     background: none;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     cursor: pointer;
     transition: color 0.15s, border-color 0.15s;
   }
 
   .mobile-tabs button.active {
-    color: var(--ui-accent);
-    border-bottom-color: var(--ui-accent);
+    color: var(--ui-text);
+    border-bottom-color: var(--ui-text);
   }
 
   /* ── Responsive ── */
@@ -1029,7 +1116,7 @@
   .float-preview-title {
     font-size: 11px;
     font-weight: 600;
-    color: var(--ui-text-dim);
+    color: var(--ui-text);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     pointer-events: none;
@@ -1038,7 +1125,7 @@
   .float-preview-toggle {
     background: none;
     border: none;
-    color: var(--ui-accent);
+    color: var(--ui-text);
     cursor: pointer;
     font-size: 13px;
     padding: 0;
@@ -1087,6 +1174,7 @@
   <button id="btn-download">Télécharger JSON</button>
   <button id="btn-export-html">Exporter HTML</button>
   <button id="btn-json-mode">JSON</button>
+  <button id="btn-tuto" title="Comment utiliser l'éditeur">? Tuto</button>
   <button class="btn-danger" id="btn-clear-cache">Vider le cache</button>
   <span class="status" id="status-text"></span>
 </div>
@@ -1123,6 +1211,72 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- Tutorial modal -->
+<div class="tuto-overlay" id="tuto-overlay">
+  <div class="tuto-modal" role="dialog" aria-modal="true" aria-labelledby="tuto-title">
+    <div class="tuto-header">
+      <h2 id="tuto-title">Comment utiliser l'éditeur</h2>
+      <button class="tuto-close" id="tuto-close" title="Fermer">&times;</button>
+    </div>
+    <div class="tuto-body">
+
+      <div class="tuto-section">
+        <h3>Barre d'outils</h3>
+        <ul>
+          <li><strong>Charger JSON</strong> — Importe un fichier <span class="tuto-kbd">.json</span> contenant un tableau de decks. Remplace les données en cache.</li>
+          <li><strong>Télécharger JSON</strong> — Exporte tous les decks dans un fichier <span class="tuto-kbd">decks.json</span>.</li>
+          <li><strong>Exporter HTML</strong> — Génère un fichier HTML statique prêt à imprimer (format A4, cartes 63 × 88 mm).</li>
+          <li><strong>JSON</strong> — Bascule vers l'éditeur JSON brut pour le deck sélectionné. Utile pour coller des données ou corriger manuellement.</li>
+          <li><strong>Vider le cache</strong> — Efface les données sauvegardées dans le navigateur (irréversible).</li>
+        </ul>
+      </div>
+
+      <div class="tuto-section">
+        <h3>Gestion des decks</h3>
+        <ul>
+          <li>Cliquez sur <strong>+</strong> dans la colonne de gauche pour créer un nouveau deck vierge.</li>
+          <li>Cliquez sur un deck dans la liste pour le sélectionner et l'éditer.</li>
+          <li>Le bouton <strong>Supprimer ce deck</strong> en bas du formulaire supprime définitivement le deck actif.</li>
+          <li>Les modifications sont <strong>sauvegardées automatiquement</strong> dans le cache du navigateur à chaque changement.</li>
+        </ul>
+      </div>
+
+      <div class="tuto-section">
+        <h3>Champs du formulaire</h3>
+        <ul>
+          <li><strong>Commander (EN)</strong> — Nom anglais exact du commander. L'illustration est récupérée automatiquement depuis Scryfall.</li>
+          <li><strong>Nom personnalisé</strong> — Nom affiché sur la fiche (peut être en français).</li>
+          <li><strong>Couleurs</strong> — Cliquez sur les ronds W / U / B / R / G pour sélectionner l'identité de couleur.</li>
+          <li><strong>Image Y</strong> — Position verticale du recadrage de l'art : <span class="tuto-kbd">top</span>, <span class="tuto-kbd">center</span>, <span class="tuto-kbd">70%</span>…</li>
+          <li><strong>Fond</strong> — Dégradé CSS du corps de la carte. Cliquez <strong>⟳ Auto</strong> pour le générer depuis la couleur Accent.</li>
+          <li><strong>Stratégie</strong> — Description courte du style de jeu (1-3 phrases).</li>
+          <li><strong>Mots-clés</strong> — Mécaniques principales séparées par des virgules.</li>
+          <li><strong>Lignes de victoire</strong> — Ajoutez les combos ou séquences gagnantes. Chacune apparaît en puce sur la fiche.</li>
+          <li><strong>Courbe de mana</strong> — Nombre de cartes par CMC. Cliquez <strong>+</strong> pour ajouter une colonne.</li>
+          <li><strong>Mana moyen</strong> — CMC moyen affiché sous le graphique.</li>
+        </ul>
+      </div>
+
+      <div class="tuto-section">
+        <h3>Apparence de la fiche</h3>
+        <ul>
+          <li>Chaque champ de couleur dispose d'un <strong>sélecteur visuel</strong> et d'une case hexadécimale synchronisés.</li>
+          <li>L'<strong>aperçu</strong> à droite (ou flottant sur mobile) se met à jour en temps réel.</li>
+          <li>Les <strong>icônes ? </strong> à côté des labels affichent des infobulles d'aide au survol.</li>
+        </ul>
+      </div>
+
+      <div class="tuto-section">
+        <h3>Astuce raccourci</h3>
+        <ul>
+          <li>Appuyez sur <span class="tuto-kbd">Échap</span> pour fermer cette fenêtre.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- Floating preview (mobile editor) -->
 <div id="float-preview" class="float-preview">
   <div class="float-preview-header" id="float-preview-drag">
@@ -1135,6 +1289,21 @@
 </div>
 
 <script>
+/* ── Tutorial ── */
+(function () {
+  function openTuto()  { document.getElementById('tuto-overlay').classList.add('open'); }
+  function closeTuto() { document.getElementById('tuto-overlay').classList.remove('open'); }
+
+  document.getElementById('btn-tuto').addEventListener('click', openTuto);
+  document.getElementById('tuto-close').addEventListener('click', closeTuto);
+  document.getElementById('tuto-overlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('tuto-overlay')) closeTuto();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTuto();
+  });
+})();
+
 /* ── State ── */
 const STORAGE_KEY = 'mtg_deck_editor_data';
 let decks = [];
@@ -1436,9 +1605,7 @@ function renderEditor() {
 
   const accentVal = d.accent || '#555555';
   const textVal   = d.text   || '#111111';
-  const textDimVal = d.textDim || '#666666';
   const bgVal = d.bg || 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 40%, #f0f0f0 100%)';
-  const accentDimVal = d.accentDim || 'rgba(85,85,85,0.15)';
 
   panel.innerHTML = `
     <div class="form-row">
@@ -1486,15 +1653,6 @@ function renderEditor() {
           <input type="text" class="color-hex" id="f-text-hex" value="${escapeHtml(textVal)}" maxlength="7" placeholder="#000000">
         </div>
       </div>
-      <div class="form-group small">
-        <label>Texte dim ${tip('Couleur des textes secondaires : labels CMC sous la courbe de mana.')}</label>
-        <div class="color-field">
-          <div class="color-swatch" id="swatch-textDim" style="background:${escapeHtml(textDimVal)}">
-            <input type="color" id="f-textDim" value="${escapeHtml(textDimVal)}">
-          </div>
-          <input type="text" class="color-hex" id="f-textDim-hex" value="${escapeHtml(textDimVal)}" maxlength="7" placeholder="#000000">
-        </div>
-      </div>
     </div>
 
     <div class="form-row">
@@ -1504,17 +1662,6 @@ function renderEditor() {
         <div style="display:flex;gap:6px;align-items:center">
           <input type="text" id="f-bg" value="${escapeHtml(bgVal)}" style="flex:1">
           <button class="btn-auto" id="btn-auto-bg">⟳ Auto</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label>Accent dim ${tip('Version semi-transparente de l\'accent, utilisée pour les fines lignes de séparation. Cliquez ⟳ Auto pour la calculer depuis l\'Accent.')}</label>
-        <div style="display:flex;gap:6px;align-items:center">
-          <div class="accent-dim-swatch" id="accent-dim-swatch" style="--preview-color:${escapeHtml(accentDimVal)}"></div>
-          <input type="text" id="f-accentDim" value="${escapeHtml(accentDimVal)}" style="flex:1">
-          <button class="btn-auto" id="btn-auto-accentDim">⟳ Auto</button>
         </div>
       </div>
     </div>
@@ -1542,7 +1689,7 @@ function renderEditor() {
       <div class="curve-editor" id="curve-editor">
         ${curveHTML}
         <div class="curve-col">
-          <button style="width:40px;height:28px;background:var(--ui-surface2);border:1px dashed var(--ui-border);color:var(--ui-text-dim);border-radius:4px;cursor:pointer;font-size:16px" id="btn-add-curve">+</button>
+          <button style="width:40px;height:28px;background:var(--ui-surface2);border:1px dashed var(--ui-border);color:var(--ui-text);border-radius:4px;cursor:pointer;font-size:16px" id="btn-add-curve">+</button>
           <span></span>
         </div>
       </div>
@@ -1566,9 +1713,7 @@ function readFormIntoDeck() {
   d.avgMv = parseFloat(document.getElementById('f-avgMv').value) || 0;
   d.accent = document.getElementById('f-accent').value;
   d.text = document.getElementById('f-text').value;
-  d.textDim = document.getElementById('f-textDim').value;
   d.bg = document.getElementById('f-bg').value;
-  d.accentDim = document.getElementById('f-accentDim').value;
   d.strategy = document.getElementById('f-strategy').value;
   d.keywords = document.getElementById('f-keywords').value;
 
@@ -1620,8 +1765,8 @@ function bindEditorEvents() {
     });
   });
 
-  // ── Color field sync: accent, text, textDim
-  ['accent', 'text', 'textDim'].forEach(id => {
+  // ── Color field sync: accent, text
+  ['accent', 'text'].forEach(id => {
     const picker   = document.getElementById(`f-${id}`);
     const hexField = document.getElementById(`f-${id}-hex`);
     const swatch   = document.getElementById(`swatch-${id}`);
@@ -1652,20 +1797,6 @@ function bindEditorEvents() {
     const gen = generateBg(accent);
     bgInput.value = gen;
     gradPreview.style.background = gen;
-    onFieldChange();
-  });
-
-  // ── AccentDim: live preview + Auto button
-  const accentDimInput  = document.getElementById('f-accentDim');
-  const accentDimSwatch = document.getElementById('accent-dim-swatch');
-  accentDimInput.addEventListener('input', () => {
-    accentDimSwatch.style.setProperty('--preview-color', accentDimInput.value);
-  });
-  document.getElementById('btn-auto-accentDim').addEventListener('click', () => {
-    const accent = document.getElementById('f-accent').value;
-    const gen = generateAccentDim(accent);
-    accentDimInput.value = gen;
-    accentDimSwatch.style.setProperty('--preview-color', gen);
     onFieldChange();
   });
 
@@ -1843,7 +1974,7 @@ document.getElementById('btn-export-html').addEventListener('click', () => {
   .mana-curve { display: flex; align-items: flex-end; gap: 0.5mm; height: 10mm; padding-top: 0.5mm; }
   .mana-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
   .mana-bar { width: 100%; background: var(--accent); border-radius: 0.3mm 0.3mm 0 0; min-height: 0; opacity: 0.75; }
-  .mana-bar-label { font-size: 5.5pt; color: var(--textDim); line-height: 1; margin-top: 0.2mm; }
+  .mana-bar-label { font-size: 5.5pt; color: var(--text-dim); line-height: 1; margin-top: 0.2mm; }
   .mana-bar-count { font-size: 5pt; color: var(--text); line-height: 1; margin-bottom: 0.1mm; }
   .avg-mv { font-size: 5.5pt; color: var(--text); text-align: right; line-height: 1; margin-top: 0.3mm; }
 </style>
@@ -1968,12 +2099,81 @@ mobileTabBar.addEventListener('click', (e) => {
   document.addEventListener('touchend', endDrag);
 })();
 
+/* ── Sample decks ── */
+const SAMPLE_DECKS = [
+  {
+    "commander": "Ayara, First of Locthwain",
+    "nameCustom": "Ayara, Première de Locthwain",
+    "colors": ["B"],
+    "bg": "linear-gradient(160deg, #f4eff8 0%, #ece6f4 40%, #f2eef8 100%)",
+    "accent": "#5c2d82",
+    "accentDim": "rgba(92,45,130,0.15)",
+    "text": "#1a0a28",
+    "textDim": "#5a4a6a",
+    "imgY": "10%",
+    "strategy": "Deck aristocrate mono-noir centré sur les boucles de sacrifice et drain via Ayara. Chaque créature noire qui entre draine un PV, et le deck exploite des combos infinies avec Rampeur des tombes, Saccageur impitoyable pour drainer la table en boucle sans fin.",
+    "combos": [
+      "Rampeur des tombes + Saccageur impitoyable + Autel d'Ashnod → drain infini via Ayara.",
+      "Vampire assermenté + Autel d'Ashnod + Ayara → boucle infinie de drain.",
+      "Syr Konrad, le Sinistre + auto-meule ou sacrifice en masse → drain massif."
+    ],
+    "keywords": "Sacrifice, Drain de vie, Réanimation, Aristocrates, combos infinis",
+    "curve": [0, 13, 14, 12, 13, 6, 1, 2, 1],
+    "avgMv": 3.02
+  },
+  {
+    "commander": "Ellivere of the Wild Court",
+    "nameCustom": "Ellivère de la Cour sauvage",
+    "colors": ["G", "W"],
+    "bg": "linear-gradient(160deg, #f0f8ec 0%, #e8f4e0 40%, #f2f8ee 100%)",
+    "accent": "#2a6018",
+    "accentDim": "rgba(42,96,24,0.15)",
+    "text": "#0a1e06",
+    "textDim": "#4a6840",
+    "imgY": "15%",
+    "strategy": "Voltron enchanteresse Selesnya qui empile des auras sur Ellivere pour créer une menace létale au combat.",
+    "combos": [
+      "Armure éthérée empilée avec les auras → voltron à puissance massive.",
+      "Sythis + enchanteresses → moteur de pioche en chaîne à chaque aura.",
+      "Svelte-patte, voix de l'Impératrice enchaîne les auras gratuitement depuis la bibliothèque.",
+      "Manteau des Anciens récupère toutes les auras du cimetière."
+    ],
+    "keywords": "Voltron, Enchanteresses, Auras, Pioche en chaîne, Domination au combat",
+    "curve": [0, 9, 23, 15, 10, 4, 0, 1],
+    "avgMv": 2.69
+  },
+  {
+    "commander": "Gargos, Vicious Watcher",
+    "nameCustom": "Gargos, Gardien vicieux",
+    "colors": ["G"],
+    "bg": "linear-gradient(160deg, #eef8ea 0%, #e4f4dc 40%, #eef8ea 100%)",
+    "accent": "#1a5c10",
+    "accentDim": "rgba(26,92,16,0.15)",
+    "text": "#081604",
+    "textDim": "#3a6830",
+    "imgY": "top",
+    "strategy": "Tribal Hydre mono-vert exploitant la réduction de coût de Gargos et ses combats gratuits déclenchés en ciblant vos propres créatures.",
+    "combos": [
+      "Gargos + sort de ciblage → combat gratuit comme removal répétable.",
+      "Hydre kalonienne double les marqueurs +1/+1 à chaque attaque.",
+      "Abondance déchaînée double la valeur X des Hydres lancées.",
+      "Solidarité des héros avec Strive double les marqueurs de plusieurs Hydres."
+    ],
+    "keywords": "Tribal Hydre, Marqueurs +1/+1, Bagarres gratuites, Rampe explosive, Doubleurs de compteurs",
+    "curve": [0, 13, 19, 19, 4, 3, 4, 1],
+    "avgMv": 2.7
+  }
+];
+
 /* ── Init ── */
 if (loadFromCache()) {
   setStatus(`${decks.length} deck(s) depuis le cache`);
   selectedIndex = decks.length > 0 ? 0 : -1;
 } else {
-  setStatus('Aucune donnée — chargez un JSON');
+  decks = SAMPLE_DECKS;
+  selectedIndex = 0;
+  saveToCache();
+  setStatus('3 decks exemples chargés');
 }
 renderAll();
 </script>
