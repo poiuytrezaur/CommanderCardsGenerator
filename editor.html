@@ -760,6 +760,144 @@
   }
 
   .tip-wrap:hover .tip-bubble { display: block; }
+
+  /* ── Mobile navigation tabs ── */
+  .mobile-tabs {
+    display: none;
+    background: var(--ui-surface);
+    border-bottom: 1px solid var(--ui-border);
+    padding: 0;
+    gap: 0;
+  }
+
+  .mobile-tabs button {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 8px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--ui-text-dim);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .mobile-tabs button.active {
+    color: var(--ui-accent);
+    border-bottom-color: var(--ui-accent);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .mobile-tabs {
+      display: flex;
+    }
+
+    .toolbar {
+      padding: 8px 12px;
+      gap: 6px;
+    }
+
+    .toolbar h1 {
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    .toolbar button, .toolbar label {
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+
+    .toolbar .status {
+      width: 100%;
+      text-align: left;
+      min-width: 0;
+    }
+
+    .app {
+      flex-direction: column;
+      height: auto;
+      min-height: calc(100vh - 100px);
+    }
+
+    .sidebar {
+      width: 100%;
+      min-width: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--ui-border);
+      max-height: none;
+      display: none;
+    }
+
+    .sidebar.mobile-visible {
+      display: flex;
+    }
+
+    .editor-panel {
+      padding: 14px 12px;
+      display: none;
+      overflow-y: auto;
+    }
+
+    .editor-panel.mobile-visible {
+      display: flex;
+    }
+
+    .editor-panel.empty-state.mobile-visible {
+      display: flex;
+    }
+
+    .preview-panel {
+      width: 100%;
+      min-width: 0;
+      border-left: none;
+      border-top: 1px solid var(--ui-border);
+      display: none;
+      padding: 16px 12px;
+    }
+
+    .preview-panel.mobile-visible {
+      display: flex;
+    }
+
+    .form-row {
+      flex-direction: column;
+    }
+
+    .form-group.small {
+      max-width: none;
+      min-width: 0;
+    }
+
+    .curve-editor {
+      flex-wrap: wrap;
+    }
+
+    .color-chip {
+      width: 36px;
+      height: 36px;
+    }
+
+    .combo-row input {
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      font-size: 14px;
+      padding: 10px;
+    }
+
+    .preview-panel {
+      align-items: center;
+      overflow-x: auto;
+    }
+  }
 </style>
 </head>
 <body>
@@ -775,10 +913,17 @@
   <span class="status" id="status-text"></span>
 </div>
 
+<!-- Mobile tab bar -->
+<div class="mobile-tabs" id="mobile-tabs">
+  <button class="active" data-panel="sidebar">Decks</button>
+  <button data-panel="editor">Éditeur</button>
+  <button data-panel="preview">Aperçu</button>
+</div>
+
 <!-- App layout -->
 <div class="app">
   <!-- Sidebar -->
-  <div class="sidebar">
+  <div class="sidebar mobile-visible" id="sidebar-panel">
     <div class="sidebar-header">
       <span>Decks</span>
       <button id="btn-add-deck" title="Ajouter un deck">+</button>
@@ -787,12 +932,12 @@
   </div>
 
   <!-- Editor -->
-  <div class="editor-panel empty-state" id="editor-panel">
+  <div class="editor-panel empty-state" id="editor-panel" data-mobile-panel="editor">
     <p>Sélectionnez un deck ou ajoutez-en un nouveau</p>
   </div>
 
   <!-- Preview -->
-  <div class="preview-panel" id="preview-panel">
+  <div class="preview-panel" id="preview-panel" data-mobile-panel="preview">
     <h3>Aperçu</h3>
     <div id="preview-card"></div>
   </div>
@@ -1008,14 +1153,15 @@ function generateBg(accent) {
 /* ── Editor form ── */
 function renderEditor() {
   const panel = document.getElementById('editor-panel');
+  const wasMobileVisible = panel.classList.contains('mobile-visible');
   if (selectedIndex < 0 || selectedIndex >= decks.length) {
-    panel.className = 'editor-panel empty-state';
+    panel.className = 'editor-panel empty-state' + (wasMobileVisible ? ' mobile-visible' : '');
     panel.innerHTML = '<p>Sélectionnez un deck ou ajoutez-en un nouveau</p>';
     return;
   }
 
   const d = decks[selectedIndex];
-  panel.className = 'editor-panel';
+  panel.className = 'editor-panel' + (wasMobileVisible ? ' mobile-visible' : '');
 
   const combosHTML = (d.combos || []).map((c, i) => `
     <div class="combo-row">
@@ -1329,6 +1475,8 @@ function selectDeck(idx) {
   }
   selectedIndex = idx;
   renderAll();
+  // Switch to editor tab on mobile
+  if (isMobile()) setMobilePanel('editor');
 }
 
 function renderAll() {
@@ -1484,6 +1632,28 @@ document.getElementById('btn-clear-cache').addEventListener('click', () => {
   selectedIndex = -1;
   renderAll();
   showToast('Cache vidé');
+});
+
+/* ── Mobile tabs ── */
+const mobileTabBar = document.getElementById('mobile-tabs');
+const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+function setMobilePanel(panel) {
+  const sidebar = document.getElementById('sidebar-panel');
+  const editor = document.getElementById('editor-panel');
+  const preview = document.getElementById('preview-panel');
+  [sidebar, editor, preview].forEach(el => el.classList.remove('mobile-visible'));
+  if (panel === 'sidebar') sidebar.classList.add('mobile-visible');
+  else if (panel === 'editor') editor.classList.add('mobile-visible');
+  else if (panel === 'preview') preview.classList.add('mobile-visible');
+  mobileTabBar.querySelectorAll('button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.panel === panel);
+  });
+}
+
+mobileTabBar.addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-panel]');
+  if (btn) setMobilePanel(btn.dataset.panel);
 });
 
 /* ── Init ── */
