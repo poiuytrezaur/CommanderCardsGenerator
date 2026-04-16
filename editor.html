@@ -440,6 +440,23 @@
     z-index: 1;
   }
 
+  .img-not-found {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    color: #e74c3c;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 2;
+    pointer-events: none;
+  }
+
   .card-name-bar {
     position: absolute;
     bottom: 0;
@@ -570,6 +587,80 @@
   .mana-bar-label { font-size: 5.5pt; color: var(--textDim); line-height: 1; margin-top: 0.2mm; }
   .mana-bar-count { font-size: 5pt; color: var(--text); line-height: 1; margin-bottom: 0.1mm; }
   .avg-mv { font-size: 5.5pt; color: var(--text); text-align: right; line-height: 1; margin-top: 0.3mm; }
+
+  /* ── JSON mode ── */
+  .toolbar button.active {
+    background: var(--ui-accent);
+    border-color: var(--ui-accent);
+    color: #fff;
+  }
+
+  .json-editor-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .json-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ui-text-dim);
+    flex-shrink: 0;
+  }
+
+  .json-textarea {
+    flex: 1;
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--ui-surface2);
+    border: 1px solid var(--ui-border);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--ui-text);
+    resize: vertical;
+    min-height: 400px;
+    line-height: 1.5;
+  }
+
+  .json-textarea:focus {
+    outline: none;
+    border-color: var(--ui-accent);
+  }
+
+  .json-error {
+    color: var(--ui-danger);
+    font-size: 12px;
+    min-height: 16px;
+    flex-shrink: 0;
+  }
+
+  .btn-json-action {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid var(--ui-border);
+    background: var(--ui-surface2);
+    color: var(--ui-text);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .btn-json-action:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+
+  .btn-json-action.primary {
+    background: var(--ui-accent);
+    border-color: var(--ui-accent);
+    color: #fff;
+  }
+
+  .btn-json-action.primary:hover { background: var(--ui-accent-hover); }
 
   /* Toast */
   .toast {
@@ -898,6 +989,92 @@
       overflow-x: auto;
     }
   }
+
+  /* ── Floating preview (mobile editor) ── */
+  .float-preview {
+    display: none;
+    position: fixed;
+    z-index: 500;
+    background: #1a1a2e;
+    border: 1px solid var(--ui-border);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.65);
+    width: 170px;
+    right: 16px;
+    top: 100px;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .float-preview.visible { display: block; }
+
+  .float-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    background: var(--ui-surface2);
+    cursor: grab;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid var(--ui-border);
+  }
+
+  .float-preview.collapsed .float-preview-header {
+    border-bottom: none;
+    border-radius: 10px;
+  }
+
+  .float-preview-header:active { cursor: grabbing; }
+
+  .float-preview-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ui-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+  }
+
+  .float-preview-toggle {
+    background: none;
+    border: none;
+    color: var(--ui-accent);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .float-preview.collapsed .float-preview-toggle {
+    transform: rotate(180deg);
+  }
+
+  .float-preview-body {
+    padding: 7px;
+    overflow: hidden;
+    max-height: 240px;
+    transition: max-height 0.25s ease, padding 0.25s ease;
+  }
+
+  .float-preview.collapsed .float-preview-body {
+    max-height: 0;
+    padding: 0;
+  }
+
+  /* Scale card to fit the 170px panel: 63mm≈238px → 0.65 → 155px */
+  .float-preview-body .card-scale {
+    width: 155px;
+    height: 216px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .float-preview-body .card-scale .card {
+    transform: scale(0.65);
+    transform-origin: top left;
+  }
 </style>
 </head>
 <body>
@@ -909,6 +1086,7 @@
   <input type="file" id="file-input" accept=".json,application/json">
   <button id="btn-download">Télécharger JSON</button>
   <button id="btn-export-html">Exporter HTML</button>
+  <button id="btn-json-mode">JSON</button>
   <button class="btn-danger" id="btn-clear-cache">Vider le cache</button>
   <span class="status" id="status-text"></span>
 </div>
@@ -945,11 +1123,23 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- Floating preview (mobile editor) -->
+<div id="float-preview" class="float-preview">
+  <div class="float-preview-header" id="float-preview-drag">
+    <span class="float-preview-title">Aperçu</span>
+    <button class="float-preview-toggle" id="btn-float-toggle" title="Réduire / Agrandir">▼</button>
+  </div>
+  <div class="float-preview-body">
+    <div class="card-scale" id="float-preview-card"></div>
+  </div>
+</div>
+
 <script>
 /* ── State ── */
 const STORAGE_KEY = 'mtg_deck_editor_data';
 let decks = [];
 let selectedIndex = -1;
+let isJsonMode = false;
 
 const pipSvgs = {
   W: 'https://svgs.scryfall.io/card-symbols/W.svg',
@@ -1076,25 +1266,40 @@ function fetchArt(container) {
   container.querySelectorAll('img[data-commander]').forEach(async img => {
     const name = img.dataset.commander;
     if (!name) return;
+    const showNotFound = () => {
+      if (!img.parentElement.querySelector('.img-not-found')) {
+        const label = document.createElement('div');
+        label.className = 'img-not-found';
+        label.textContent = 'NOT FOUND';
+        img.parentElement.appendChild(label);
+      }
+    };
     try {
       const resp = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`);
-      if (!resp.ok) return;
+      if (!resp.ok) { showNotFound(); return; }
       const data = await resp.json();
       const uri = data.image_uris?.art_crop ?? data.card_faces?.[0]?.image_uris?.art_crop;
-      if (uri) img.src = uri;
-    } catch (e) { /* network failure */ }
+      if (uri) img.src = uri; else showNotFound();
+    } catch (e) { showNotFound(); }
   });
 }
 
 /* ── Preview ── */
 function renderPreview() {
   const container = document.getElementById('preview-card');
+  const floatCard = document.getElementById('float-preview-card');
   if (selectedIndex < 0 || selectedIndex >= decks.length) {
     container.innerHTML = '';
+    if (floatCard) floatCard.innerHTML = '';
     return;
   }
-  container.innerHTML = renderCardHTML(decks[selectedIndex]);
+  const html = renderCardHTML(decks[selectedIndex]);
+  container.innerHTML = html;
   fetchArt(container);
+  if (floatCard) {
+    floatCard.innerHTML = html;
+    fetchArt(floatCard);
+  }
 }
 
 /* ── Tooltip helper ── */
@@ -1150,6 +1355,48 @@ function generateBg(accent) {
   } catch { return 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 40%, #f0f0f0 100%)'; }
 }
 
+/* ── JSON mode editor ── */
+function renderJsonEditor(panel, wasMobileVisible) {
+  const d = decks[selectedIndex];
+  panel.className = 'editor-panel' + (wasMobileVisible ? ' mobile-visible' : '');
+  panel.innerHTML = `
+    <div class="json-editor-wrap">
+      <div class="json-editor-header">
+        <span>JSON brut — ${escapeHtml(d.nameCustom || d.commander || 'Sans nom')}</span>
+        <div style="display:flex;gap:8px">
+          <button id="btn-json-apply" class="btn-json-action primary">Appliquer</button>
+          <button id="btn-json-cancel" class="btn-json-action">Annuler</button>
+        </div>
+      </div>
+      <textarea id="json-textarea" class="json-textarea" spellcheck="false">${escapeHtml(JSON.stringify(d, null, 2))}</textarea>
+      <div id="json-error" class="json-error"></div>
+    </div>
+  `;
+  document.getElementById('btn-json-apply').addEventListener('click', applyJsonEdit);
+  document.getElementById('btn-json-cancel').addEventListener('click', exitJsonMode);
+}
+
+function applyJsonEdit() {
+  const raw = document.getElementById('json-textarea').value;
+  try {
+    const parsed = JSON.parse(raw);
+    decks[selectedIndex] = parsed;
+    exitJsonMode();
+    renderAll();
+    saveToCache();
+    showToast('JSON appliqué');
+  } catch (e) {
+    document.getElementById('json-error').textContent = 'JSON invalide : ' + e.message;
+  }
+}
+
+function exitJsonMode() {
+  isJsonMode = false;
+  const btn = document.getElementById('btn-json-mode');
+  if (btn) btn.classList.remove('active');
+  renderEditor();
+}
+
 /* ── Editor form ── */
 function renderEditor() {
   const panel = document.getElementById('editor-panel');
@@ -1157,6 +1404,11 @@ function renderEditor() {
   if (selectedIndex < 0 || selectedIndex >= decks.length) {
     panel.className = 'editor-panel empty-state' + (wasMobileVisible ? ' mobile-visible' : '');
     panel.innerHTML = '<p>Sélectionnez un deck ou ajoutez-en un nouveau</p>';
+    return;
+  }
+
+  if (isJsonMode) {
+    renderJsonEditor(panel, wasMobileVisible);
     return;
   }
 
@@ -1630,8 +1882,19 @@ document.getElementById('btn-clear-cache').addEventListener('click', () => {
   localStorage.removeItem(STORAGE_KEY);
   decks = [];
   selectedIndex = -1;
+  isJsonMode = false;
+  document.getElementById('btn-json-mode').classList.remove('active');
   renderAll();
   showToast('Cache vidé');
+});
+
+/* ── JSON mode toggle ── */
+document.getElementById('btn-json-mode').addEventListener('click', () => {
+  if (selectedIndex < 0 || selectedIndex >= decks.length) return;
+  if (!isJsonMode) readFormIntoDeck();
+  isJsonMode = !isJsonMode;
+  document.getElementById('btn-json-mode').classList.toggle('active', isJsonMode);
+  renderEditor();
 });
 
 /* ── Mobile tabs ── */
@@ -1642,6 +1905,7 @@ function setMobilePanel(panel) {
   const sidebar = document.getElementById('sidebar-panel');
   const editor = document.getElementById('editor-panel');
   const preview = document.getElementById('preview-panel');
+  const fp = document.getElementById('float-preview');
   [sidebar, editor, preview].forEach(el => el.classList.remove('mobile-visible'));
   if (panel === 'sidebar') sidebar.classList.add('mobile-visible');
   else if (panel === 'editor') editor.classList.add('mobile-visible');
@@ -1649,12 +1913,60 @@ function setMobilePanel(panel) {
   mobileTabBar.querySelectorAll('button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.panel === panel);
   });
+  if (fp) fp.classList.toggle('visible', panel === 'editor' && isMobile());
 }
 
 mobileTabBar.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-panel]');
   if (btn) setMobilePanel(btn.dataset.panel);
 });
+
+/* ── Floating preview: drag & collapse ── */
+(function() {
+  const fp = document.getElementById('float-preview');
+  const dragHandle = document.getElementById('float-preview-drag');
+  let dragging = false, dragOffX = 0, dragOffY = 0;
+
+  document.getElementById('btn-float-toggle').addEventListener('click', e => {
+    e.stopPropagation();
+    fp.classList.toggle('collapsed');
+  });
+
+  function startDrag(clientX, clientY) {
+    const rect = fp.getBoundingClientRect();
+    fp.style.left = rect.left + 'px';
+    fp.style.top = rect.top + 'px';
+    fp.style.right = 'auto';
+    fp.style.bottom = 'auto';
+    dragOffX = clientX - rect.left;
+    dragOffY = clientY - rect.top;
+    dragging = true;
+  }
+
+  function moveDrag(clientX, clientY) {
+    if (!dragging) return;
+    const x = Math.max(0, Math.min(clientX - dragOffX, window.innerWidth - fp.offsetWidth));
+    const y = Math.max(0, Math.min(clientY - dragOffY, window.innerHeight - fp.offsetHeight));
+    fp.style.left = x + 'px';
+    fp.style.top = y + 'px';
+  }
+
+  function endDrag() { dragging = false; }
+
+  dragHandle.addEventListener('mousedown', e => { e.preventDefault(); startDrag(e.clientX, e.clientY); });
+  document.addEventListener('mousemove', e => moveDrag(e.clientX, e.clientY));
+  document.addEventListener('mouseup', endDrag);
+
+  dragHandle.addEventListener('touchstart', e => {
+    startDrag(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+  document.addEventListener('touchmove', e => {
+    if (!dragging) return;
+    e.preventDefault();
+    moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: false });
+  document.addEventListener('touchend', endDrag);
+})();
 
 /* ── Init ── */
 if (loadFromCache()) {
