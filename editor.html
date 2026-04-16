@@ -2049,7 +2049,10 @@ function setMobilePanel(panel) {
 
 mobileTabBar.addEventListener('click', (e) => {
   const btn = e.target.closest('button[data-panel]');
-  if (btn) setMobilePanel(btn.dataset.panel);
+  if (btn) {
+    setMobilePanel(btn.dataset.panel);
+    if (btn.dataset.panel === 'editor') showSaveWarningOnce();
+  }
 });
 
 /* ── Floating preview: drag & collapse ── */
@@ -2166,9 +2169,12 @@ const SAMPLE_DECKS = [
 ];
 
 /* ── Init ── */
-window.addEventListener('load', () => {
+let saveWarningShown = false;
+function showSaveWarningOnce() {
+  if (saveWarningShown) return;
+  saveWarningShown = true;
   alert('⚠️ Rappel : pensez à exporter régulièrement votre JSON pour ne pas perdre votre progression. Le cache navigateur peut être effacé à tout moment.');
-});
+}
 
 if (loadFromCache()) {
   setStatus(`${decks.length} deck(s) depuis le cache`);
@@ -2180,6 +2186,12 @@ if (loadFromCache()) {
   setStatus('3 decks exemples chargés');
 }
 renderAll();
+
+/* ── Save warning: PC — trigger on first field edit ── */
+if (!isMobile()) {
+  document.getElementById('editor-panel').addEventListener('input', showSaveWarningOnce, { once: false });
+  document.getElementById('editor-panel').addEventListener('change', showSaveWarningOnce, { once: false });
+}
 </script>
 </body>
 </html>
