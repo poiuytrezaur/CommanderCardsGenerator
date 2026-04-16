@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Fetch comprehensive deck data from Scryfall, Commander Spellbook, and EDHREC.
-Parses exported Moxfield decklists from decklists/ folder.
+Reads Moxfield deck URLs from decks/decks.md and fetches decklists via Moxfield API.
 Outputs deck_full_data.json for HTML generation.
 """
 
@@ -13,12 +13,11 @@ from pathlib import Path
 from collections import Counter
 
 BASE_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
-DECKLIST_DIR = BASE_DIR / "decklists"
+DECKS_MD = BASE_DIR / "decks" / "decks.md"
 OUTPUT_FILE = BASE_DIR / "deck_full_data.json"
 
-# Deck configurations (loaded from decklists/decks.json)
-with open(DECKLIST_DIR / "decks.json", encoding="utf-8") as _f:
-    DECKS = json.load(_f)
+MOXFIELD_API = "https://api2.moxfield.com"
+MOXFIELD_PREFIXES = ("https://www.moxfield.com/decks/", "https://moxfield.com/decks/")
 
 KEYWORD_FR = {
     "Flying": "Vol", "Trample": "Piétinement", "Haste": "Célérité",
@@ -39,19 +38,64 @@ KEYWORD_FR = {
 }
 
 
-def parse_decklist(filepath):
-    cards = []
-    with open(filepath, encoding='utf-8') as f:
-        for line in f:
-            line = line.strip()
-            if not line:
+def extract_moxfield_id(url: str) -> str:
+    """Extract deck ID from a Moxfield URL, or return as-is if already an ID."""
+    url = url.strip()
+    for prefix in MOXFIELD_PREFIXES:
+        if url.startswith(prefix):
+            return url[len(prefix):].split("/")[0]
+    return url.split("/")[0]
+
+
+def fetch_moxfield_deck(deck_id: str):
+    """Fetch raw deck JSON from the Moxfield API. Returns None on 404."""
+    url = f"{MOXFIELD_API}/v3/decks/all/{deck_id}"
+    headers = {"User-Agent": "MTGDeckDesc/1.0", "Accept": "application/json"}
+    for attempt in range(3):
+        try:
+            req = Request(url, headers=headers)
+            resp = urlopen(req, timeout=30)
+            return json.loads(resp.read())
+        except HTTPError as e:
+            if e.code == 404:
+                print(f"  WARNING: Deck not found: {deck_id}")
+                return None
+            if e.code == 429 and attempt < 2:
+                time.sleep(2 ** (attempt + 1))
                 continue
-            m = re.match(r'^(\d+)\s+(.+?)\s+\([A-Za-z0-9]+\)\s+\S+', line)
-            if m:
-                # Normalize DFC/split card names: Moxfield uses ' / ', Scryfall uses ' // '
-                name = m.group(2).replace(' / ', ' // ')
-                cards.append({"name": name, "qty": int(m.group(1))})
-    return cards
+            raise
+        except (URLError, TimeoutError):
+            if attempt == 2:
+                raise
+            time.sleep(1)
+    return None
+
+
+def parse_moxfield_deck(data: dict):
+    """Extract (commander_name, color_identity, cards_list) from Moxfield API response.
+    Includes commanders and mainboard/companion; excludes sideboard and maybeboard."""
+    boards = data.get("boards", {})
+
+    # Commander name — take the first card from the commanders board
+    commander_name = ""
+    for entry in boards.get("commanders", {}).get("cards", {}).values():
+        commander_name = entry.get("card", {}).get("name", "")
+        break
+
+    # Color identity from deck metadata
+    colors = data.get("colorIdentity", [])
+
+    # Cards from mainboard + companion only
+    cards = []
+    for board_name in ("mainboard", "companion"):
+        for entry in boards.get(board_name, {}).get("cards", {}).values():
+            qty = entry.get("quantity", 1)
+            name = entry.get("card", {}).get("name", "")
+            if name:
+                name = name.replace(" / ", " // ")  # normalize DFC names
+                cards.append({"name": name, "qty": qty})
+
+    return commander_name, colors, cards
 
 
 def api_get(url, retries=2):
@@ -149,33 +193,38 @@ def get_card(name, cache):
     return None
 
 
-# ─── PHASE 1: Parse decklists ───
+# ─── PHASE 1: Fetch decklists from Moxfield ───
 print("=" * 60)
-print("PHASE 1: Parsing decklists")
+print("PHASE 1: Fetching decklists from Moxfield")
 print("=" * 60)
+
+with open(DECKS_MD, encoding="utf-8") as _f:
+    deck_urls = [line.strip() for line in _f if line.strip()]
 
 all_decks = {}
 all_card_names = set()
 
-for deck_id, config in DECKS.items():
-    filepath = DECKLIST_DIR / f"{deck_id}.md"
-    if not filepath.exists():
-        print(f"  WARNING: {filepath} not found!")
+for url in deck_urls:
+    deck_id = extract_moxfield_id(url)
+    print(f"  Fetching {deck_id}...", end=" ", flush=True)
+    data = fetch_moxfield_deck(deck_id)
+    if not data:
         continue
-    cards = parse_decklist(filepath)
+    commander_name, colors, cards = parse_moxfield_deck(data)
     all_decks[deck_id] = {
         "id": deck_id,
-        "commander": config["commander"],
-        "colors": config["colors"],
+        "commander": commander_name,
+        "colors": colors,
         "cards": cards,
     }
     names = set(c["name"] for c in cards)
     all_card_names.update(names)
-    print(f"  {deck_id}: {sum(c['qty'] for c in cards)} cards ({len(names)} unique)")
+    print(f"{sum(c['qty'] for c in cards)} cards ({len(names)} unique) — {commander_name}")
 
 # Include commanders so they get fetched from Scryfall and translated
-for config in DECKS.values():
-    all_card_names.add(config["commander"])
+for deck in all_decks.values():
+    if deck["commander"]:
+        all_card_names.add(deck["commander"])
 
 print(f"\nTotal unique card names (incl. commanders): {len(all_card_names)}")
 
@@ -265,7 +314,7 @@ if still_missing:
         decks_using = [
             deck_id for deck_id, deck in all_decks.items()
             if any(c["name"] == nm for c in deck["cards"])
-            or DECKS[deck_id]["commander"] == nm
+            or deck["commander"] == nm
         ]
         missing_in_decks[nm] = decks_using
     print(f"\n  WARNING: {len(still_missing)} cards not found on Scryfall:")
@@ -436,10 +485,8 @@ print("=" * 60)
 
 combo_data = {}
 
-for deck_id, config in DECKS.items():
-    if deck_id not in all_decks:
-        continue
-    commander = config["commander"]
+for deck_id, deck in all_decks.items():
+    commander = deck["commander"]
     deck_card_names = set()
     for c in all_decks[deck_id]["cards"]:
         deck_card_names.add(c["name"])
@@ -503,10 +550,7 @@ print("=" * 60)
 
 output = {"decks": []}
 
-for deck_id in DECKS:
-    if deck_id not in all_decks:
-        continue
-    deck = all_decks[deck_id]
+for deck_id, deck in all_decks.items():
     cards = deck["cards"]
 
     # Mana curve (dynamic, no cap)
