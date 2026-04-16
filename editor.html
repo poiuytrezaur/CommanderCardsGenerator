@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Éditeur — Fiches Commander</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ui-bg: #12121c;
+    --ui-surface: #1e1e2e;
+    --ui-surface2: #282840;
+    --ui-border: #3a3a5c;
+    --ui-text: #e0e0f0;
+    --ui-text-dim: #8888aa;
+    --ui-accent: #7c5cbf;
+    --ui-accent-hover: #9370db;
+    --ui-danger: #c0392b;
+    --ui-danger-hover: #e74c3c;
+    --ui-success: #27ae60;
+  }
+
+  body {
+    background: var(--ui-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--ui-text);
+    min-height: 100vh;
+  }
+
+  /* ── Top toolbar ── */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ui-surface);
+    border-bottom: 1px solid var(--ui-border);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--ui-accent);
+    margin-right: auto;
+  }
+
+  .toolbar button, .toolbar label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--ui-border);
+    background: var(--ui-surface2);
+    color: var(--ui-text);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .toolbar button:hover, .toolbar label:hover {
+    background: var(--ui-accent);
+    border-color: var(--ui-accent);
+    color: #fff;
+  }
+
+  .toolbar .btn-accent {
+    background: var(--ui-accent);
+    border-color: var(--ui-accent);
+    color: #fff;
+  }
+
+  .toolbar .btn-accent:hover {
+    background: var(--ui-accent-hover);
+  }
+
+  .toolbar .btn-danger {
+    background: var(--ui-danger);
+    border-color: var(--ui-danger);
+    color: #fff;
+  }
+
+  .toolbar .btn-danger:hover {
+    background: var(--ui-danger-hover);
+  }
+
+  .toolbar input[type="file"] { display: none; }
+
+  .toolbar .status {
+    font-size: 11px;
+    color: var(--ui-text-dim);
+    min-width: 120px;
+    text-align: right;
+  }
+
+  /* ── Layout ── */
+  .app {
+    display: flex;
+    height: calc(100vh - 52px);
+  }
+
+  /* ── Sidebar: deck list ── */
+  .sidebar {
+    width: 260px;
+    min-width: 200px;
+    background: var(--ui-surface);
+    border-right: 1px solid var(--ui-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 12px;
+    border-bottom: 1px solid var(--ui-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sidebar-header span {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ui-text-dim);
+  }
+
+  .sidebar-header button {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: var(--ui-accent);
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .sidebar-header button:hover {
+    background: var(--ui-surface2);
+  }
+
+  .deck-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px;
+  }
+
+  .deck-item {
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.1s;
+  }
+
+  .deck-item:hover { background: var(--ui-surface2); }
+
+  .deck-item.active {
+    background: var(--ui-accent);
+    color: #fff;
+  }
+
+  .deck-item .color-dots {
+    display: flex;
+    gap: 2px;
+  }
+
+  .deck-item .color-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* ── Editor panel ── */
+  .editor-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .editor-panel.empty-state {
+    align-items: center;
+    justify-content: center;
+    color: var(--ui-text-dim);
+    font-size: 14px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .form-group.small { max-width: 180px; min-width: 120px; }
+
+  .form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ui-text-dim);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    background: var(--ui-surface2);
+    border: 1px solid var(--ui-border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: var(--ui-text);
+    resize: vertical;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--ui-accent);
+  }
+
+  .form-group textarea { min-height: 60px; }
+
+  .color-picker-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .color-chip {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--ui-border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    transition: border-color 0.15s, transform 0.1s;
+    user-select: none;
+  }
+
+  .color-chip:hover { transform: scale(1.1); }
+  .color-chip.selected { border-color: #fff; box-shadow: 0 0 0 2px var(--ui-accent); }
+
+  .color-chip[data-c="W"] { background: #f9faf4; color: #333; }
+  .color-chip[data-c="U"] { background: #0e68ab; color: #fff; }
+  .color-chip[data-c="B"] { background: #150b00; color: #ccc; }
+  .color-chip[data-c="R"] { background: #d3202a; color: #fff; }
+  .color-chip[data-c="G"] { background: #00733e; color: #fff; }
+
+  .combos-editor { display: flex; flex-direction: column; gap: 6px; }
+
+  .combo-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .combo-row input { flex: 1; }
+
+  .combo-row button {
+    background: var(--ui-danger);
+    border: none;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .btn-add-combo {
+    align-self: flex-start;
+    font-size: 12px;
+    background: var(--ui-surface2);
+    border: 1px dashed var(--ui-border);
+    color: var(--ui-text-dim);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-add-combo:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+
+  .curve-editor {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .curve-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .curve-col input {
+    width: 40px;
+    text-align: center;
+    font-size: 13px;
+    background: var(--ui-surface2);
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    padding: 4px;
+    color: var(--ui-text);
+  }
+
+  .curve-col input:focus { outline: none; border-color: var(--ui-accent); }
+
+  .curve-col span {
+    font-size: 10px;
+    color: var(--ui-text-dim);
+  }
+
+  .editor-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .editor-actions button {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-delete-deck {
+    background: var(--ui-danger);
+    color: #fff;
+    margin-left: auto;
+  }
+
+  .btn-delete-deck:hover { background: var(--ui-danger-hover); }
+
+  /* ── Preview panel ── */
+  .preview-panel {
+    width: 300px;
+    min-width: 250px;
+    background: #1a1a2e;
+    border-left: 1px solid var(--ui-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    overflow-y: auto;
+  }
+
+  .preview-panel h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: var(--ui-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  /* ── Card styles (from original) ── */
+  .card {
+    width: 63mm;
+    height: 88mm;
+    border-radius: 3mm;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 3mm;
+    border: 0.5mm solid rgba(0,0,0,0.25);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .card-header {
+    position: relative;
+    height: 18mm;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center var(--img-y, top);
+    display: block;
+    filter: brightness(0.9) saturate(1.05);
+  }
+
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10mm;
+    background: linear-gradient(transparent, var(--card-bg));
+    z-index: 1;
+  }
+
+  .card-name-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 3mm 2mm 0.5mm 2mm;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  }
+
+  .commander-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,0.8), 1px 1px 0 rgba(0,0,0,0.9);
+    line-height: 1.1;
+    max-width: 80%;
+  }
+
+  .mana-pips { display: flex; gap: 0.5mm; flex-shrink: 0; }
+  .mana-pip { width: 4mm; height: 4mm; flex-shrink: 0; }
+  .mana-pip img { width: 100%; height: 100%; display: block; }
+
+  .card-body {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 1.5mm 2mm 1mm 2mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6mm;
+    overflow: hidden;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.3mm;
+    border-bottom: 0.3mm solid var(--accent-dim);
+    padding-bottom: 0.3mm;
+    margin-bottom: 0.5mm;
+    line-height: 1;
+  }
+
+  .strategy-text {
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 1mm;
+    font-family: 'PT Serif', Georgia, serif;
+  }
+
+  .combos-list {
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.1;
+    list-style: none;
+    font-family: 'PT Serif', Georgia, serif;
+  }
+
+  .combos-list li {
+    padding-left: 2mm;
+    position: relative;
+    margin-bottom: 0.4mm;
+  }
+
+  .combos-list li::before {
+    content: '\2694';
+    position: absolute;
+    left: 0;
+    font-size: 5pt;
+    color: var(--accent);
+  }
+
+  .keywords-line {
+    font-size: 7pt;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    font-style: italic;
+    margin-top: 0.5mm;
+    font-family: 'PT Serif', Georgia, serif;
+  }
+
+  .keywords-line strong {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.5pt;
+  }
+
+  .mana-curve-section { margin-top: auto; flex-shrink: 0; padding: 0.5mm 1mm; }
+
+  .mana-curve {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5mm;
+    height: 10mm;
+    padding-top: 0.5mm;
+  }
+
+  .mana-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+  }
+
+  .mana-bar {
+    width: 100%;
+    background: var(--accent);
+    border-radius: 0.3mm 0.3mm 0 0;
+    min-height: 0;
+    opacity: 0.75;
+  }
+
+  .mana-bar-label { font-size: 5.5pt; color: var(--textDim); line-height: 1; margin-top: 0.2mm; }
+  .mana-bar-count { font-size: 5pt; color: var(--text); line-height: 1; margin-bottom: 0.1mm; }
+  .avg-mv { font-size: 5.5pt; color: var(--text); text-align: right; line-height: 1; margin-top: 0.3mm; }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--ui-success);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── Color field widget ── */
+  .color-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .color-swatch {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 2px solid var(--ui-border);
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+
+  .color-swatch:hover { border-color: var(--ui-accent); }
+
+  .color-swatch input[type="color"] {
+    position: absolute;
+    inset: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .color-hex {
+    font-family: 'Consolas', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--ui-surface2);
+    border: 1px solid var(--ui-border);
+    border-radius: 6px;
+    padding: 6px 8px;
+    color: var(--ui-text);
+    width: 78px;
+    min-width: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .color-hex:focus { outline: none; border-color: var(--ui-accent); }
+
+  /* ── Gradient preview ── */
+  .gradient-preview {
+    height: 22px;
+    border-radius: 5px;
+    border: 1px solid var(--ui-border);
+    margin-bottom: 5px;
+    transition: background 0.25s;
+  }
+
+  /* ── Accent dim preview (checkerboard = transparency indicator) ── */
+  .accent-dim-swatch {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid var(--ui-border);
+    flex-shrink: 0;
+    background-image:
+      linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%),
+      linear-gradient(45deg, #888 25%, transparent 25%, transparent 75%, #888 75%);
+    background-color: #fff;
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .accent-dim-swatch::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--preview-color, transparent);
+  }
+
+  /* ── Auto button ── */
+  .btn-auto {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 9px;
+    border-radius: 5px;
+    border: 1px solid var(--ui-border);
+    background: var(--ui-surface2);
+    color: var(--ui-text-dim);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .btn-auto:hover { border-color: var(--ui-accent); color: var(--ui-accent); }
+
+  /* ── Tooltips ── */
+  .tip-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .tip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid var(--ui-text-dim);
+    background: none;
+    color: var(--ui-text-dim);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: help;
+    flex-shrink: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-left: 1px;
+  }
+
+  .tip-bubble {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: auto;
+    top: -9999px;
+    transform: translateX(-50%);
+    background: #24243c;
+    border: 1px solid var(--ui-border);
+    color: #d0d0e8;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 9px 12px;
+    border-radius: 7px;
+    width: 240px;
+    z-index: 10000;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+    pointer-events: none;
+    white-space: normal;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .tip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #24243c;
+  }
+
+  .tip-bubble.flip-down::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: #24243c;
+  }
+
+  .tip-wrap:hover .tip-bubble { display: block; }
+
+  /* if tooltip overflows top, flip downward using JS-class alternative */
+  .tip-wrap.flip-down .tip-bubble {
+    top: calc(100% + 8px);
+    bottom: auto;
+  }
+  .tip-wrap.flip-down .tip-bubble::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: #24243c;
+  }
+</style>
+</head>
+<body>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <h1>Éditeur de Fiches Commander</h1>
+  <label for="file-input">Charger JSON</label>
+  <input type="file" id="file-input" accept=".json,application/json">
+  <button id="btn-download">Télécharger JSON</button>
+  <button id="btn-export-html">Exporter HTML</button>
+  <button class="btn-danger" id="btn-clear-cache">Vider le cache</button>
+  <span class="status" id="status-text"></span>
+</div>
+
+<!-- App layout -->
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <span>Decks</span>
+      <button id="btn-add-deck" title="Ajouter un deck">+</button>
+    </div>
+    <div class="deck-list" id="deck-list"></div>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor-panel empty-state" id="editor-panel">
+    <p>Sélectionnez un deck ou ajoutez-en un nouveau</p>
+  </div>
+
+  <!-- Preview -->
+  <div class="preview-panel" id="preview-panel">
+    <h3>Aperçu</h3>
+    <div id="preview-card"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ── State ── */
+const STORAGE_KEY = 'mtg_deck_editor_data';
+let decks = [];
+let selectedIndex = -1;
+
+const pipSvgs = {
+  W: 'https://svgs.scryfall.io/card-symbols/W.svg',
+  U: 'https://svgs.scryfall.io/card-symbols/U.svg',
+  B: 'https://svgs.scryfall.io/card-symbols/B.svg',
+  R: 'https://svgs.scryfall.io/card-symbols/R.svg',
+  G: 'https://svgs.scryfall.io/card-symbols/G.svg'
+};
+
+const colorDotColors = { W: '#f9faf4', U: '#0e68ab', B: '#150b00', R: '#d3202a', G: '#00733e' };
+
+/* ── Persistence ── */
+function saveToCache() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(decks));
+    setStatus('Sauvegardé dans le cache');
+  } catch (e) {
+    setStatus('Erreur cache: ' + e.message);
+  }
+}
+
+function loadFromCache() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      decks = JSON.parse(raw);
+      return true;
+    }
+  } catch (e) { /* ignore */ }
+  return false;
+}
+
+/* ── UI helpers ── */
+function setStatus(msg) {
+  document.getElementById('status-text').textContent = msg;
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* ── Deck list rendering ── */
+function renderDeckList() {
+  const list = document.getElementById('deck-list');
+  list.innerHTML = decks.map((d, i) => {
+    const dots = (d.colors || []).map(c =>
+      `<span class="color-dot" style="background:${colorDotColors[c] || '#888'}"></span>`
+    ).join('');
+    const name = escapeHtml(d.nameCustom || d.commander || 'Sans nom');
+    return `<div class="deck-item${i === selectedIndex ? ' active' : ''}" data-idx="${i}">
+      <span class="color-dots">${dots}</span>
+      <span>${name}</span>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('.deck-item').forEach(el => {
+    el.addEventListener('click', () => selectDeck(parseInt(el.dataset.idx)));
+  });
+}
+
+/* ── Card HTML renderer (same as original) ── */
+function renderCardHTML(deck) {
+  const maxCurve = Math.max(...(deck.curve || [0]));
+  const curveHTML = (deck.curve || []).map((count, i) => {
+    const pct = maxCurve > 0 ? (count * 50 / maxCurve) : 0;
+    return `<div class="mana-bar-group">
+        <span class="mana-bar-count">${count > 0 ? count : ''}</span>
+        <div class="mana-bar" style="height:${pct}%"></div>
+        <span class="mana-bar-label">${i}</span>
+      </div>`;
+  }).join('');
+
+  const pipsHTML = (deck.colors || []).map(c =>
+    `<span class="mana-pip"><img src="${pipSvgs[c] || ''}" alt="{${escapeHtml(c)}}" loading="lazy"></span>`
+  ).join('');
+
+  const combosHTML = (deck.combos || []).map(c =>
+    `<li>${escapeHtml(c)}</li>`
+  ).join('');
+
+  const bg = deck.bg || 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 100%)';
+  const accent = deck.accent || '#555';
+  const accentDim = deck.accentDim || 'rgba(85,85,85,0.15)';
+  const text = deck.text || '#111';
+  const textDim = deck.textDim || '#666';
+  const imgY = deck.imgY || 'top';
+  const avgMv = typeof deck.avgMv === 'number' ? deck.avgMv.toFixed(2) : '0.00';
+
+  return `<div class="card" style="--card-bg:${bg};--accent:${accent};--accent-dim:${accentDim};--text:${text};--text-dim:${textDim};--img-y:${imgY}">
+      <div class="card-border"></div>
+      <div class="card-header">
+        <img data-commander="${escapeHtml(deck.commander || '')}" alt="${escapeHtml(deck.commander || '')}" loading="lazy">
+        <div class="card-name-bar">
+          <span class="commander-name">${escapeHtml(deck.nameCustom || deck.commander || '')}</span>
+          <span class="mana-pips">${pipsHTML}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="section-label">Stratégie</div>
+        <div class="strategy-text">${escapeHtml(deck.strategy || '')}</div>
+        <div class="section-label">Lignes de Victoire</div>
+        <ul class="combos-list">${combosHTML}</ul>
+        <div class="keywords-line"><strong>Mots-clés :</strong> ${escapeHtml(deck.keywords || '')}</div>
+        <div class="mana-curve-section">
+          <div class="section-label">Courbe de Mana</div>
+          <div class="mana-curve">${curveHTML}</div>
+          <div class="avg-mv">Moy. ${avgMv}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ── Fetch art ── */
+function fetchArt(container) {
+  container.querySelectorAll('img[data-commander]').forEach(async img => {
+    const name = img.dataset.commander;
+    if (!name) return;
+    try {
+      const resp = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(name)}`);
+      if (!resp.ok) return;
+      const data = await resp.json();
+      const uri = data.image_uris?.art_crop ?? data.card_faces?.[0]?.image_uris?.art_crop;
+      if (uri) img.src = uri;
+    } catch (e) { /* network failure */ }
+  });
+}
+
+/* ── Preview ── */
+function renderPreview() {
+  const container = document.getElementById('preview-card');
+  if (selectedIndex < 0 || selectedIndex >= decks.length) {
+    container.innerHTML = '';
+    return;
+  }
+  container.innerHTML = renderCardHTML(decks[selectedIndex]);
+  fetchArt(container);
+}
+
+/* ── Tooltip helper ── */
+function tip(text) {
+  return `<span class="tip-wrap"><span class="tip-btn">?</span><span class="tip-bubble">${escapeHtml(text)}</span></span>`;
+}
+
+function positionTooltip(bubble) {
+  const wrap = bubble.closest('.tip-wrap');
+  if (!wrap) return;
+  const rect = wrap.getBoundingClientRect();
+  const bubbleHeight = 88;
+  const gap = 12;
+  
+  // Try top first
+  let topPos = rect.top - bubbleHeight - gap;
+  
+  // If it goes off-screen at top, flip to bottom
+  if (topPos < 10) {
+    topPos = rect.bottom + gap;
+  }
+  
+  bubble.style.top = topPos + 'px';
+  bubble.style.left = (rect.left + rect.width / 2) + 'px';
+}
+
+/* ── Color helpers ── */
+function hexToRgb(hex) {
+  const h = hex.replace('#', '');
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16)
+  };
+}
+
+function generateAccentDim(hex) {
+  try { const { r, g, b } = hexToRgb(hex); return `rgba(${r},${g},${b},0.15)`; }
+  catch { return 'rgba(85,85,85,0.15)'; }
+}
+
+function generateBg(accent) {
+  try {
+    const { r, g, b } = hexToRgb(accent);
+    const mix = (c, a) => Math.round(c + (255 - c) * a).toString(16).padStart(2, '0');
+    const c1 = `#${mix(r,.85)}${mix(g,.85)}${mix(b,.85)}`;
+    const c2 = `#${mix(r,.88)}${mix(g,.88)}${mix(b,.88)}`;
+    const c3 = `#${mix(r,.86)}${mix(g,.86)}${mix(b,.86)}`;
+    return `linear-gradient(160deg, ${c1} 0%, ${c2} 40%, ${c3} 100%)`;
+  } catch { return 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 40%, #f0f0f0 100%)'; }
+}
+
+/* ── Editor form ── */
+function renderEditor() {
+  const panel = document.getElementById('editor-panel');
+  if (selectedIndex < 0 || selectedIndex >= decks.length) {
+    panel.className = 'editor-panel empty-state';
+    panel.innerHTML = '<p>Sélectionnez un deck ou ajoutez-en un nouveau</p>';
+    return;
+  }
+
+  const d = decks[selectedIndex];
+  panel.className = 'editor-panel';
+
+  const combosHTML = (d.combos || []).map((c, i) => `
+    <div class="combo-row">
+      <input type="text" value="${escapeHtml(c)}" data-combo-idx="${i}" class="combo-input">
+      <button class="btn-remove-combo" data-combo-idx="${i}">&times;</button>
+    </div>
+  `).join('');
+
+  const curveHTML = (d.curve || []).map((v, i) => `
+    <div class="curve-col">
+      <input type="number" min="0" value="${v}" data-curve-idx="${i}" class="curve-input">
+      <span>${i} CMC</span>
+    </div>
+  `).join('');
+
+  const allColors = ['W', 'U', 'B', 'R', 'G'];
+  const colorsHTML = allColors.map(c =>
+    `<div class="color-chip${(d.colors || []).includes(c) ? ' selected' : ''}" data-c="${c}">${c}</div>`
+  ).join('');
+
+  const accentVal = d.accent || '#555555';
+  const textVal   = d.text   || '#111111';
+  const textDimVal = d.textDim || '#666666';
+  const bgVal = d.bg || 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 40%, #f0f0f0 100%)';
+  const accentDimVal = d.accentDim || 'rgba(85,85,85,0.15)';
+
+  panel.innerHTML = `
+    <div class="form-row">
+      <div class="form-group">
+        <label>Commander (EN) ${tip('Nom anglais exact du commander. Utilisé pour récupérer automatiquement l\'illustration depuis Scryfall.')}</label>
+        <input type="text" id="f-commander" value="${escapeHtml(d.commander || '')}">
+      </div>
+      <div class="form-group">
+        <label>Nom personnalisé ${tip('Nom affiché en bas de l\'illustration sur la fiche. Peut être en français ou tout autre langue.')}</label>
+        <input type="text" id="f-nameCustom" value="${escapeHtml(d.nameCustom || '')}">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group small">
+        <label>Couleurs ${tip('Identité de couleur du commander. Détermine les symboles de mana affichés en haut à droite de la fiche.')}</label>
+        <div class="color-picker-row" id="color-picker">${colorsHTML}</div>
+      </div>
+      <div class="form-group small">
+        <label>Image Y ${tip('Position verticale du recadrage de l\'illustration. Exemples : top, center, 20%, 70%. Ajustez selon où se trouve le visage.')}</label>
+        <input type="text" id="f-imgY" value="${escapeHtml(d.imgY || 'top')}" placeholder="top, 10%, 50%…">
+      </div>
+      <div class="form-group small">
+        <label>Mana moyen ${tip('Coût moyen de mana converti (CMC) de toutes les cartes hors terrains. Affiché sous la courbe de mana.')}</label>
+        <input type="number" step="0.01" id="f-avgMv" value="${d.avgMv || 0}">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group small">
+        <label>Accent ${tip('Couleur vive principale : titres de section, icônes ⚔, barres de la courbe de mana et séparateurs.')}</label>
+        <div class="color-field">
+          <div class="color-swatch" id="swatch-accent" style="background:${escapeHtml(accentVal)}">
+            <input type="color" id="f-accent" value="${escapeHtml(accentVal)}">
+          </div>
+          <input type="text" class="color-hex" id="f-accent-hex" value="${escapeHtml(accentVal)}" maxlength="7" placeholder="#000000">
+        </div>
+      </div>
+      <div class="form-group small">
+        <label>Texte ${tip('Couleur du texte principal de la fiche : stratégie, combos et mots-clés.')}</label>
+        <div class="color-field">
+          <div class="color-swatch" id="swatch-text" style="background:${escapeHtml(textVal)}">
+            <input type="color" id="f-text" value="${escapeHtml(textVal)}">
+          </div>
+          <input type="text" class="color-hex" id="f-text-hex" value="${escapeHtml(textVal)}" maxlength="7" placeholder="#000000">
+        </div>
+      </div>
+      <div class="form-group small">
+        <label>Texte dim ${tip('Couleur des textes secondaires : labels CMC sous la courbe de mana.')}</label>
+        <div class="color-field">
+          <div class="color-swatch" id="swatch-textDim" style="background:${escapeHtml(textDimVal)}">
+            <input type="color" id="f-textDim" value="${escapeHtml(textDimVal)}">
+          </div>
+          <input type="text" class="color-hex" id="f-textDim-hex" value="${escapeHtml(textDimVal)}" maxlength="7" placeholder="#000000">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Fond de la fiche ${tip('Dégradé CSS du corps de la fiche. Cliquez ⟳ Auto pour générer un dégradé clair adapté à la couleur Accent.')}</label>
+        <div class="gradient-preview" id="gradient-preview" style="background:${escapeHtml(bgVal)}"></div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <input type="text" id="f-bg" value="${escapeHtml(bgVal)}" style="flex:1">
+          <button class="btn-auto" id="btn-auto-bg">⟳ Auto</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Accent dim ${tip('Version semi-transparente de l\'accent, utilisée pour les fines lignes de séparation. Cliquez ⟳ Auto pour la calculer depuis l\'Accent.')}</label>
+        <div style="display:flex;gap:6px;align-items:center">
+          <div class="accent-dim-swatch" id="accent-dim-swatch" style="--preview-color:${escapeHtml(accentDimVal)}"></div>
+          <input type="text" id="f-accentDim" value="${escapeHtml(accentDimVal)}" style="flex:1">
+          <button class="btn-auto" id="btn-auto-accentDim">⟳ Auto</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Stratégie ${tip('Description concise du style de jeu. 1-3 phrases, en restant dans l\'espace disponible sur la fiche.')}</label>
+      <textarea id="f-strategy" rows="3">${escapeHtml(d.strategy || '')}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Mots-clés ${tip('Mécaniques principales, séparées par des virgules. Ex : Sacrifice, Drain, Réanimation')}</label>
+      <input type="text" id="f-keywords" value="${escapeHtml(d.keywords || '')}">
+    </div>
+
+    <div class="form-group">
+      <label>Lignes de victoire ${tip('Les 3-4 combos ou séquences gagnantes du deck. Chacune apparaît comme un point de liste sur la fiche.')}</label>
+      <div class="combos-editor" id="combos-editor">
+        ${combosHTML}
+        <button class="btn-add-combo" id="btn-add-combo">+ Ajouter une ligne</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Courbe de mana ${tip('Nombre de cartes (hors terrains) par coût CMC. Chaque case = 1 CMC à partir de 0. Cliquez + pour ajouter une colonne.')}</label>
+      <div class="curve-editor" id="curve-editor">
+        ${curveHTML}
+        <div class="curve-col">
+          <button style="width:40px;height:28px;background:var(--ui-surface2);border:1px dashed var(--ui-border);color:var(--ui-text-dim);border-radius:4px;cursor:pointer;font-size:16px" id="btn-add-curve">+</button>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="editor-actions">
+      <button class="btn-delete-deck" id="btn-delete-deck">Supprimer ce deck</button>
+    </div>
+  `;
+
+  // Bind events
+  bindEditorEvents();
+}
+
+function readFormIntoDeck() {
+  if (selectedIndex < 0) return;
+  const d = decks[selectedIndex];
+  d.commander = document.getElementById('f-commander').value;
+  d.nameCustom = document.getElementById('f-nameCustom').value;
+  d.imgY = document.getElementById('f-imgY').value || 'top';
+  d.avgMv = parseFloat(document.getElementById('f-avgMv').value) || 0;
+  d.accent = document.getElementById('f-accent').value;
+  d.text = document.getElementById('f-text').value;
+  d.textDim = document.getElementById('f-textDim').value;
+  d.bg = document.getElementById('f-bg').value;
+  d.accentDim = document.getElementById('f-accentDim').value;
+  d.strategy = document.getElementById('f-strategy').value;
+  d.keywords = document.getElementById('f-keywords').value;
+
+  // colors from chips
+  d.colors = [...document.querySelectorAll('#color-picker .color-chip.selected')].map(el => el.dataset.c);
+
+  // combos
+  d.combos = [...document.querySelectorAll('.combo-input')].map(el => el.value).filter(v => v.trim());
+
+  // curve
+  d.curve = [...document.querySelectorAll('.curve-input')].map(el => parseInt(el.value) || 0);
+}
+
+function onFieldChange() {
+  readFormIntoDeck();
+  renderPreview();
+  renderDeckList();
+  saveToCache();
+}
+
+let debounceTimer = null;
+function onFieldChangeDebounced() {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(onFieldChange, 250);
+}
+
+function bindEditorEvents() {
+  const panel = document.getElementById('editor-panel');
+  
+  // ── Tooltip positioning on hover
+  panel.querySelectorAll('.tip-wrap').forEach(wrap => {
+    const bubble = wrap.querySelector('.tip-bubble');
+    if (bubble) {
+      wrap.addEventListener('mouseenter', () => positionTooltip(bubble));
+      window.addEventListener('scroll', () => { if (bubble.style.display !== 'none') positionTooltip(bubble); });
+    }
+  });
+  
+  // Text / number / color inputs
+  panel.querySelectorAll('input[type="text"], input[type="number"], input[type="color"], textarea').forEach(el => {
+    el.addEventListener('input', onFieldChangeDebounced);
+  });
+
+  // Color chips
+  document.querySelectorAll('#color-picker .color-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('selected');
+      onFieldChange();
+    });
+  });
+
+  // ── Color field sync: accent, text, textDim
+  ['accent', 'text', 'textDim'].forEach(id => {
+    const picker   = document.getElementById(`f-${id}`);
+    const hexField = document.getElementById(`f-${id}-hex`);
+    const swatch   = document.getElementById(`swatch-${id}`);
+    if (!picker || !hexField || !swatch) return;
+    // Picker → sync hex display + swatch bg (visual only)
+    picker.addEventListener('input', () => {
+      hexField.value = picker.value;
+      swatch.style.background = picker.value;
+    });
+    // Hex text → validate → sync picker + swatch bg
+    hexField.addEventListener('input', () => {
+      const v = hexField.value.trim();
+      if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+        picker.value = v;
+        swatch.style.background = v;
+      }
+    });
+  });
+
+  // ── Gradient bg: live preview + Auto button
+  const bgInput    = document.getElementById('f-bg');
+  const gradPreview = document.getElementById('gradient-preview');
+  bgInput.addEventListener('input', () => {
+    gradPreview.style.background = bgInput.value;
+  });
+  document.getElementById('btn-auto-bg').addEventListener('click', () => {
+    const accent = document.getElementById('f-accent').value;
+    const gen = generateBg(accent);
+    bgInput.value = gen;
+    gradPreview.style.background = gen;
+    onFieldChange();
+  });
+
+  // ── AccentDim: live preview + Auto button
+  const accentDimInput  = document.getElementById('f-accentDim');
+  const accentDimSwatch = document.getElementById('accent-dim-swatch');
+  accentDimInput.addEventListener('input', () => {
+    accentDimSwatch.style.setProperty('--preview-color', accentDimInput.value);
+  });
+  document.getElementById('btn-auto-accentDim').addEventListener('click', () => {
+    const accent = document.getElementById('f-accent').value;
+    const gen = generateAccentDim(accent);
+    accentDimInput.value = gen;
+    accentDimSwatch.style.setProperty('--preview-color', gen);
+    onFieldChange();
+  });
+
+  // Combo inputs
+  document.querySelectorAll('.combo-input').forEach(el => {
+    el.addEventListener('input', onFieldChangeDebounced);
+  });
+
+  // Remove combo
+  document.querySelectorAll('.btn-remove-combo').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.comboIdx);
+      decks[selectedIndex].combos.splice(idx, 1);
+      renderEditor();
+      renderPreview();
+      saveToCache();
+    });
+  });
+
+  // Add combo
+  document.getElementById('btn-add-combo').addEventListener('click', () => {
+    readFormIntoDeck();
+    decks[selectedIndex].combos = decks[selectedIndex].combos || [];
+    decks[selectedIndex].combos.push('');
+    renderEditor();
+    // Focus last combo input
+    const inputs = document.querySelectorAll('.combo-input');
+    if (inputs.length) inputs[inputs.length - 1].focus();
+  });
+
+  // Curve inputs
+  document.querySelectorAll('.curve-input').forEach(el => {
+    el.addEventListener('input', onFieldChangeDebounced);
+  });
+
+  // Add curve slot
+  document.getElementById('btn-add-curve').addEventListener('click', () => {
+    readFormIntoDeck();
+    decks[selectedIndex].curve.push(0);
+    renderEditor();
+  });
+
+  // Delete deck
+  document.getElementById('btn-delete-deck').addEventListener('click', () => {
+    if (!confirm('Supprimer ce deck ?')) return;
+    decks.splice(selectedIndex, 1);
+    selectedIndex = decks.length > 0 ? Math.min(selectedIndex, decks.length - 1) : -1;
+    renderAll();
+    saveToCache();
+    showToast('Deck supprimé');
+  });
+}
+
+/* ── Select deck ── */
+function selectDeck(idx) {
+  // Save current form first
+  if (selectedIndex >= 0 && selectedIndex < decks.length) {
+    readFormIntoDeck();
+  }
+  selectedIndex = idx;
+  renderAll();
+}
+
+function renderAll() {
+  renderDeckList();
+  renderEditor();
+  renderPreview();
+}
+
+/* ── Add deck ── */
+document.getElementById('btn-add-deck').addEventListener('click', () => {
+  if (selectedIndex >= 0) readFormIntoDeck();
+  decks.push({
+    commander: '',
+    nameCustom: '',
+    colors: [],
+    bg: 'linear-gradient(160deg, #f4f4f4 0%, #e8e8e8 40%, #f0f0f0 100%)',
+    accent: '#555555',
+    accentDim: 'rgba(85,85,85,0.15)',
+    text: '#111111',
+    textDim: '#666666',
+    imgY: 'top',
+    strategy: '',
+    combos: [],
+    keywords: '',
+    curve: [0, 0, 0, 0, 0, 0, 0],
+    avgMv: 0
+  });
+  selectedIndex = decks.length - 1;
+  renderAll();
+  saveToCache();
+  showToast('Nouveau deck ajouté');
+  // Focus commander field
+  const f = document.getElementById('f-commander');
+  if (f) f.focus();
+});
+
+/* ── Load JSON file ── */
+document.getElementById('file-input').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        decks = data;
+      } else if (data.decks && Array.isArray(data.decks)) {
+        decks = data.decks;
+      } else {
+        throw new Error('Format invalide');
+      }
+      selectedIndex = decks.length > 0 ? 0 : -1;
+      renderAll();
+      saveToCache();
+      showToast(`${decks.length} deck(s) chargé(s)`);
+    } catch (err) {
+      alert('Erreur de lecture JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+/* ── Download JSON ── */
+document.getElementById('btn-download').addEventListener('click', () => {
+  if (selectedIndex >= 0) readFormIntoDeck();
+  const blob = new Blob([JSON.stringify(decks, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'decks.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('JSON téléchargé');
+});
+
+/* ── Export static HTML ── */
+document.getElementById('btn-export-html').addEventListener('click', () => {
+  if (selectedIndex >= 0) readFormIntoDeck();
+  const cardsHTML = decks.map(renderCardHTML).join('\n');
+  const html = `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiches Commander — Collection de Decks</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a2e; font-family: 'PT Serif', Georgia, serif; display: flex; flex-wrap: wrap; justify-content: center; gap: 4mm; padding: 5mm; }
+  @page { size: A4 portrait; margin: 8mm; }
+  @media print { body { background: white; gap: 1mm; padding: 0; } .card { break-inside: avoid; } }
+  .card { width: 63mm; height: 88mm; border-radius: 3mm; overflow: hidden; position: relative; display: flex; flex-direction: column; flex-shrink: 0; }
+  .card-border { position: absolute; inset: 0; border-radius: 3mm; border: 0.5mm solid rgba(0,0,0,0.25); pointer-events: none; z-index: 10; }
+  .card-header { position: relative; height: 18mm; overflow: hidden; flex-shrink: 0; }
+  .card-header img { width: 100%; height: 100%; object-fit: cover; object-position: center var(--img-y, top); display: block; filter: brightness(0.9) saturate(1.05); }
+  .card-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 10mm; background: linear-gradient(transparent, var(--card-bg)); z-index: 1; }
+  .card-name-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 3mm 2mm 0.5mm 2mm; display: flex; align-items: flex-end; justify-content: space-between; background: linear-gradient(transparent, rgba(0,0,0,0.5)); }
+  .commander-name { font-family: 'Cinzel', serif; font-weight: 700; font-size: 8.5pt; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,0.8), 1px 1px 0 rgba(0,0,0,0.9); line-height: 1.1; max-width: 80%; }
+  .mana-pips { display: flex; gap: 0.5mm; flex-shrink: 0; }
+  .mana-pip { width: 4mm; height: 4mm; flex-shrink: 0; }
+  .mana-pip img { width: 100%; height: 100%; display: block; }
+  .card-body { flex: 1; background: var(--card-bg); padding: 1.5mm 2mm 1mm 2mm; display: flex; flex-direction: column; gap: 0.6mm; overflow: hidden; }
+  .section-label { font-family: 'Cinzel', serif; font-size: 6.5pt; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.3mm; border-bottom: 0.3mm solid var(--accent-dim); padding-bottom: 0.3mm; margin-bottom: 0.5mm; line-height: 1; }
+  .strategy-text { font-size: 7pt; font-weight: 400; color: var(--text); line-height: 1.2; margin-bottom: 1mm; }
+  .combos-list { font-size: 7pt; font-weight: 400; color: var(--text); line-height: 1.1; list-style: none; }
+  .combos-list li { padding-left: 2mm; position: relative; margin-bottom: 0.4mm; }
+  .combos-list li::before { content: '\\2694'; position: absolute; left: 0; font-size: 5pt; color: var(--accent); }
+  .keywords-line { font-size: 7pt; font-weight: 400; color: var(--text); line-height: 1.3; letter-spacing: 0.01em; font-style: italic; margin-top: 0.5mm; }
+  .keywords-line strong { color: var(--accent); font-style: normal; font-weight: 700; font-size: 6.5pt; }
+  .mana-curve-section { margin-top: auto; flex-shrink: 0; padding: 0.5mm 1mm; }
+  .mana-curve { display: flex; align-items: flex-end; gap: 0.5mm; height: 10mm; padding-top: 0.5mm; }
+  .mana-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+  .mana-bar { width: 100%; background: var(--accent); border-radius: 0.3mm 0.3mm 0 0; min-height: 0; opacity: 0.75; }
+  .mana-bar-label { font-size: 5.5pt; color: var(--textDim); line-height: 1; margin-top: 0.2mm; }
+  .mana-bar-count { font-size: 5pt; color: var(--text); line-height: 1; margin-bottom: 0.1mm; }
+  .avg-mv { font-size: 5.5pt; color: var(--text); text-align: right; line-height: 1; margin-top: 0.3mm; }
+</style>
+</head>
+<body>
+${cardsHTML}
+<script>
+document.querySelectorAll('img[data-commander]').forEach(async img => {
+  const name = img.dataset.commander;
+  if (!name) return;
+  try {
+    const resp = await fetch('https://api.scryfall.com/cards/named?fuzzy=' + encodeURIComponent(name));
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const uri = data.image_uris?.art_crop ?? data.card_faces?.[0]?.image_uris?.art_crop;
+    if (uri) img.src = uri;
+  } catch (e) {}
+});
+<\/script>
+</body>
+</html>`;
+
+  const blob = new Blob([html], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'deck_cards.html';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('HTML exporté');
+});
+
+/* ── Clear cache ── */
+document.getElementById('btn-clear-cache').addEventListener('click', () => {
+  if (!confirm('Vider le cache navigateur ? Les données non téléchargées seront perdues.')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  decks = [];
+  selectedIndex = -1;
+  renderAll();
+  showToast('Cache vidé');
+});
+
+/* ── Init ── */
+if (loadFromCache()) {
+  setStatus(`${decks.length} deck(s) depuis le cache`);
+  selectedIndex = decks.length > 0 ? 0 : -1;
+} else {
+  setStatus('Aucune donnée — chargez un JSON');
+}
+renderAll();
+</script>
+</body>
+</html>
