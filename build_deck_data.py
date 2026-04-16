@@ -72,7 +72,7 @@ def fetch_moxfield_deck(deck_id: str):
 
 
 def parse_moxfield_deck(data: dict):
-    """Extract (commander_name, color_identity, cards_list) from Moxfield API response.
+    """Extract (commander_name, color_identity, cards_list, description, deck_name) from Moxfield API response.
     Includes commanders and mainboard/companion; excludes sideboard and maybeboard."""
     boards = data.get("boards", {})
 
@@ -85,6 +85,10 @@ def parse_moxfield_deck(data: dict):
     # Color identity from deck metadata
     colors = data.get("colorIdentity", [])
 
+    # Deck name and description
+    deck_name = data.get("name", "")
+    description = data.get("description", "")
+
     # Cards from mainboard + companion only
     cards = []
     for board_name in ("mainboard", "companion"):
@@ -95,7 +99,7 @@ def parse_moxfield_deck(data: dict):
                 name = name.replace(" / ", " // ")  # normalize DFC names
                 cards.append({"name": name, "qty": qty})
 
-    return commander_name, colors, cards
+    return commander_name, colors, cards, description, deck_name
 
 
 def api_get(url, retries=2):
@@ -210,12 +214,14 @@ for url in deck_urls:
     data = fetch_moxfield_deck(deck_id)
     if not data:
         continue
-    commander_name, colors, cards = parse_moxfield_deck(data)
+    commander_name, colors, cards, description, deck_name = parse_moxfield_deck(data)
     all_decks[deck_id] = {
         "id": deck_id,
+        "name": deck_name,
         "commander": commander_name,
         "colors": colors,
         "cards": cards,
+        "description": description,
     }
     names = set(c["name"] for c in cards)
     all_card_names.update(names)
@@ -604,8 +610,24 @@ for deck_id, deck in all_decks.items():
     # French commander name
     commander_fr = french_names.get(deck["commander"], deck["commander"])
 
+    # Card list with French names and Scryfall info
+    card_list = []
+    for c in sorted(cards, key=lambda x: x["name"]):
+        info = get_card(c["name"], scryfall_cache) or {}
+        card_list.append({
+            "name": c["name"],
+            "name_fr": french_names.get(c["name"], c["name"]),
+            "qty": c["qty"],
+            "type_line": info.get("type_line", ""),
+            "mana_cost": info.get("mana_cost", ""),
+            "cmc": info.get("cmc", 0),
+            "oracle_text": info.get("oracle_text", ""),
+        })
+
     deck_data = {
         "id": deck_id,
+        "name": deck["name"],
+        "description": deck["description"],
         "commander": deck["commander"],
         "commander_fr": commander_fr,
         "colors": deck["colors"],
@@ -615,6 +637,7 @@ for deck_id, deck in all_decks.items():
         "avg_mv": avg_mv,
         "top_keywords": top_kw,
         "verified_combos": verified_combos,
+        "card_list": card_list,
     }
     output["decks"].append(deck_data)
     print(f"  {deck_id}: curve={curve} avg={avg_mv} kw={len(top_kw)} combos={len(verified_combos)}")
